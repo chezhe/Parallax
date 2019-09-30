@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		83133D6F236405F20005717E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D6E236405F20005717E /* SettingViewController.swift */; };
 		83133D8323642E1E0005717E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D8223642E1E0005717E /* Extenstions.swift */; };
-		83366DD82361D99A005A3175 /* Pods_Parallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83366DCA2361D92B005A3175 /* Pods_Parallax.framework */; };
-		83366DD92361D99A005A3175 /* Pods_Parallax.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83366DCA2361D92B005A3175 /* Pods_Parallax.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
 		8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1AC2360833B006A8AB3 /* ImageUtil.swift */; };
 		8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B123608352006A8AB3 /* FileUtil.swift */; };
@@ -51,82 +49,68 @@
 		83E897EC235F356E00435C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E897EA235F356E00435C8A /* Main.storyboard */; };
 		83E897EE235F356F00435C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E897ED235F356F00435C8A /* Assets.xcassets */; };
 		83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E897EF235F356F00435C8A /* LaunchScreen.storyboard */; };
-		9C096B4005724A47CF6AACEF /* Pods_Parallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		83133D9C2364395D0005717E /* PBXContainerItemProxy */ = {
+		834239C223688F07009612BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C332967D484B2EE6DD22A3B3E4FE3345;
-			remoteInfo = INSPhotoGallery;
-		};
-		83133D9E2364395D0005717E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 76ECEA879395B4B4B0CD445E2E3606C3;
-			remoteInfo = "INSPhotoGallery-INSPhotoGallery";
-		};
-		83366DC12361D92B005A3175 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1B9BA6EAA87D4C940D27B6CCFC4B7039;
 			remoteInfo = EVGPUImage2;
 		};
-		83366DC72361D92B005A3175 /* PBXContainerItemProxy */ = {
+		834239C423688F07009612BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D1C6F1275E5A54781203643366117595;
-			remoteInfo = Persei;
-		};
-		83366DC92361D92B005A3175 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EBC3CED93C8464072128AC93473846B8;
-			remoteInfo = "Pods-Parallax";
-		};
-		83366DCB2361D92B005A3175 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BE629661A28417489F63DBC74196BBD6;
-			remoteInfo = SPAlert;
-		};
-		83AFC702236441F500371D9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8F8BEC2F52650BAE9B276661E9E652AE;
 			remoteInfo = INSNibLoading;
 		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		83366DDA2361D99A005A3175 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				83366DD92361D99A005A3175 /* Pods_Parallax.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+		834239C623688F07009612BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C332967D484B2EE6DD22A3B3E4FE3345;
+			remoteInfo = INSPhotoGallery;
 		};
-/* End PBXCopyFilesBuildPhase section */
+		834239C823688F07009612BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 76ECEA879395B4B4B0CD445E2E3606C3;
+			remoteInfo = "INSPhotoGallery-INSPhotoGallery";
+		};
+		834239CA23688F07009612BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D1C6F1275E5A54781203643366117595;
+			remoteInfo = Persei;
+		};
+		834239CC23688F07009612BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBC3CED93C8464072128AC93473846B8;
+			remoteInfo = "Pods-Parallax";
+		};
+		834239CE23688F07009612BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE629661A28417489F63DBC74196BBD6;
+			remoteInfo = SPAlert;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2377C4DD9FA901846BA863ED /* Pods-Parallax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parallax.release.xcconfig"; path = "Target Support Files/Pods-Parallax/Pods-Parallax.release.xcconfig"; sourceTree = "<group>"; };
 		23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parallax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83133D6E236405F20005717E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83133D8223642E1E0005717E /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
-		83366DB82361D92B005A3175 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
+		834239B723688EF7009612BA /* framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = framework; path = Pods/EVGPUImage2/framework; sourceTree = "<group>"; };
+		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8351C1B123608352006A8AB3 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		8351C1B323608371006A8AB3 /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
@@ -179,8 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83366DD82361D99A005A3175 /* Pods_Parallax.framework in Frameworks */,
-				9C096B4005724A47CF6AACEF /* Pods_Parallax.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +172,7 @@
 		3AE3A647F1605F22C2B6A32D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				834239B723688EF7009612BA /* framework */,
 				83D4E5B72361D782007B73C4 /* GPUImage2 */,
 				83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */,
 				83D4E5AF2361D56B007B73C4 /* Persei.framework */,
@@ -207,16 +190,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		83366DB92361D92B005A3175 /* Products */ = {
+		834239B923688F07009612BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83366DC22361D92B005A3175 /* EVGPUImage2.framework */,
-				83AFC703236441F500371D9E /* INSNibLoading.framework */,
-				83133D9D2364395D0005717E /* INSPhotoGallery.framework */,
-				83133D9F2364395D0005717E /* INSPhotoGallery.bundle */,
-				83366DC82361D92B005A3175 /* Persei.framework */,
-				83366DCA2361D92B005A3175 /* Pods_Parallax.framework */,
-				83366DCC2361D92B005A3175 /* SPAlert.framework */,
+				834239C323688F07009612BA /* EVGPUImage2.framework */,
+				834239C523688F07009612BA /* INSNibLoading.framework */,
+				834239C723688F07009612BA /* INSPhotoGallery.framework */,
+				834239C923688F07009612BA /* INSPhotoGallery.bundle */,
+				834239CB23688F07009612BA /* Persei.framework */,
+				834239CD23688F07009612BA /* Pods_Parallax.framework */,
+				834239CF23688F07009612BA /* SPAlert.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,7 +235,7 @@
 		83E897D8235F356E00435C8A = {
 			isa = PBXGroup;
 			children = (
-				83366DB82361D92B005A3175 /* Pods.xcodeproj */,
+				834239B823688F07009612BA /* Pods.xcodeproj */,
 				83E897E3235F356E00435C8A /* Parallax */,
 				83E897E2235F356E00435C8A /* Products */,
 				8213E252C93E96117A642910 /* Pods */,
@@ -310,7 +293,6 @@
 				83E897DE235F356E00435C8A /* Frameworks */,
 				83E897DF235F356E00435C8A /* Resources */,
 				B04E153AE7A735786733219B /* [CP] Embed Pods Frameworks */,
-				83366DDA2361D99A005A3175 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,8 +331,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 83366DB92361D92B005A3175 /* Products */;
-					ProjectRef = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
+					ProductGroup = 834239B923688F07009612BA /* Products */;
+					ProjectRef = 834239B823688F07009612BA /* Pods.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -361,53 +343,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		83133D9D2364395D0005717E /* INSPhotoGallery.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = INSPhotoGallery.framework;
-			remoteRef = 83133D9C2364395D0005717E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83133D9F2364395D0005717E /* INSPhotoGallery.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = INSPhotoGallery.bundle;
-			remoteRef = 83133D9E2364395D0005717E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83366DC22361D92B005A3175 /* EVGPUImage2.framework */ = {
+		834239C323688F07009612BA /* EVGPUImage2.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = EVGPUImage2.framework;
-			remoteRef = 83366DC12361D92B005A3175 /* PBXContainerItemProxy */;
+			remoteRef = 834239C223688F07009612BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		83366DC82361D92B005A3175 /* Persei.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Persei.framework;
-			remoteRef = 83366DC72361D92B005A3175 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83366DCA2361D92B005A3175 /* Pods_Parallax.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pods_Parallax.framework;
-			remoteRef = 83366DC92361D92B005A3175 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83366DCC2361D92B005A3175 /* SPAlert.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SPAlert.framework;
-			remoteRef = 83366DCB2361D92B005A3175 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83AFC703236441F500371D9E /* INSNibLoading.framework */ = {
+		834239C523688F07009612BA /* INSNibLoading.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = INSNibLoading.framework;
-			remoteRef = 83AFC702236441F500371D9E /* PBXContainerItemProxy */;
+			remoteRef = 834239C423688F07009612BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		834239C723688F07009612BA /* INSPhotoGallery.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = INSPhotoGallery.framework;
+			remoteRef = 834239C623688F07009612BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		834239C923688F07009612BA /* INSPhotoGallery.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = INSPhotoGallery.bundle;
+			remoteRef = 834239C823688F07009612BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		834239CB23688F07009612BA /* Persei.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Persei.framework;
+			remoteRef = 834239CA23688F07009612BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		834239CD23688F07009612BA /* Pods_Parallax.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Parallax.framework;
+			remoteRef = 834239CC23688F07009612BA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		834239CF23688F07009612BA /* SPAlert.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SPAlert.framework;
+			remoteRef = 834239CE23688F07009612BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -656,17 +638,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KJB8DLYA43;
+				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Parallax/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chezhe.Parallax;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chezhe.Parallax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_VERSION = 5.0;
@@ -680,17 +663,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KJB8DLYA43;
+				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Parallax/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chezhe.Parallax;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chezhe.Parallax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

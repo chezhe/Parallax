@@ -11,7 +11,7 @@ import EVGPUImage2
 import AVFoundation
 import Persei
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var viewport: RenderView!
 
@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     var soundEffect: AVAudioPlayer?
     let cameraEnabled: Bool = true
     var filterName: String?
+    var zoomEnd: CGFloat = 1.0
     
     fileprivate var menu: MenuView!
     
@@ -53,12 +54,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         do {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
+            
+            let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(zoomFrame(_:)))
+            pinchGesture.delegate = self
+            viewport.addGestureRecognizer(pinchGesture)
+            
+            // button style
             filmButton.tintColor = .white
             captureButton.tintColor = .white
             photoButton.tintColor = .white
             let lastPhoto = FileUtil.getLastPhoto()
             photoButton.setImage(lastPhoto, for: .normal)
             
+            // camera & filter
             filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
             
             if cameraEnabled {
@@ -70,10 +78,11 @@ class ViewController: UIViewController {
                 filter.addTarget(viewport)
                 videoCamera?.startCapture()
             }
-            
 
+            // sound effect
             soundEffect = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "shoot.mp3", ofType:nil)!))
             
+            // filter switch menu
             menu = MenuView()
             menu.delegate = self
             filterSwitcher.addSubview(menu)
@@ -121,6 +130,28 @@ class ViewController: UIViewController {
         })
         
         super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    @objc func zoomFrame(_ gestureRecognizer: UIPinchGestureRecognizer) {
+        var zoomScale = gestureRecognizer.scale
+        if videoCamera!.inputCamera.videoZoomFactor > 1.0 && zoomScale < 1.0 {
+            zoomScale = zoomScale * zoomEnd * 0.8
+        }
+        zoomScale = max(1.0, zoomScale)
+        zoomScale = min(3.0, zoomScale)
+        do {
+            try videoCamera!.inputCamera.lockForConfiguration()
+            if gestureRecognizer.state == .ended {
+                if zoomScale <= 1.0 {
+                    zoomScale = 1.0
+                }
+                zoomEnd = zoomScale
+            }
+            videoCamera!.inputCamera.videoZoomFactor = CGFloat(zoomScale)
+            videoCamera!.inputCamera.unlockForConfiguration()
+        } catch {
+            
+        }
     }
 
     @IBAction func onCapture(_ sender: Any) {
@@ -177,6 +208,8 @@ class ViewController: UIViewController {
             print("##$ \(orient)")
             FileUtil.storeImageToDocumentDirectory(image: croppedImage, fileName: [name, orient].joined(separator: "~"))
             
+            FileUtil.onLaunch()
+            
             let lastPhoto = ImageUtil.cropScaleSize(image: image, size: CGSize(width: 200, height: 200))
             self.photoButton.setImage(lastPhoto, for: .normal)
         }
@@ -186,8 +219,6 @@ class ViewController: UIViewController {
         if autoSaveLocal {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
-        
-        FileUtil.onLaunch()
     }
     
     @IBAction func onSwitchFilter(_ sender: Any) {
