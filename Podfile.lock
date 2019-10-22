@@ -1,0 +1,20 @@
+PODS:
+  - EVGPUImage2 (0.2.0)
+  - SPAlert (1.1.1)
+
+DEPENDENCIES:
+  - EVGPUImage2 (~> 0.2)
+  - SPAlert
+
+SPEC REPOS:
+  trunk:
+    - EVGPUImage2
+    - SPAlert
+
+SPEC CHECKSUMS:
+  EVGPUImage2: 1e057f25fbab811b8a9e98d19f96bbd5eb434913
+  SPAlert: 292690a27df49ff131d532a0a39d89b08dd93e4d
+
+PODFILE CHECKSUM: 759cd07e55a3d5177e954c15ef40fad4ad3b7a01
+
+COCOAPODS: 1.8.3
