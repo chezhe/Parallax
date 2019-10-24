@@ -10,4 +10,6 @@ target 'Parallax' do
   # pod 'CameraKit-iOS', git: 'https://github.com/CameraKit/camerakit-ios.git'
   pod 'EVGPUImage2', '~> 0.2'
   pod 'SPAlert'
+  pod 'INSPhotoGallery'
+  pod 'Persei', '~> 3.0'
 end

@@ -1,20 +1,28 @@
 PODS:
   - EVGPUImage2 (0.2.0)
+  - INSPhotoGallery (1.2.8)
+  - Persei (3.1.1)
   - SPAlert (1.1.1)
 
 DEPENDENCIES:
   - EVGPUImage2 (~> 0.2)
+  - INSPhotoGallery
+  - Persei (~> 3.0)
   - SPAlert
 
 SPEC REPOS:
   trunk:
     - EVGPUImage2
+    - INSPhotoGallery
+    - Persei
     - SPAlert
 
 SPEC CHECKSUMS:
   EVGPUImage2: 1e057f25fbab811b8a9e98d19f96bbd5eb434913
+  INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
+  Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
   SPAlert: 292690a27df49ff131d532a0a39d89b08dd93e4d
 
-PODFILE CHECKSUM: 759cd07e55a3d5177e954c15ef40fad4ad3b7a01
+PODFILE CHECKSUM: 2d5a67258ef1f22460f83bb72865b8dac9b867c9
 
 COCOAPODS: 1.8.3
