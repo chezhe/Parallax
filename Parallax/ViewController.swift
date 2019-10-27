@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     var filter: ImageProcessingOperation!
     var soundEffect: AVAudioPlayer?
     let cameraEnabled: Bool = true
+    var filterName: String?
     
     fileprivate var menu: MenuView!
     
@@ -56,13 +57,13 @@ class ViewController: UIViewController {
             let lastPhoto = ImageUtil.cropScaleSize(image: FileUtil.getLastPhoto(), size: CGSize(width: 200, height: 200))
             photoButton.setImage(lastPhoto, for: .normal)
             
-            let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+            filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
             
             if cameraEnabled {
                 viewport.fillMode = .preserveAspectRatioAndFill
                 videoCamera = try Camera(sessionPreset: .hd4K3840x2160, location: .backFacing)
 
-                filter = getFilter(name: filterName)
+                filter = getFilter(name: filterName!)
                 videoCamera?.addTarget(filter)
                 filter.addTarget(viewport)
                 videoCamera?.startCapture()
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
                 return MenuItem(image: UIImage(cgImage: getCGImage(name: item.name, ext: "jpg")))
             }
             menu.items.append(MenuItem(image: UIImage(named: "shop")!))
-            menu.selectedIndex = getIndexOf(filterName: filterName)
+            menu.selectedIndex = getIndexOf(filterName: filterName!)
         } catch {
             print("Initialize camera with error: \(error)")
         }
@@ -139,6 +140,39 @@ class ViewController: UIViewController {
             videoCamera.removeAllTargets()
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let videoCamera = videoCamera {
+            videoCamera.stopCapture()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let videoCamera = videoCamera {
+            videoCamera.startCapture()
+        }
+        
+        let newFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+        if newFilterName != filterName {
+            switchFilter(name: newFilterName)
+        }
+    }
+    
+    func switchFilter(name: String) -> Void {
+        filterName = name
+        menu.selectedIndex = getIndexOf(filterName: name)
+        
+        if cameraEnabled {
+            filter.removeAllTargets()
+            resetCamera()
+            filter = getFilter(name: name)
+            videoCamera!.addTarget(filter)
+            filter.addTarget(viewport!)
+            videoCamera!.startCapture()
+        }
+    }
 }
 
 
@@ -157,14 +191,7 @@ extension ViewController: MenuViewDelegate {
         let filterItem = FILTERS[index]
         UserDefaults.standard.set(filterItem.name, forKey: "filterName")
         
-        if cameraEnabled {
-            filter.removeAllTargets()
-            resetCamera()
-            filter = getFilter(name: filterItem.name)
-            videoCamera!.addTarget(filter)
-            filter.addTarget(viewport!)
-            videoCamera!.startCapture()
-        }
+        self.switchFilter(name: filterItem.name)
     }
 }
 

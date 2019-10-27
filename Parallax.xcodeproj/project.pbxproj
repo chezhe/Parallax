@@ -36,6 +36,7 @@
 		8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D52360A6A1006A8AB3 /* joker.jpg */; };
 		8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D62360A6A1006A8AB3 /* joker.fsh */; };
 		8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1EA2360A6C6006A8AB3 /* Filters.swift */; };
+		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
 		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
@@ -150,6 +151,7 @@
 		8351C1D52360A6A1006A8AB3 /* joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joker.jpg; sourceTree = "<group>"; };
 		8351C1D62360A6A1006A8AB3 /* joker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = joker.fsh; sourceTree = "<group>"; };
 		8351C1EA2360A6C6006A8AB3 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		83D4E5AF2361D56B007B73C4 /* Persei.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Persei.framework; path = Carthage/Build/iOS/Persei.framework; sourceTree = "<group>"; };
@@ -272,18 +274,19 @@
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
 				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
-				83E215142365738F005E8385 /* PhotoModel.swift */,
-				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
-				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
 				83366DDD2361FA57005A3175 /* FilmRollViewController.swift */,
-				83AFC7042364495900371D9E /* PhotoCell.swift */,
 				83133D6E236405F20005717E /* SettingViewController.swift */,
 				83E897EA235F356E00435C8A /* Main.storyboard */,
+				838DA90D2365D64600C9BC8F /* FilmRollCell.swift */,
 				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
 				8351C1AC2360833B006A8AB3 /* ImageUtil.swift */,
 				8351C1EA2360A6C6006A8AB3 /* Filters.swift */,
 				8351C1B123608352006A8AB3 /* FileUtil.swift */,
 				8351C1B323608371006A8AB3 /* SizeUtil.swift */,
+				83E215142365738F005E8385 /* PhotoModel.swift */,
+				83AFC7042364495900371D9E /* PhotoCell.swift */,
+				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
+				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
 				83133D8223642E1E0005717E /* Extenstions.swift */,
 				83E897ED235F356F00435C8A /* Assets.xcassets */,
 				83E897EF235F356F00435C8A /* LaunchScreen.storyboard */,
@@ -505,6 +508,7 @@
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
 				83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */,
 				83E2151F2365AFA6005E8385 /* LaunchViewController.swift in Sources */,
+				838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

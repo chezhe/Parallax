@@ -10,8 +10,13 @@ import UIKit
 
 class FilmRollViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     
@@ -24,5 +29,19 @@ class FilmRollViewController: UIViewController {
         let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
         self.navigationController?.pushViewController(setting, animated:true)
     }
+    
+}
+
+extension FilmRollViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return FILTERS.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilmRollCell", for: indexPath) as! FilmRollCell
+        cell.updateCell(index: indexPath.item, onBack: self.onBack)
+        return cell
+    }
+    
     
 }
