@@ -41,6 +41,8 @@
 		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
 		83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E21510236568C6005E8385 /* CustomOverlayView.xib */; };
 		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
+		83E2151D2365AF06005E8385 /* launching.gif in Resources */ = {isa = PBXBuildFile; fileRef = 83E2151C2365AF06005E8385 /* launching.gif */; };
+		83E2151F2365AFA6005E8385 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2151E2365AFA6005E8385 /* LaunchViewController.swift */; };
 		83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E4235F356E00435C8A /* AppDelegate.swift */; };
 		83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E6235F356E00435C8A /* SceneDelegate.swift */; };
 		83E897E9235F356E00435C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E8235F356E00435C8A /* ViewController.swift */; };
@@ -156,6 +158,8 @@
 		83E2150E23656898005E8385 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 		83E21510236568C6005E8385 /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		83E215142365738F005E8385 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		83E2151C2365AF06005E8385 /* launching.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launching.gif; sourceTree = "<group>"; };
+		83E2151E2365AFA6005E8385 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		83E897E1235F356E00435C8A /* Parallax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parallax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E897E4235F356E00435C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E897E6235F356E00435C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83E2151C2365AF06005E8385 /* launching.gif */,
 				8351C1C62360A6A0006A8AB3 /* 2046.jpg */,
 				8351C1D02360A6A1006A8AB3 /* amelie.jpg */,
 				8351C1CD2360A6A1006A8AB3 /* blade-runner-2049.jpg */,
@@ -282,6 +287,7 @@
 				83133D8223642E1E0005717E /* Extenstions.swift */,
 				83E897ED235F356F00435C8A /* Assets.xcassets */,
 				83E897EF235F356F00435C8A /* LaunchScreen.storyboard */,
+				83E2151E2365AFA6005E8385 /* LaunchViewController.swift */,
 				83E897F2235F356F00435C8A /* Info.plist */,
 				8351C1B723608678006A8AB3 /* Resources */,
 			);
@@ -409,6 +415,7 @@
 			files = (
 				8351C1DE2360A6A1006A8AB3 /* happy-together.jpg in Resources */,
 				83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */,
+				83E2151D2365AF06005E8385 /* launching.gif in Resources */,
 				8351C1D72360A6A1006A8AB3 /* lookup_miss_etikate.png in Resources */,
 				8351C1E52360A6A1006A8AB3 /* lookup_amatorka.png in Resources */,
 				8351C1E02360A6A1006A8AB3 /* blade-runner-2049.jpg in Resources */,
@@ -497,6 +504,7 @@
 				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
 				83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */,
+				83E2151F2365AFA6005E8385 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
