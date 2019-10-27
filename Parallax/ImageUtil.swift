@@ -41,4 +41,20 @@ class ImageUtil {
         }
         return image
     }
+    
+    public static func makeRoundedImage(image: UIImage, radius: Float) -> UIImage {
+        let imageLayer = CALayer()
+        imageLayer.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        imageLayer.contents = image.cgImage
+
+        imageLayer.masksToBounds = true
+        imageLayer.cornerRadius = CGFloat(radius)
+
+        UIGraphicsBeginImageContext(image.size)
+        imageLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return roundedImage!
+    }
 }

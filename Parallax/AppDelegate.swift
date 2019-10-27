@@ -11,14 +11,10 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-//        let home = storyBoard.instantiateViewController(withIdentifier: "home")
-//        
-//        let navController = UINavigationController(rootViewController: home)
-//        window?.addSubview(navController.view)
-//        window?.makeKeyAndVisible()
         return true
     }
 

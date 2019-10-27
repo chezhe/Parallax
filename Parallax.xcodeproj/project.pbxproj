@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83133D6F236405F20005717E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D6E236405F20005717E /* SettingViewController.swift */; };
+		83133D8323642E1E0005717E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D8223642E1E0005717E /* Extenstions.swift */; };
 		83366DD82361D99A005A3175 /* Pods_Parallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83366DCA2361D92B005A3175 /* Pods_Parallax.framework */; };
 		83366DD92361D99A005A3175 /* Pods_Parallax.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83366DCA2361D92B005A3175 /* Pods_Parallax.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
@@ -34,35 +36,41 @@
 		8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D52360A6A1006A8AB3 /* joker.jpg */; };
 		8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D62360A6A1006A8AB3 /* joker.fsh */; };
 		8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1EA2360A6C6006A8AB3 /* Filters.swift */; };
+		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
+		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
+		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
+		83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E21510236568C6005E8385 /* CustomOverlayView.xib */; };
+		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
 		83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E4235F356E00435C8A /* AppDelegate.swift */; };
 		83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E6235F356E00435C8A /* SceneDelegate.swift */; };
 		83E897E9235F356E00435C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E8235F356E00435C8A /* ViewController.swift */; };
 		83E897EC235F356E00435C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E897EA235F356E00435C8A /* Main.storyboard */; };
 		83E897EE235F356F00435C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E897ED235F356F00435C8A /* Assets.xcassets */; };
 		83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E897EF235F356F00435C8A /* LaunchScreen.storyboard */; };
+		9C096B4005724A47CF6AACEF /* Pods_Parallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		83366DC12361D92B005A3175 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1B9BA6EAA87D4C940D27B6CCFC4B7039;
-			remoteInfo = EVGPUImage2;
-		};
-		83366DC32361D92B005A3175 /* PBXContainerItemProxy */ = {
+		83133D9C2364395D0005717E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C332967D484B2EE6DD22A3B3E4FE3345;
 			remoteInfo = INSPhotoGallery;
 		};
-		83366DC52361D92B005A3175 /* PBXContainerItemProxy */ = {
+		83133D9E2364395D0005717E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 76ECEA879395B4B4B0CD445E2E3606C3;
 			remoteInfo = "INSPhotoGallery-INSPhotoGallery";
+		};
+		83366DC12361D92B005A3175 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B9BA6EAA87D4C940D27B6CCFC4B7039;
+			remoteInfo = EVGPUImage2;
 		};
 		83366DC72361D92B005A3175 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -85,6 +93,13 @@
 			remoteGlobalIDString = BE629661A28417489F63DBC74196BBD6;
 			remoteInfo = SPAlert;
 		};
+		83AFC702236441F500371D9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83366DB82361D92B005A3175 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8F8BEC2F52650BAE9B276661E9E652AE;
+			remoteInfo = INSNibLoading;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,6 +119,8 @@
 /* Begin PBXFileReference section */
 		2377C4DD9FA901846BA863ED /* Pods-Parallax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parallax.release.xcconfig"; path = "Target Support Files/Pods-Parallax/Pods-Parallax.release.xcconfig"; sourceTree = "<group>"; };
 		23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parallax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83133D6E236405F20005717E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		83133D8223642E1E0005717E /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		83366DB82361D92B005A3175 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
@@ -131,9 +148,14 @@
 		8351C1D52360A6A1006A8AB3 /* joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joker.jpg; sourceTree = "<group>"; };
 		8351C1D62360A6A1006A8AB3 /* joker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = joker.fsh; sourceTree = "<group>"; };
 		8351C1EA2360A6C6006A8AB3 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
+		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		83D4E5AF2361D56B007B73C4 /* Persei.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Persei.framework; path = Carthage/Build/iOS/Persei.framework; sourceTree = "<group>"; };
 		83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Persei.framework.dSYM; path = Carthage/Build/iOS/Persei.framework.dSYM; sourceTree = "<group>"; };
 		83D4E5B72361D782007B73C4 /* GPUImage2 */ = {isa = PBXFileReference; lastKnownFileType = text; name = GPUImage2; path = "/Users/de/Library/Developer/Xcode/DerivedData/Parallax-cggpgovfzygpfcdsoytdqbifaqqh/SourcePackages/checkouts/GPUImage2"; sourceTree = "<absolute>"; };
+		83E2150E23656898005E8385 /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		83E21510236568C6005E8385 /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
+		83E215142365738F005E8385 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		83E897E1235F356E00435C8A /* Parallax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parallax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E897E4235F356E00435C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E897E6235F356E00435C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83366DD82361D99A005A3175 /* Pods_Parallax.framework in Frameworks */,
+				9C096B4005724A47CF6AACEF /* Pods_Parallax.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,8 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				83366DC22361D92B005A3175 /* EVGPUImage2.framework */,
-				83366DC42361D92B005A3175 /* INSPhotoGallery.framework */,
-				83366DC62361D92B005A3175 /* INSPhotoGallery.bundle */,
+				83AFC703236441F500371D9E /* INSNibLoading.framework */,
+				83133D9D2364395D0005717E /* INSPhotoGallery.framework */,
+				83133D9F2364395D0005717E /* INSPhotoGallery.bundle */,
 				83366DC82361D92B005A3175 /* Persei.framework */,
 				83366DCA2361D92B005A3175 /* Pods_Parallax.framework */,
 				83366DCC2361D92B005A3175 /* SPAlert.framework */,
@@ -243,12 +267,19 @@
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
 				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
+				83E215142365738F005E8385 /* PhotoModel.swift */,
+				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
+				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
 				83366DDD2361FA57005A3175 /* FilmRollViewController.swift */,
+				83AFC7042364495900371D9E /* PhotoCell.swift */,
+				83133D6E236405F20005717E /* SettingViewController.swift */,
 				83E897EA235F356E00435C8A /* Main.storyboard */,
+				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
 				8351C1AC2360833B006A8AB3 /* ImageUtil.swift */,
 				8351C1EA2360A6C6006A8AB3 /* Filters.swift */,
 				8351C1B123608352006A8AB3 /* FileUtil.swift */,
 				8351C1B323608371006A8AB3 /* SizeUtil.swift */,
+				83133D8223642E1E0005717E /* Extenstions.swift */,
 				83E897ED235F356F00435C8A /* Assets.xcassets */,
 				83E897EF235F356F00435C8A /* LaunchScreen.storyboard */,
 				83E897F2235F356F00435C8A /* Info.plist */,
@@ -276,8 +307,6 @@
 			dependencies = (
 			);
 			name = Parallax;
-			packageProductDependencies = (
-			);
 			productName = Parallax;
 			productReference = 83E897E1235F356E00435C8A /* Parallax.app */;
 			productType = "com.apple.product-type.application";
@@ -306,8 +335,6 @@
 				Base,
 			);
 			mainGroup = 83E897D8235F356E00435C8A;
-			packageReferences = (
-			);
 			productRefGroup = 83E897E2235F356E00435C8A /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -324,25 +351,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		83133D9D2364395D0005717E /* INSPhotoGallery.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = INSPhotoGallery.framework;
+			remoteRef = 83133D9C2364395D0005717E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83133D9F2364395D0005717E /* INSPhotoGallery.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = INSPhotoGallery.bundle;
+			remoteRef = 83133D9E2364395D0005717E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		83366DC22361D92B005A3175 /* EVGPUImage2.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = EVGPUImage2.framework;
 			remoteRef = 83366DC12361D92B005A3175 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83366DC42361D92B005A3175 /* INSPhotoGallery.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = INSPhotoGallery.framework;
-			remoteRef = 83366DC32361D92B005A3175 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		83366DC62361D92B005A3175 /* INSPhotoGallery.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = INSPhotoGallery.bundle;
-			remoteRef = 83366DC52361D92B005A3175 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		83366DC82361D92B005A3175 /* Persei.framework */ = {
@@ -366,6 +393,13 @@
 			remoteRef = 83366DCB2361D92B005A3175 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		83AFC703236441F500371D9E /* INSNibLoading.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = INSNibLoading.framework;
+			remoteRef = 83AFC702236441F500371D9E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -383,6 +417,7 @@
 				8351C1E42360A6A1006A8AB3 /* lookup.png in Resources */,
 				8351C1E32360A6A1006A8AB3 /* amelie.jpg in Resources */,
 				8351C1D82360A6A1006A8AB3 /* lookup_soft_elegance_2.png in Resources */,
+				83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */,
 				8351C1E62360A6A1006A8AB3 /* shadow.jpg in Resources */,
 				8351C1DC2360A6A1006A8AB3 /* matrix.fsh in Resources */,
 				83E897EE235F356F00435C8A /* Assets.xcassets in Resources */,
@@ -447,13 +482,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83AFC7052364495900371D9E /* PhotoCell.swift in Sources */,
 				8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */,
+				83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */,
+				83E215152365738F005E8385 /* PhotoModel.swift in Sources */,
 				8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */,
 				8351C1BB23608807006A8AB3 /* GalleryViewController.swift in Sources */,
 				83E897E9235F356E00435C8A /* ViewController.swift in Sources */,
+				83133D8323642E1E0005717E /* Extenstions.swift in Sources */,
 				83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */,
+				83133D6F236405F20005717E /* SettingViewController.swift in Sources */,
 				83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
+				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
 				83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */,
 			);

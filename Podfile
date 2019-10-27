@@ -12,4 +12,5 @@ target 'Parallax' do
   pod 'SPAlert'
   pod 'INSPhotoGallery'
   pod 'Persei', '~> 3.0'
+  pod 'INSNibLoading'
 end

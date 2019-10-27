@@ -11,8 +11,8 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Parallax" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="view">
+                <viewController storyboardIdentifier="home" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Parallax" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -21,12 +21,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opA-II-9EW" customClass="UIScrollView">
-                                <rect key="frame" x="20" y="737" width="374" height="128"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKi-Km-PKW">
+                                <rect key="frame" x="20" y="734" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-nh-okr">
-                                        <rect key="frame" x="150" y="57" width="60" height="60"/>
+                                        <rect key="frame" x="154" y="34" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="capture"/>
                                         <connections>
@@ -34,16 +34,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-K7-bhD">
-                                        <rect key="frame" x="310" y="71" width="32" height="32"/>
+                                        <rect key="frame" x="310" y="32" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="check"/>
+                                        <state key="normal" image="amelie.jpg"/>
                                         <connections>
                                             <action selector="onGoGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vk4-qf-WV7"/>
-                                            <segue destination="VdW-ew-XLD" kind="show" id="ECM-aw-uFB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-Ct-fY1">
-                                        <rect key="frame" x="35" y="71" width="32" height="32"/>
+                                        <rect key="frame" x="8" y="48" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="film-roll"/>
                                         <connections>
@@ -51,15 +50,18 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yMJ-ve-cmF"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="awR-ng-0KD"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bpk-XJ-FXd"/>
                     <connections>
-                        <outlet property="filterSwitcher" destination="opA-II-9EW" id="Lbn-Mm-STi"/>
+                        <outlet property="captureButton" destination="HCt-nh-okr" id="Y5b-mT-YV6"/>
+                        <outlet property="filmButton" destination="HXA-Ct-fY1" id="ZN9-kA-2Tm"/>
+                        <outlet property="filterSwitcher" destination="wKi-Km-PKW" id="Ngm-gI-e7b"/>
+                        <outlet property="photoButton" destination="zDP-K7-bhD" id="FJe-V1-hrw"/>
                         <outlet property="screenView" destination="8bC-Xf-vdC" id="O8D-IG-kWW"/>
                         <outlet property="viewport" destination="ky2-DC-nog" id="YNM-JZ-Zlc"/>
                     </connections>
@@ -71,75 +73,138 @@
         <!--Film Roll View Controller-->
         <scene sceneID="a4K-qS-V1n">
             <objects>
-                <viewController id="KAD-jx-oga" customClass="FilmRollViewController" customModule="Parallax" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="filmroll" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KAD-jx-oga" customClass="FilmRollViewController" customModule="Parallax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bP3-Ty-9aJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-kI-umK">
+                                <rect key="frame" x="20" y="48" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="onBack:" destination="KAD-jx-oga" eventType="touchUpInside" id="L6Q-QD-uKB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cp-gQ-acg">
+                                <rect key="frame" x="355" y="50" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="setting"/>
+                                <connections>
+                                    <action selector="onGoSetting:" destination="KAD-jx-oga" eventType="touchUpInside" id="Yqe-qV-b2n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rMc-mc-Fmv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BF4-9z-kr1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNZ-c2-DcZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="861"/>
         </scene>
-        <!--Gallery View Controller-->
-        <scene sceneID="kJp-ii-NBk">
+        <!--Setting View Controller-->
+        <scene sceneID="KSG-dY-com">
             <objects>
-                <viewController storyboardIdentifier="gallery" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VdW-ew-XLD" customClass="GalleryViewController" customModule="Parallax" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4yl-Dv-bzC">
+                <viewController storyboardIdentifier="setting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jBT-gA-Hvw" customClass="SettingViewController" customModule="Parallax" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zdl-aK-nZD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xDO-PT-dq3">
-                                <rect key="frame" x="20" y="109" width="374" height="753"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ibG-3T-gkz">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qz9-se-9Mc">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w78-Eg-GvJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkg-7J-qeL">
-                                <rect key="frame" x="27" y="54" width="32" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXp-KI-lEM">
+                                <rect key="frame" x="20" y="43" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back"/>
                                 <connections>
-                                    <action selector="onBack:" destination="VdW-ew-XLD" eventType="touchUpInside" id="Kta-3h-LHQ"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="hTd-jC-sbp"/>
+                                    <action selector="onBack:" destination="jBT-gA-Hvw" eventType="touchUpInside" id="0ap-Kb-hPV"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.037281411917098439" green="0.037281411917098439" blue="0.037281411917098439" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="vz2-zX-GXF"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ifj-WM-2Rl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Njk-BV-1fW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wd7-JE-qMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="860"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="XGk-Wm-Cq2">
+            <objects>
+                <viewController storyboardIdentifier="gallery" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OP5-sq-9CY" customClass="GalleryViewController" customModule="Parallax" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4JY-0a-huj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-Ox-Gvg">
+                                <rect key="frame" x="20" y="94" width="374" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fHG-8E-lK8">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="Ykb-Ho-ZEU" customClass="PhotoCell" customModule="Parallax" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="112" height="112"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Ue-gL-6hC">
+                                            <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="happy-together.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="oFR-tC-1bk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oFR-tC-1bk" secondAttribute="bottom" constant="-8" id="2qs-nT-n5N"/>
+                                                <constraint firstItem="oFR-tC-1bk" firstAttribute="top" secondItem="6Ue-gL-6hC" secondAttribute="topMargin" id="CFc-bv-WPB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oFR-tC-1bk" secondAttribute="trailing" constant="-8" id="R5S-m3-9kU"/>
+                                                <constraint firstItem="oFR-tC-1bk" firstAttribute="leading" secondItem="6Ue-gL-6hC" secondAttribute="leadingMargin" id="pmU-4r-qiU"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="112" height="112"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="oFR-tC-1bk" id="Hpr-Ke-6uO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shA-Xj-kCA">
+                                <rect key="frame" x="13" y="50" width="32" height="32"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="onBack:" destination="OP5-sq-9CY" eventType="touchUpInside" id="v7a-c8-gbh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="shA-Xj-kCA" firstAttribute="leading" secondItem="k7k-XW-wB7" secondAttribute="leading" constant="13" id="deZ-JO-7vf"/>
+                            <constraint firstItem="3Sm-Ox-Gvg" firstAttribute="top" secondItem="shA-Xj-kCA" secondAttribute="bottom" constant="12" id="gaB-0k-pYK"/>
+                            <constraint firstItem="3Sm-Ox-Gvg" firstAttribute="trailing" secondItem="4JY-0a-huj" secondAttribute="trailingMargin" id="hmi-Kd-hhT"/>
+                            <constraint firstItem="3Sm-Ox-Gvg" firstAttribute="bottom" secondItem="k7k-XW-wB7" secondAttribute="bottom" id="upi-GU-7OP"/>
+                            <constraint firstItem="3Sm-Ox-Gvg" firstAttribute="leading" secondItem="4JY-0a-huj" secondAttribute="leadingMargin" id="vCO-OF-yQp"/>
+                            <constraint firstItem="shA-Xj-kCA" firstAttribute="top" secondItem="k7k-XW-wB7" secondAttribute="top" constant="6" id="zbk-5w-w7G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k7k-XW-wB7"/>
+                    </view>
                     <connections>
-                        <outlet property="collectionView" destination="xDO-PT-dq3" id="5aB-UG-Fdk"/>
+                        <outlet property="collectionView" destination="3Sm-Ox-Gvg" id="iX1-6W-zeE"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gGR-FO-erP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCH-W4-iEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="112.5"/>
+            <point key="canvasLocation" x="1060.8695652173915" y="107.8125"/>
         </scene>
     </scenes>
     <resources>
+        <image name="amelie.jpg" width="512" height="512"/>
         <image name="back" width="32" height="32"/>
         <image name="capture" width="37" height="32"/>
-        <image name="check" width="32" height="32"/>
         <image name="film-roll" width="32" height="32"/>
+        <image name="happy-together.jpg" width="512" height="512"/>
+        <image name="setting" width="32" height="32"/>
     </resources>
 </document>
