@@ -25,6 +25,12 @@ extension FileManager {
 }
 
 class FileUtil {
+    public static var photoList:[Photo] = []
+    
+    public static func onLaunch() {
+        self.photoList = self.getPhotoList()
+    }
+    
     public static func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> Void {
         guard let data = image.pngData() else {
             return

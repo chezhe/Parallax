@@ -25,9 +25,9 @@ class ViewController: UIViewController {
     
     var videoCamera: Camera?
     var pictureOutput: PictureOutput!
-    var filter: ImageProcessingOperation = getFilter(name: "schindlers-list")
+    var filter: ImageProcessingOperation!
     var soundEffect: AVAudioPlayer?
-    let cameraEnabled: Bool = false
+    let cameraEnabled: Bool = true
     
     fileprivate var menu: MenuView!
     
@@ -54,13 +54,15 @@ class ViewController: UIViewController {
             captureButton.tintColor = .white
             photoButton.tintColor = .white
             let lastPhoto = ImageUtil.cropScaleSize(image: FileUtil.getLastPhoto(), size: CGSize(width: 200, height: 200))
-            photoButton.setImage(lastPhoto, for: UIControl.State.normal)
-            photoButton.layer.cornerRadius = 4
+            photoButton.setImage(lastPhoto, for: .normal)
+            
+            let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
             
             if cameraEnabled {
                 viewport.fillMode = .preserveAspectRatioAndFill
                 videoCamera = try Camera(sessionPreset: .hd4K3840x2160, location: .backFacing)
 
+                filter = getFilter(name: filterName)
                 videoCamera?.addTarget(filter)
                 filter.addTarget(viewport)
                 videoCamera?.startCapture()
@@ -75,7 +77,7 @@ class ViewController: UIViewController {
                 return MenuItem(image: UIImage(cgImage: getCGImage(name: item.name, ext: "jpg")))
             }
             menu.items.append(MenuItem(image: UIImage(named: "shop")!))
-            menu.selectedIndex = 0
+            menu.selectedIndex = getIndexOf(filterName: filterName)
         } catch {
             print("Initialize camera with error: \(error)")
         }
@@ -98,14 +100,27 @@ class ViewController: UIViewController {
                 let orient = isPortrait ? "portrait" : "landscape"
 
                 let croppedImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
-                FileUtil.storeImageToDocumentDirectory(image: croppedImage, fileName: [name, orient].joined(separator: "~") )
-                // if enable save image to photo library directly
-    //            if autoSaveLocal {
-    //                UIImageWriteToSavedPhotosAlbum(croppedImage, nil, nil, nil)
-    //            }
+                FileUtil.storeImageToDocumentDirectory(image: croppedImage, fileName: [name, orient].joined(separator: "~"))
+                
+                self.onCaptureCompleted(image: croppedImage)
             }
             filter --> pictureOutput
         }
+    }
+    
+    func onCaptureCompleted(image: UIImage) {
+        DispatchQueue.main.async {
+            let lastPhoto = ImageUtil.cropScaleSize(image: image, size: CGSize(width: 200, height: 200))
+            self.photoButton.setImage(lastPhoto, for: .normal)
+        }
+
+        // if enable save image to photo library directly
+        let autoSaveLocal = UserDefaults.standard.string(forKey: "autoSaveLocal") == "true" ? true : false
+        if autoSaveLocal {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+        
+        FileUtil.onLaunch()
     }
     
     @IBAction func onSwitchFilter(_ sender: Any) {
@@ -133,11 +148,16 @@ extension ViewController: MenuViewDelegate {
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
             let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmroll") as! FilmRollViewController
             self.navigationController?.pushViewController(filmroll, animated:true)
+            
+            let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+            menu.selectedIndex = getIndexOf(filterName: filterName)
             return
         }
+
+        let filterItem = FILTERS[index]
+        UserDefaults.standard.set(filterItem.name, forKey: "filterName")
         
         if cameraEnabled {
-            let filterItem = FILTERS[index]
             filter.removeAllTargets()
             resetCamera()
             filter = getFilter(name: filterItem.name)

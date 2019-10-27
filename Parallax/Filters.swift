@@ -81,3 +81,8 @@ func customFilter(_ name: String) -> BasicOperation {
     
     return customFilter
 }
+
+
+func getIndexOf(filterName: String) -> Int? {
+    return FILTERS.map{filter in filter.name}.firstIndex(of: filterName)
+}

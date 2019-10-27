@@ -11,8 +11,6 @@ import UIKit
 import EVGPUImage2
 import INSPhotoGallery
 
-
-
 class GalleryViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,7 +18,7 @@ class GalleryViewController: UIViewController {
     var useCustomOverlay = true
     let numberOfItemsPerRow = 4
     
-    var photos = FileUtil.getPhotoList().map { photo in
+    var photos = FileUtil.photoList.map { photo in
         return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
     }
     
@@ -84,7 +82,8 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         for photo in photos {
             FileUtil.deletePhoto(url: photo.url)
         }
-        self.photos = FileUtil.getPhotoList().map { photo in
+        FileUtil.onLaunch()
+        self.photos = FileUtil.photoList.map { photo in
             return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
         }
         self.collectionView.reloadData()
