@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-nh-okr">
-                                        <rect key="frame" x="154" y="34" width="60" height="60"/>
+                                        <rect key="frame" x="154" y="58" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="capture"/>
                                         <connections>
@@ -34,7 +34,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDP-K7-bhD">
-                                        <rect key="frame" x="310" y="32" width="64" height="64"/>
+                                        <rect key="frame" x="310" y="56" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="amelie.jpg"/>
                                         <connections>
@@ -42,11 +42,27 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-Ct-fY1">
-                                        <rect key="frame" x="8" y="48" width="32" height="32"/>
+                                        <rect key="frame" x="8" y="64" width="46" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="film-roll"/>
                                         <connections>
                                             <action selector="onSwitchFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a00-GM-Cfq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-Ou-WIg">
+                                        <rect key="frame" x="8" y="2" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="switch"/>
+                                        <connections>
+                                            <action selector="onSwitchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O6B-lv-69m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Md-ZRE">
+                                        <rect key="frame" x="334" y="2" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="flash-on"/>
+                                        <connections>
+                                            <action selector="onToggleFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n6z-wl-VXX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -63,6 +79,7 @@
                         <outlet property="filterSwitcher" destination="wKi-Km-PKW" id="Ngm-gI-e7b"/>
                         <outlet property="photoButton" destination="zDP-K7-bhD" id="FJe-V1-hrw"/>
                         <outlet property="screenView" destination="8bC-Xf-vdC" id="O8D-IG-kWW"/>
+                        <outlet property="torchBtn" destination="cxo-Md-ZRE" id="3j7-0V-tL9"/>
                         <outlet property="viewport" destination="ky2-DC-nog" id="YNM-JZ-Zlc"/>
                     </connections>
                 </viewController>
@@ -323,6 +340,13 @@
                                     <action selector="onBack:" destination="OP5-sq-9CY" eventType="touchUpInside" id="v7a-c8-gbh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有照片，快去拍两张吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wJU-e9-mbA">
+                                <rect key="frame" x="20" y="416" width="374" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -337,6 +361,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="3Sm-Ox-Gvg" id="iX1-6W-zeE"/>
+                        <outlet property="emptyText" destination="wJU-e9-mbA" id="qhr-u5-66O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCH-W4-iEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,7 +374,9 @@
         <image name="back" width="32" height="32"/>
         <image name="capture" width="37" height="32"/>
         <image name="film-roll" width="32" height="32"/>
+        <image name="flash-on" width="32" height="32"/>
         <image name="happy-together.jpg" width="512" height="512"/>
         <image name="setting" width="32" height="32"/>
+        <image name="switch" width="32" height="32"/>
     </resources>
 </document>

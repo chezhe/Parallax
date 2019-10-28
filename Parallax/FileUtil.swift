@@ -50,8 +50,26 @@ class FileUtil {
         }
         var list: [Photo] = []
         for url in urls {
-            let photo = Photo(url: url, isPortrait: url.path.contains("portrait"), image: UIImage(contentsOfFile: url.path)!)
+            let photo = Photo(url: url, isPortrait: url.path.contains("Portrait"), image: UIImage(contentsOfFile: url.path)!)
             list.append(photo)
+            
+            switch UIImage(contentsOfFile: url.path)?.imageOrientation {
+            case .left:
+                print("##@ left")
+                break
+            case .right:
+                print("##@ right")
+                break
+            case .leftMirrored:
+                print("##@ leftMirrored")
+                break
+            case .rightMirrored:
+                print("##@ rightMirrored")
+                break
+            default:
+                print("##@ portrait")
+                break
+            }
         }
         
         return list
@@ -64,9 +82,10 @@ class FileUtil {
         }
         
         if urls.count > 0 {
-            return ImageUtil.cropImageToSquare(image: UIImage(contentsOfFile: urls[0].path)!)
+            return ImageUtil.cropScaleSize(image: UIImage(contentsOfFile: urls[0].path)!, size: CGSize(width: 200, height: 200))
+//            return ImageUtil.cropImageToSquare(image: UIImage(contentsOfFile: urls[0].path)!)
         }
-        return UIImage(imageLiteralResourceName: "AppIcon")
+        return UIImage(imageLiteralResourceName: "photo")
     }
     
     public static func deletePhoto(url: URL) -> Void {

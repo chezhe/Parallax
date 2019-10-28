@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var photoButton: UIButton!
     
+    @IBOutlet weak var torchBtn: UIButton!
+    
     var videoCamera: Camera?
     var pictureOutput: PictureOutput!
     var filter: ImageProcessingOperation!
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
             filmButton.tintColor = .white
             captureButton.tintColor = .white
             photoButton.tintColor = .white
-            let lastPhoto = ImageUtil.cropScaleSize(image: FileUtil.getLastPhoto(), size: CGSize(width: 200, height: 200))
+            let lastPhoto = FileUtil.getLastPhoto()
             photoButton.setImage(lastPhoto, for: .normal)
             
             filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
@@ -67,8 +69,10 @@ class ViewController: UIViewController {
                 videoCamera?.addTarget(filter)
                 filter.addTarget(viewport)
                 videoCamera?.startCapture()
-//                soundEffect = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "shoot.mp3", ofType:nil)!))
             }
+            
+
+            soundEffect = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "shoot.mp3", ofType:nil)!))
             
             menu = MenuView()
             menu.delegate = self
@@ -83,27 +87,42 @@ class ViewController: UIViewController {
             print("Initialize camera with error: \(error)")
         }
     }
-
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            let orient = UIDevice.current.orientation
+            if self.viewport != nil {
+                switch orient {
+                    case .portrait:
+                        self.viewport.orientation = .portrait
+                    case .landscapeLeft:
+                        self.viewport.orientation = .landscapeLeft
+                    case .landscapeRight:
+                        self.viewport.orientation = .landscapeRight
+                    case .portraitUpsideDown:
+                        self.viewport.orientation = .portraitUpsideDown
+                    default:
+                        self.viewport.orientation = .portrait
+                }
+            }
+            
+        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+            print("rotation completed")
+        })
+        
+        super.viewWillTransition(to: size, with: coordinator)
+    }
 
     @IBAction func onCapture(_ sender: Any) {
-//        soundEffect?.play()
+        soundEffect?.play()
         
         if cameraEnabled {
             pictureOutput = PictureOutput()
             pictureOutput.encodedImageFormat = .png
             pictureOutput.imageAvailableCallback = {image in
-                let dateformatter = DateFormatter()
-                dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-                let name = dateformatter.string(from: Date())
-
-                let isPortrait = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation.isPortrait ?? false
-
-                let orient = isPortrait ? "portrait" : "landscape"
-
-                let croppedImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
-                FileUtil.storeImageToDocumentDirectory(image: croppedImage, fileName: [name, orient].joined(separator: "~"))
-                
-                self.onCaptureCompleted(image: croppedImage)
+                self.onCaptureCompleted(image: image)
             }
             filter --> pictureOutput
         }
@@ -111,6 +130,45 @@ class ViewController: UIViewController {
     
     func onCaptureCompleted(image: UIImage) {
         DispatchQueue.main.async {
+            let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let name = dateformatter.string(from: Date())
+
+            let croppedImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
+            var orient: String
+//            var imageOrientation: UIImage.UIIma
+            switch image.imageOrientation {
+            case .left:
+                print("### left")
+                break
+            case .right:
+                print("### right")
+                break
+            case .leftMirrored:
+                print("### leftMirrored")
+                break
+            case .rightMirrored:
+                print("### rightMirrored")
+                break
+            default:
+                print("### portrait")
+                break
+            }
+            switch UIDevice.current.orientation{
+                case .portrait:
+                    orient = "Portrait"
+                case .portraitUpsideDown:
+                    orient = "PortraitUpsideDown"
+                case .landscapeLeft:
+                    orient = "LandscapeLeft"
+                case .landscapeRight:
+                    orient = "LandscapeRight"
+                default:
+                    orient = "Portrait"
+            }
+            print("##$ \(orient)")
+            FileUtil.storeImageToDocumentDirectory(image: croppedImage, fileName: [name, orient].joined(separator: "~"))
+            
             let lastPhoto = ImageUtil.cropScaleSize(image: image, size: CGSize(width: 200, height: 200))
             self.photoButton.setImage(lastPhoto, for: .normal)
         }
@@ -134,6 +192,35 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(gallery, animated:true)
     }
     
+    @IBAction func onSwitchCamera(_ sender: Any) {
+        resetCamera()
+        do {
+            let location = videoCamera?.location == .backFacing ? PhysicalCameraLocation.frontFacing : PhysicalCameraLocation.backFacing
+            videoCamera = try Camera(sessionPreset: .high, location: location)
+            videoCamera!.addTarget(filter)
+            videoCamera!.startCapture()
+        } catch {
+            print("toggle position error: \(error)")
+        }
+    }
+    
+    @IBAction func onToggleFlash(_ sender: Any) {
+        do {
+            try videoCamera!.inputCamera.lockForConfiguration()
+            if videoCamera?.inputCamera.torchMode == .off {
+                videoCamera?.inputCamera.torchMode = .on
+                torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-off"), for: .normal)
+            } else {
+                videoCamera?.inputCamera.torchMode = .off
+                torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-on"), for: .normal)
+            }
+            videoCamera!.inputCamera.unlockForConfiguration()
+        } catch {
+            
+        }
+    }
+    
+    
     func resetCamera() {
         if let videoCamera = videoCamera {
             videoCamera.stopCapture()
@@ -153,6 +240,9 @@ class ViewController: UIViewController {
         if let videoCamera = videoCamera {
             videoCamera.startCapture()
         }
+        
+        let lastPhoto = FileUtil.getLastPhoto()
+        photoButton.setImage(lastPhoto, for: .normal)
         
         let newFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
         if newFilterName != filterName {

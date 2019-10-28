@@ -62,7 +62,9 @@ class FilmRollCell: UICollectionViewCell {
         useBtn.layer.borderColor = UIColor.orange.cgColor
         useBtn.setTitleColor(UIColor.darkGray, for: .normal)
         
-        self.onBack(sender)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.onBack(sender)
+        }
     }
 }
 

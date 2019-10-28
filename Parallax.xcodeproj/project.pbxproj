@@ -36,6 +36,7 @@
 		8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D52360A6A1006A8AB3 /* joker.jpg */; };
 		8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D62360A6A1006A8AB3 /* joker.fsh */; };
 		8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1EA2360A6C6006A8AB3 /* Filters.swift */; };
+		8363F1C9236713040062106A /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8363F1C8236713040062106A /* shoot.mp3 */; };
 		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
@@ -129,7 +130,6 @@
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8351C1B123608352006A8AB3 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		8351C1B323608371006A8AB3 /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
-		8351C1B82360867E006A8AB3 /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
 		8351C1BA23608807006A8AB3 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		8351C1C42360A6A0006A8AB3 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
 		8351C1C52360A6A0006A8AB3 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_2.png; sourceTree = "<group>"; };
@@ -151,6 +151,7 @@
 		8351C1D52360A6A1006A8AB3 /* joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joker.jpg; sourceTree = "<group>"; };
 		8351C1D62360A6A1006A8AB3 /* joker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = joker.fsh; sourceTree = "<group>"; };
 		8351C1EA2360A6C6006A8AB3 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		8363F1C8236713040062106A /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
 		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -223,6 +224,7 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8363F1C8236713040062106A /* shoot.mp3 */,
 				83E2151C2365AF06005E8385 /* launching.gif */,
 				8351C1C62360A6A0006A8AB3 /* 2046.jpg */,
 				8351C1D02360A6A1006A8AB3 /* amelie.jpg */,
@@ -243,7 +245,6 @@
 				8351C1CF2360A6A1006A8AB3 /* schindlers-list.jpg */,
 				8351C1D32360A6A1006A8AB3 /* shadow.jpg */,
 				8351C1D42360A6A1006A8AB3 /* sin-city.jpg */,
-				8351C1B82360867E006A8AB3 /* shoot.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -438,6 +439,7 @@
 				83E897EC235F356E00435C8A /* Main.storyboard in Resources */,
 				8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */,
 				8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */,
+				8363F1C9236713040062106A /* shoot.mp3 in Resources */,
 				8351C1DF2360A6A1006A8AB3 /* matrix.jpg in Resources */,
 				8351C1D92360A6A1006A8AB3 /* 2046.jpg in Resources */,
 			);

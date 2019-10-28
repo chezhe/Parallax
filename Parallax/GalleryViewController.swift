@@ -15,6 +15,8 @@ class GalleryViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var emptyText: UILabel!
+    
     var useCustomOverlay = true
     let numberOfItemsPerRow = 4
     
@@ -27,8 +29,9 @@ class GalleryViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        for photo in photos {
-            photo.attributedTitle = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        if photos.count > 0 {
+            emptyText.isHidden = true
         }
     }
     
