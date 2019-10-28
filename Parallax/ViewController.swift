@@ -79,10 +79,18 @@ class ViewController: UIViewController {
             filterSwitcher.addSubview(menu)
             
             menu.items = FILTERS.map { item in
-                return MenuItem(image: UIImage(cgImage: getCGImage(name: item.name, ext: "jpg")))
+                var item = MenuItem(image: UIImage(cgImage: getCGImage(name: item.name, ext: "jpg")))
+                item.backgroundColor = UIColor.darkGray
+                item.highlightedBackgroundColor = UIColor(white: 1, alpha: 0.3)
+                item.shadowColor = UIColor(white: 1, alpha: 0.3)
+                return item
             }
-            menu.items.append(MenuItem(image: UIImage(named: "shop")!))
+            var shopItem = MenuItem(image: UIImage(named: "shop")!)
+            shopItem.backgroundColor = UIColor.darkGray
+            shopItem.shadowColor = UIColor(white: 1, alpha: 0.3)
+            menu.items.append(shopItem)
             menu.selectedIndex = getIndexOf(filterName: filterName!)
+            menu.backgroundColor = UIColor.darkGray
         } catch {
             print("Initialize camera with error: \(error)")
         }
