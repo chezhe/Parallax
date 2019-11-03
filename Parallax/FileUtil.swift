@@ -82,7 +82,7 @@ class FileUtil {
         }
         
         if urls.count > 0 {
-            return ImageUtil.cropScaleSize(image: UIImage(contentsOfFile: urls[0].path)!, size: CGSize(width: 200, height: 200))
+            return ImageUtil.cropScaleSize(image: UIImage(contentsOfFile: urls[0].path)!, size: CGSize(width: 50, height: 50))
 //            return ImageUtil.cropImageToSquare(image: UIImage(contentsOfFile: urls[0].path)!)
         }
         return UIImage(imageLiteralResourceName: "photo")

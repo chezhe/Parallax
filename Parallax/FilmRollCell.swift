@@ -34,9 +34,8 @@ class FilmRollCell: UICollectionViewCell {
         effectImage.image = image
         effectImage.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         
-        
-        useBtn.layer.borderWidth = 1
-        useBtn.layer.borderColor = UIColor.white.cgColor
+//        useBtn.layer.borderWidth = 1
+//        useBtn.layer.borderColor = UIColor.white.cgColor
         useBtn.layer.cornerRadius = 15
         useBtn.contentEdgeInsets = UIEdgeInsets(top: 0,left: 15,bottom: 0,right: 15)
         useBtn.bounds.size = CGSize(width: 80, height: 30)
@@ -49,6 +48,8 @@ class FilmRollCell: UICollectionViewCell {
             useBtn.setTitleColor(UIColor.darkGray, for: .normal)
         } else {
             useBtn.setTitle("使用", for: .normal)
+            useBtn.layer.backgroundColor = UIColor.darkGray.cgColor
+            useBtn.setTitleColor(UIColor.white, for: .normal)
         }
     }
     
@@ -59,10 +60,10 @@ class FilmRollCell: UICollectionViewCell {
         
         useBtn.setTitle("使用中", for: .normal)
         useBtn.layer.backgroundColor = UIColor.orange.cgColor
-        useBtn.layer.borderColor = UIColor.orange.cgColor
+//        useBtn.layer.borderColor = UIColor.orange.cgColor
         useBtn.setTitleColor(UIColor.darkGray, for: .normal)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.onBack(sender)
         }
     }

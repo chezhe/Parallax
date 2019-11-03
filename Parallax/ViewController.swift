@@ -54,6 +54,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         do {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
+            self.modalPresentationCapturesStatusBarAppearance = true
             
             let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(zoomFrame(_:)))
             pinchGesture.delegate = self
@@ -65,6 +66,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             photoButton.tintColor = .white
             let lastPhoto = FileUtil.getLastPhoto()
             photoButton.setImage(lastPhoto, for: .normal)
+            photoButton.bounds.size = CGSize(width: 50, height: 50)
             
             // camera & filter
             filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
@@ -244,18 +246,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func onToggleFlash(_ sender: Any) {
-        do {
-            try videoCamera!.inputCamera.lockForConfiguration()
-            if videoCamera?.inputCamera.torchMode == .off {
-                videoCamera?.inputCamera.torchMode = .on
-                torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-off"), for: .normal)
-            } else {
-                videoCamera?.inputCamera.torchMode = .off
-                torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-on"), for: .normal)
+        if cameraEnabled {
+            do {
+                try videoCamera!.inputCamera.lockForConfiguration()
+                if videoCamera?.inputCamera.torchMode == .off {
+                    videoCamera?.inputCamera.torchMode = .on
+                    torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-off"), for: .normal)
+                } else {
+                    videoCamera?.inputCamera.torchMode = .off
+                    torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-on"), for: .normal)
+                }
+                videoCamera!.inputCamera.unlockForConfiguration()
+            } catch {
+                
             }
-            videoCamera!.inputCamera.unlockForConfiguration()
-        } catch {
-            
         }
     }
     

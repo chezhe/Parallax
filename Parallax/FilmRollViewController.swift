@@ -15,6 +15,7 @@ class FilmRollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -43,5 +44,9 @@ extension FilmRollViewController: UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView,
+           layout collectionViewLayout: UICollectionViewLayout,
+           sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.size.width - 20, height: 240)
+    }
 }
