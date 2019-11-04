@@ -59,13 +59,13 @@ class FilmRollCell: UICollectionViewCell {
         UserDefaults.standard.set(filter.name, forKey: "filterName")
         
         useBtn.setTitle("使用中", for: .normal)
-        useBtn.layer.backgroundColor = UIColor.orange.cgColor
+//        useBtn.setTitleColor(UIColor.darkGray, for: .normal)
+//        useBtn.layer.backgroundColor = UIColor.orange.cgColor
 //        useBtn.layer.borderColor = UIColor.orange.cgColor
-        useBtn.setTitleColor(UIColor.darkGray, for: .normal)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.onBack(sender)
-        }
+//        }
     }
 }
 

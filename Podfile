@@ -13,4 +13,5 @@ target 'Parallax' do
   pod 'INSPhotoGallery'
   pod 'Persei', '~> 3.0'
   pod 'INSNibLoading'
+  pod 'lottie-ios'
 end

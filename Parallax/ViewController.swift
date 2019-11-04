@@ -10,6 +10,7 @@ import UIKit
 import EVGPUImage2
 import AVFoundation
 import Persei
+import Lottie
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -65,6 +66,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             captureButton.tintColor = .white
             photoButton.tintColor = .white
             let lastPhoto = FileUtil.getLastPhoto()
+            
             photoButton.setImage(lastPhoto, for: .normal)
             photoButton.bounds.size = CGSize(width: 50, height: 50)
             
@@ -98,7 +100,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             var shopItem = MenuItem(image: UIImage(named: "shop")!)
             shopItem.backgroundColor = UIColor.darkGray
-            shopItem.shadowColor = UIColor(white: 1, alpha: 0.3)
+            shopItem.shadowColor = UIColor.darkGray
             menu.items.append(shopItem)
             menu.selectedIndex = getIndexOf(filterName: filterName!)
             menu.backgroundColor = UIColor.darkGray
@@ -171,6 +173,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func onCaptureCompleted(image: UIImage) {
         DispatchQueue.main.async {
+            self.animateLottie()
+            
             let dateformatter = DateFormatter()
             dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
             let name = dateformatter.string(from: Date())
@@ -300,10 +304,28 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         if cameraEnabled {
             filter.removeAllTargets()
             resetCamera()
-            filter = getFilter(name: name)
-            videoCamera!.addTarget(filter)
-            filter.addTarget(viewport!)
-            videoCamera!.startCapture()
+            
+            self.filter = getFilter(name: name)
+            self.videoCamera!.addTarget(self.filter)
+            self.filter.addTarget(self.viewport!)
+            self.videoCamera!.startCapture()
+        }
+    }
+    
+    func animateLottie() {
+        let overlay = UIView(frame: self.view.frame)
+        overlay.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.view.addSubview(overlay)
+        overlay.center = self.view.center
+        
+        let animView = AnimationView(name: "camera-motion")
+        let anim = Animation.named("loading", bundle: Bundle.main)
+        animView.animation = anim
+        overlay.addSubview(animView)
+        animView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animView.center = overlay.center
+        animView.play { (finished) in
+            overlay.removeFromSuperview()
         }
     }
 }

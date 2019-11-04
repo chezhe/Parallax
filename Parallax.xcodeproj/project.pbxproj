@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBAE7ABB081324C256D05CB /* Pods_Parallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */; };
 		83133D6F236405F20005717E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D6E236405F20005717E /* SettingViewController.swift */; };
 		83133D8323642E1E0005717E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D8223642E1E0005717E /* Extenstions.swift */; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
@@ -34,6 +35,9 @@
 		8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D52360A6A1006A8AB3 /* joker.jpg */; };
 		8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D62360A6A1006A8AB3 /* joker.fsh */; };
 		8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1EA2360A6C6006A8AB3 /* Filters.swift */; };
+		835DB81D23704B610070AB72 /* camera-motion.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB81223704B610070AB72 /* camera-motion.json */; };
+		835DB820237059060070AB72 /* film-roll-item.png in Resources */ = {isa = PBXBuildFile; fileRef = 835DB81F237059060070AB72 /* film-roll-item.png */; };
+		835DB8222370675E0070AB72 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB8212370675D0070AB72 /* loading.json */; };
 		8363F1C9236713040062106A /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8363F1C8236713040062106A /* shoot.mp3 */; };
 		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
@@ -101,6 +105,13 @@
 			remoteGlobalIDString = BE629661A28417489F63DBC74196BBD6;
 			remoteInfo = SPAlert;
 		};
+		835DB81B23704B610070AB72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +146,9 @@
 		8351C1D52360A6A1006A8AB3 /* joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joker.jpg; sourceTree = "<group>"; };
 		8351C1D62360A6A1006A8AB3 /* joker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = joker.fsh; sourceTree = "<group>"; };
 		8351C1EA2360A6C6006A8AB3 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		835DB81223704B610070AB72 /* camera-motion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "camera-motion.json"; sourceTree = "<group>"; };
+		835DB81F237059060070AB72 /* film-roll-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "film-roll-item.png"; sourceTree = "<group>"; };
+		835DB8212370675D0070AB72 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		8363F1C8236713040062106A /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
 		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBAE7ABB081324C256D05CB /* Pods_Parallax.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +212,7 @@
 				834239C523688F07009612BA /* INSNibLoading.framework */,
 				834239C723688F07009612BA /* INSPhotoGallery.framework */,
 				834239C923688F07009612BA /* INSPhotoGallery.bundle */,
+				835DB81C23704B610070AB72 /* Lottie.framework */,
 				834239CB23688F07009612BA /* Persei.framework */,
 				834239CD23688F07009612BA /* Pods_Parallax.framework */,
 				834239CF23688F07009612BA /* SPAlert.framework */,
@@ -207,6 +223,9 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				835DB8212370675D0070AB72 /* loading.json */,
+				835DB81F237059060070AB72 /* film-roll-item.png */,
+				835DB81223704B610070AB72 /* camera-motion.json */,
 				8363F1C8236713040062106A /* shoot.mp3 */,
 				83E2151C2365AF06005E8385 /* launching.gif */,
 				8351C1C62360A6A0006A8AB3 /* 2046.jpg */,
@@ -392,6 +411,13 @@
 			remoteRef = 834239CE23688F07009612BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		835DB81C23704B610070AB72 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = 835DB81B23704B610070AB72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -404,17 +430,20 @@
 				83E2151D2365AF06005E8385 /* launching.gif in Resources */,
 				8351C1D72360A6A1006A8AB3 /* lookup_miss_etikate.png in Resources */,
 				8351C1E52360A6A1006A8AB3 /* lookup_amatorka.png in Resources */,
+				835DB820237059060070AB72 /* film-roll-item.png in Resources */,
 				8351C1E02360A6A1006A8AB3 /* blade-runner-2049.jpg in Resources */,
 				8351C1E22360A6A1006A8AB3 /* schindlers-list.jpg in Resources */,
 				8351C1DA2360A6A1006A8AB3 /* Chaplin.fsh in Resources */,
 				8351C1E42360A6A1006A8AB3 /* lookup.png in Resources */,
 				8351C1E32360A6A1006A8AB3 /* amelie.jpg in Resources */,
+				835DB81D23704B610070AB72 /* camera-motion.json in Resources */,
 				8351C1D82360A6A1006A8AB3 /* lookup_soft_elegance_2.png in Resources */,
 				83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */,
 				8351C1E62360A6A1006A8AB3 /* shadow.jpg in Resources */,
 				8351C1DC2360A6A1006A8AB3 /* matrix.fsh in Resources */,
 				83E897EE235F356F00435C8A /* Assets.xcassets in Resources */,
 				8351C1E12360A6A1006A8AB3 /* schindlers-list.fsh in Resources */,
+				835DB8222370675E0070AB72 /* loading.json in Resources */,
 				8351C1DB2360A6A1006A8AB3 /* filters.json in Resources */,
 				8351C1E72360A6A1006A8AB3 /* sin-city.jpg in Resources */,
 				8351C1DD2360A6A1006A8AB3 /* lookup_soft_elegance_1.png in Resources */,
@@ -638,6 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -649,6 +679,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.chezhe.Parallax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -663,6 +694,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -674,6 +706,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.chezhe.Parallax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
