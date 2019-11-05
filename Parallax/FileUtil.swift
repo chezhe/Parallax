@@ -32,7 +32,7 @@ class FileUtil {
     }
     
     public static func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> Void {
-        guard let data = image.pngData() else {
+        guard let data = image.png else {
             return
         }
         let fileURL = self.fileURLInDocumentDirectory(fileName)
@@ -52,24 +52,6 @@ class FileUtil {
         for url in urls {
             let photo = Photo(url: url, isPortrait: url.path.contains("Portrait"), image: UIImage(contentsOfFile: url.path)!)
             list.append(photo)
-            
-            switch UIImage(contentsOfFile: url.path)?.imageOrientation {
-            case .left:
-                print("##@ left")
-                break
-            case .right:
-                print("##@ right")
-                break
-            case .leftMirrored:
-                print("##@ leftMirrored")
-                break
-            case .rightMirrored:
-                print("##@ rightMirrored")
-                break
-            default:
-                print("##@ portrait")
-                break
-            }
         }
         
         return list

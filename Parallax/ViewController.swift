@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var torchBtn: UIButton!
     
+    private var deviceOrientationHelper = DeviceOrientationHelper()
+    
     var videoCamera: Camera?
     var pictureOutput: PictureOutput!
     var filter: ImageProcessingOperation!
@@ -35,6 +37,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var zoomEnd: CGFloat = 1.0
     
     fileprivate var menu: MenuView!
+    fileprivate var deviceOrientation: UIDeviceOrientation?
     
     required init(coder aDecoder: NSCoder)
     {
@@ -53,6 +56,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        deviceOrientation = .portrait
+        deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
+        
         do {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
             self.modalPresentationCapturesStatusBarAppearance = true
@@ -114,6 +121,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
             let orient = UIDevice.current.orientation
+            
             if self.viewport != nil {
                 switch orient {
                     case .portrait:
@@ -163,7 +171,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         if cameraEnabled {
             pictureOutput = PictureOutput()
-            pictureOutput.encodedImageFormat = .png
+            pictureOutput.encodedImageFormat = .jpeg
             pictureOutput.imageAvailableCallback = {image in
                 self.onCaptureCompleted(image: image)
             }
@@ -179,44 +187,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
             let name = dateformatter.string(from: Date())
 
-            let croppedImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
-            var orient: String
-//            var imageOrientation: UIImage.UIIma
-            switch image.imageOrientation {
-            case .left:
-                print("### left")
-                break
-            case .right:
-                print("### right")
-                break
-            case .leftMirrored:
-                print("### leftMirrored")
-                break
-            case .rightMirrored:
-                print("### rightMirrored")
-                break
-            default:
-                print("### portrait")
-                break
-            }
-            switch UIDevice.current.orientation{
-                case .portrait:
-                    orient = "Portrait"
+            var newImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
+
+            switch self.deviceOrientation {
                 case .portraitUpsideDown:
-                    orient = "PortraitUpsideDown"
+                    newImage = UIImage(cgImage: newImage.cgImage!, scale: 1.0, orientation: UIImage.Orientation.down)
                 case .landscapeLeft:
-                    orient = "LandscapeLeft"
+                    newImage = UIImage(cgImage: newImage.cgImage!, scale: 1.0, orientation: UIImage.Orientation.right)
                 case .landscapeRight:
-                    orient = "LandscapeRight"
-                default:
-                    orient = "Portrait"
+                    newImage = UIImage(cgImage: newImage.cgImage!, scale: 1.0, orientation: UIImage.Orientation.left)
+                default: break
+                    
             }
-            print("##$ \(orient)")
-            FileUtil.storeImageToDocumentDirectory(image: croppedImage, fileName: [name, orient].joined(separator: "~"))
+            FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
             
             FileUtil.onLaunch()
             
-            let lastPhoto = ImageUtil.cropScaleSize(image: image, size: CGSize(width: 200, height: 200))
+            let lastPhoto = ImageUtil.cropScaleSize(image: newImage, size: CGSize(width: 200, height: 200))
             self.photoButton.setImage(lastPhoto, for: .normal)
         }
 
@@ -275,11 +262,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    func onDeviceRotate(deviceOrientation: UIDeviceOrientation) -> Void {
+        self.deviceOrientation = deviceOrientation
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let videoCamera = videoCamera {
             videoCamera.stopCapture()
         }
+        deviceOrientationHelper.stopDeviceOrientationNotifier()
     }
     
     override func viewWillAppear(_ animated: Bool) {

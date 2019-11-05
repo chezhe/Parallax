@@ -42,6 +42,7 @@
 		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
+		83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */; };
 		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
 		83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E21510236568C6005E8385 /* CustomOverlayView.xib */; };
 		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
@@ -153,6 +154,7 @@
 		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationHelper.swift; sourceTree = "<group>"; };
 		83D4E5AF2361D56B007B73C4 /* Persei.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Persei.framework; path = Carthage/Build/iOS/Persei.framework; sourceTree = "<group>"; };
 		83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Persei.framework.dSYM; path = Carthage/Build/iOS/Persei.framework.dSYM; sourceTree = "<group>"; };
 		83D4E5B72361D782007B73C4 /* GPUImage2 */ = {isa = PBXFileReference; lastKnownFileType = text; name = GPUImage2; path = "/Users/de/Library/Developer/Xcode/DerivedData/Parallax-cggpgovfzygpfcdsoytdqbifaqqh/SourcePackages/checkouts/GPUImage2"; sourceTree = "<absolute>"; };
@@ -276,6 +278,7 @@
 				83E897E4235F356E00435C8A /* AppDelegate.swift */,
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
+				83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */,
 				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
 				83366DDD2361FA57005A3175 /* FilmRollViewController.swift */,
 				83133D6E236405F20005717E /* SettingViewController.swift */,
@@ -517,6 +520,7 @@
 				83133D6F236405F20005717E /* SettingViewController.swift in Sources */,
 				83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
+				83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */,
 				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
 				83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */,
