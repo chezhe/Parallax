@@ -28,7 +28,10 @@ class FilmRollCell: UICollectionViewCell {
         
         let filter = FILTERS[index]
         
-        filterName.text = filter.title
+        filterName.text = NSLocalizedString(filter.name, comment: "")
+        
+        let apply = NSLocalizedString("Apply", comment: "")
+        let applying = NSLocalizedString("Applying", comment: "")
         
         let image = UIImage(cgImage: getCGImage(name: filter.name, ext: "jpg"), scale: 4, orientation: UIImage.Orientation.up)
         effectImage.image = image
@@ -42,12 +45,12 @@ class FilmRollCell: UICollectionViewCell {
         
         let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
         if filterName == filter.name {
-            useBtn.setTitle("使用中", for: .normal)
+            useBtn.setTitle(applying, for: .normal)
             useBtn.layer.backgroundColor = UIColor.orange.cgColor
             useBtn.layer.borderColor = UIColor.orange.cgColor
             useBtn.setTitleColor(UIColor.darkGray, for: .normal)
         } else {
-            useBtn.setTitle("使用", for: .normal)
+            useBtn.setTitle(apply, for: .normal)
             useBtn.layer.backgroundColor = UIColor.darkGray.cgColor
             useBtn.setTitleColor(UIColor.white, for: .normal)
         }

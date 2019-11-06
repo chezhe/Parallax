@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             self.window = UIWindow(windowScene: windowScene)
 
-            let home = storyBoard.instantiateViewController(withIdentifier: "setting")
+            let home = storyBoard.instantiateViewController(withIdentifier: "home")
             let nav = UINavigationController(rootViewController: home)
             window?.rootViewController = nav
             window?.makeKeyAndVisible()
