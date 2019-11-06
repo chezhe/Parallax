@@ -15,8 +15,19 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var saveLocalBtnOff: UIButton!
     
+    @IBOutlet weak var savePhotoLocalLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        let onTitle = NSLocalizedString("On", comment: "")
+        let offTitle = NSLocalizedString("Off", comment: "")
+        let saveLocalTitle = NSLocalizedString("Save photo local directly", comment: "")
+        
+        saveLocalBtnOn.setTitle(onTitle, for: .normal)
+        saveLocalBtnOff.setTitle(offTitle, for: .normal)
+        savePhotoLocalLabel.text = saveLocalTitle
         
         let autoSaveLocal = UserDefaults.standard.string(forKey: "autoSaveLocal") == "true" ? true : false
         if autoSaveLocal {

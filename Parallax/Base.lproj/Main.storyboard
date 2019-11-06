@@ -282,53 +282,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXp-KI-lEM">
-                                <rect key="frame" x="10" y="43" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXp-KI-lEM">
+                                <rect key="frame" x="10" y="43" width="32" height="42.666666666666657"/>
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <action selector="onBack:" destination="jBT-gA-Hvw" eventType="touchUpInside" id="0ap-Kb-hPV"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-BX-OEU">
-                                <rect key="frame" x="20" y="90" width="374" height="369"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-BX-OEU">
+                                <rect key="frame" x="20" y="89" width="374" height="370"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Lzu-5d-YH2">
-                                        <rect key="frame" x="-1" y="8" width="375" height="44"/>
+                                        <rect key="frame" x="-1" y="8" width="336" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="保存照片到本地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI2-29-Z6q">
-                                                <rect key="frame" x="8" y="11" width="129" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="保存照片到本地" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI2-29-Z6q">
+                                                <rect key="frame" x="7" y="5" width="321" height="22"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBC-QY-hmY">
-                                                <rect key="frame" x="272" y="5" width="30" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="开">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="turnSaveLocalOn:" destination="jBT-gA-Hvw" eventType="touchUpInside" id="ufa-ap-Qkx"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk3-kq-SdU">
-                                                <rect key="frame" x="328" y="5" width="30" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="关">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="turnSaveLocalOff:" destination="jBT-gA-Hvw" eventType="touchUpInside" id="OmW-FD-VWv"/>
-                                                </connections>
-                                            </button>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWX-FC-e1p">
+                                                <rect key="frame" x="0.0" y="38" width="328" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBC-QY-hmY">
+                                                        <rect key="frame" x="100" y="3" width="30" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="开">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="turnSaveLocalOn:" destination="jBT-gA-Hvw" eventType="touchUpInside" id="ufa-ap-Qkx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk3-kq-SdU">
+                                                        <rect key="frame" x="244" y="3" width="30" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="关">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="turnSaveLocalOff:" destination="jBT-gA-Hvw" eventType="touchUpInside" id="OmW-FD-VWv"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="PBC-QY-hmY" firstAttribute="leading" secondItem="gWX-FC-e1p" secondAttribute="leading" constant="100" id="1XT-uZ-4O5"/>
+                                                    <constraint firstItem="Uk3-kq-SdU" firstAttribute="centerY" secondItem="gWX-FC-e1p" secondAttribute="centerY" id="LKy-tt-DBC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Uk3-kq-SdU" secondAttribute="trailing" constant="100" id="WKM-G5-sz5"/>
+                                                    <constraint firstItem="PBC-QY-hmY" firstAttribute="centerY" secondItem="gWX-FC-e1p" secondAttribute="centerY" id="ZR1-K4-BZN"/>
+                                                    <constraint firstAttribute="height" constant="40" id="vIv-aR-FOz"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="gWX-FC-e1p" firstAttribute="centerX" secondItem="Lzu-5d-YH2" secondAttribute="centerX" id="Chl-25-SzB"/>
+                                            <constraint firstItem="LI2-29-Z6q" firstAttribute="centerX" secondItem="Lzu-5d-YH2" secondAttribute="centerX" id="NiS-jD-Pik"/>
+                                            <constraint firstItem="LI2-29-Z6q" firstAttribute="leading" secondItem="Lzu-5d-YH2" secondAttribute="leading" constant="16" id="Tia-pQ-rXc"/>
+                                            <constraint firstItem="LI2-29-Z6q" firstAttribute="top" secondItem="Lzu-5d-YH2" secondAttribute="top" constant="11" id="ejj-fY-Jbb"/>
+                                            <constraint firstItem="gWX-FC-e1p" firstAttribute="leading" secondItem="Lzu-5d-YH2" secondAttribute="leading" constant="-19" id="q1w-3V-ybS"/>
+                                            <constraint firstAttribute="bottom" secondItem="gWX-FC-e1p" secondAttribute="bottom" constant="14" id="vYI-hG-zHF"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="p1u-vg-gFS"/>
@@ -336,16 +352,27 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ifj-WM-2Rl" firstAttribute="bottom" secondItem="eaw-BX-OEU" secondAttribute="bottom" constant="319" id="6To-Ul-Qug"/>
+                            <constraint firstItem="eaw-BX-OEU" firstAttribute="top" secondItem="sXp-KI-lEM" secondAttribute="bottom" constant="15" id="LwK-d7-YQ5"/>
+                            <constraint firstItem="Ifj-WM-2Rl" firstAttribute="trailing" secondItem="sXp-KI-lEM" secondAttribute="trailing" constant="333" id="gU6-yI-5s9"/>
+                            <constraint firstItem="sXp-KI-lEM" firstAttribute="top" secondItem="Zdl-aK-nZD" secondAttribute="topMargin" constant="-1" id="kAR-I2-XLL"/>
+                            <constraint firstItem="Ifj-WM-2Rl" firstAttribute="top" secondItem="sXp-KI-lEM" secondAttribute="top" constant="1" id="kAx-0o-MjO"/>
+                            <constraint firstItem="sXp-KI-lEM" firstAttribute="leading" secondItem="Ifj-WM-2Rl" secondAttribute="leading" constant="10" id="nPB-uX-sZa"/>
+                            <constraint firstItem="eaw-BX-OEU" firstAttribute="leading" secondItem="Ifj-WM-2Rl" secondAttribute="leading" constant="20" id="oJD-w1-Wu7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eaw-BX-OEU" secondAttribute="trailing" constant="-35" id="uZG-jq-JXj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ifj-WM-2Rl"/>
                     </view>
                     <connections>
                         <outlet property="saveLocalBtnOff" destination="Uk3-kq-SdU" id="8g1-6p-I8H"/>
                         <outlet property="saveLocalBtnOn" destination="PBC-QY-hmY" id="gNU-rb-G6Q"/>
+                        <outlet property="savePhotoLocalLabel" destination="LI2-29-Z6q" id="hfA-Hn-ox5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd7-JE-qMa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028.985507246377" y="859.82142857142856"/>
+            <point key="canvasLocation" x="1028" y="859.35960591133005"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="XGk-Wm-Cq2">
@@ -397,7 +424,7 @@
                                     <action selector="onBack:" destination="OP5-sq-9CY" eventType="touchUpInside" id="v7a-c8-gbh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有照片，快去拍两张吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wJU-e9-mbA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no photo, shoot now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wJU-e9-mbA">
                                 <rect key="frame" x="20" y="200" width="374" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>

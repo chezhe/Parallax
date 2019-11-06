@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "保存照片到本地"; ObjectID = "LI2-29-Z6q"; */
+"LI2-29-Z6q.text" = "保存照片到本地";
+
+/* Class = "UIButton"; normalTitle = "开"; ObjectID = "PBC-QY-hmY"; */
+"PBC-QY-hmY.normalTitle" = "开";
+
+/* Class = "UILabel"; text = "filter name"; ObjectID = "Qe6-7S-nS7"; */
+"Qe6-7S-nS7.text" = "filter name";
+
+/* Class = "UIButton"; normalTitle = "关"; ObjectID = "Uk3-kq-SdU"; */
+"Uk3-kq-SdU.normalTitle" = "关";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "n4u-mc-Q88"; */
+"n4u-mc-Q88.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "还没有照片，快去拍两张吧"; ObjectID = "wJU-e9-mbA"; */
+"wJU-e9-mbA.text" = "还没有照片，快去拍两张吧";

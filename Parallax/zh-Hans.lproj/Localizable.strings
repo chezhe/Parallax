@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Parallax
+
+  Created by 王亮 on 2019/11/6.
+  Copyright © 2019 王亮. All rights reserved.
+*/
+
+"On" = "开";
+"Off" = "关";
+"Save photo local directly" = "把照片保存到本地";
+"Deleted :)" = "照片已删除";
+"Saved :)" = "照片已保存到本地";
+

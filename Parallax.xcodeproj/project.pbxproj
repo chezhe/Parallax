@@ -39,6 +39,7 @@
 		835DB820237059060070AB72 /* film-roll-item.png in Resources */ = {isa = PBXBuildFile; fileRef = 835DB81F237059060070AB72 /* film-roll-item.png */; };
 		835DB8222370675E0070AB72 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB8212370675D0070AB72 /* loading.json */; };
 		8363F1C9236713040062106A /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8363F1C8236713040062106A /* shoot.mp3 */; };
+		836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 836F399D2372F1F400C6E8AB /* Localizable.strings */; };
 		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
@@ -151,6 +152,9 @@
 		835DB81F237059060070AB72 /* film-roll-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "film-roll-item.png"; sourceTree = "<group>"; };
 		835DB8212370675D0070AB72 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		8363F1C8236713040062106A /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
+		836F39902372F12500C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		836F399C2372F1F400C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		836F399E2372F1FD00C6E8AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
 				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
 				83133D8223642E1E0005717E /* Extenstions.swift */,
+				836F399D2372F1F400C6E8AB /* Localizable.strings */,
 				83E897ED235F356F00435C8A /* Assets.xcassets */,
 				83E897EF235F356F00435C8A /* LaunchScreen.storyboard */,
 				83E2151E2365AFA6005E8385 /* LaunchViewController.swift */,
@@ -347,6 +352,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 83E897D8235F356E00435C8A;
 			productRefGroup = 83E897E2235F356E00435C8A /* Products */;
@@ -450,6 +456,7 @@
 				8351C1DB2360A6A1006A8AB3 /* filters.json in Resources */,
 				8351C1E72360A6A1006A8AB3 /* sin-city.jpg in Resources */,
 				8351C1DD2360A6A1006A8AB3 /* lookup_soft_elegance_1.png in Resources */,
+				836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */,
 				83E897EC235F356E00435C8A /* Main.storyboard in Resources */,
 				8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */,
 				8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */,
@@ -532,10 +539,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		836F399D2372F1F400C6E8AB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				836F399C2372F1F400C6E8AB /* zh-Hans */,
+				836F399E2372F1FD00C6E8AB /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		83E897EA235F356E00435C8A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				83E897EB235F356E00435C8A /* Base */,
+				836F39902372F12500C6E8AB /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -555,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -615,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -53,13 +53,15 @@ class CustomOverlayView: INSNibLoadedView {
     }
     
     @IBAction func onDownload(_ sender: Any) {
-        SPAlert.present(message: "照片已保存到本地")
+        let saved = NSLocalizedString("Saved :)", comment: "")
+        SPAlert.present(message: saved)
         let photo = photosViewController?.currentPhoto as! PhotoModel
         FileUtil.saveToPhotoLibrary(url: photo.url)
     }
     
     @IBAction func onDelete(_ sender: Any) {
-        SPAlert.present(message: "照片已删除")
+        let deleted = NSLocalizedString("Deleted :)", comment: "")
+        SPAlert.present(message: deleted)
         let currentPhoto = photosViewController?.currentPhoto as! PhotoModel
         photosViewController?.handleDeleteButtonTapped()
         delete([currentPhoto])
