@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var pictureOutput: PictureOutput!
     var filter: ImageProcessingOperation!
     var soundEffect: AVAudioPlayer?
-    let cameraEnabled: Bool = true
+    let cameraEnabled: Bool = false
     var filterName: String?
     var zoomEnd: CGFloat = 1.0
     
@@ -68,18 +68,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             pinchGesture.delegate = self
             viewport.addGestureRecognizer(pinchGesture)
             
+            filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+            
             // button style
+            let filterItem = FILTERS.first { item in
+                return item.name == filterName
+            }
             filmButton.tintColor = .white
+            let filmIcon = UIImage(cgImage: getCGImage(name: filterItem!.name + "-filter", ext: "png"))
+            filmButton.setImage(filmIcon, for: .normal)
+            filmButton.bounds.size = CGSize(width: 50, height: 50)
+            filmButton.backgroundColor = UIColor.white
             captureButton.tintColor = .white
             photoButton.tintColor = .white
-            let lastPhoto = FileUtil.getLastPhoto()
             
-            photoButton.setImage(lastPhoto, for: .normal)
             photoButton.bounds.size = CGSize(width: 50, height: 50)
             
             // camera & filter
-            filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
-            
             if cameraEnabled {
                 viewport.fillMode = .preserveAspectRatioAndFill
                 videoCamera = try Camera(sessionPreset: .hd4K3840x2160, location: .backFacing)
@@ -99,7 +104,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             filterSwitcher.addSubview(menu)
             
             menu.items = FILTERS.map { item in
-                var item = MenuItem(image: UIImage(cgImage: getCGImage(name: item.name, ext: "jpg")))
+                var item = MenuItem(image: UIImage(cgImage: getCGImage(name: item.name + "-filter", ext: "png")))
                 item.backgroundColor = UIColor.darkGray
                 item.highlightedBackgroundColor = UIColor(white: 1, alpha: 0.3)
                 item.shadowColor = UIColor(white: 1, alpha: 0.3)
@@ -341,6 +346,8 @@ extension ViewController: MenuViewDelegate {
         UserDefaults.standard.set(filterItem.name, forKey: "filterName")
         
         self.switchFilter(name: filterItem.name)
+        let filmIcon = UIImage(cgImage: getCGImage(name: filterItem.name + "-filter", ext: "png"))
+        filmButton.setImage(filmIcon, for: .normal)
     }
 }
 

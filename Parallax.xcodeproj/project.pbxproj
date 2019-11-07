@@ -11,6 +11,12 @@
 		83133D6F236405F20005717E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D6E236405F20005717E /* SettingViewController.swift */; };
 		83133D8323642E1E0005717E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D8223642E1E0005717E /* Extenstions.swift */; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
+		8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */; };
+		8344466A23745B3200FD4ED5 /* joker-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466423745B3100FD4ED5 /* joker-filter.png */; };
+		8344466B23745B3200FD4ED5 /* shadow-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466523745B3100FD4ED5 /* shadow-filter.png */; };
+		8344466C23745B3200FD4ED5 /* happy-together-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466623745B3200FD4ED5 /* happy-together-filter.png */; };
+		8344466D23745B3200FD4ED5 /* schindlers-list-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466723745B3200FD4ED5 /* schindlers-list-filter.png */; };
+		8344466E23745B3200FD4ED5 /* matrix-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466823745B3200FD4ED5 /* matrix-filter.png */; };
 		8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1AC2360833B006A8AB3 /* ImageUtil.swift */; };
 		8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B123608352006A8AB3 /* FileUtil.swift */; };
 		8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B323608371006A8AB3 /* SizeUtil.swift */; };
@@ -40,6 +46,7 @@
 		835DB8222370675E0070AB72 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB8212370675D0070AB72 /* loading.json */; };
 		8363F1C9236713040062106A /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8363F1C8236713040062106A /* shoot.mp3 */; };
 		836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 836F399D2372F1F400C6E8AB /* Localizable.strings */; };
+		836F39A0237308F600C6E8AB /* glass-break.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 836F399F237308F500C6E8AB /* glass-break.fsh */; };
 		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
@@ -124,6 +131,12 @@
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
 		834239B723688EF7009612BA /* framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = framework; path = Pods/EVGPUImage2/framework; sourceTree = "<group>"; };
 		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blade-runner-2049-filter.png"; sourceTree = "<group>"; };
+		8344466423745B3100FD4ED5 /* joker-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joker-filter.png"; sourceTree = "<group>"; };
+		8344466523745B3100FD4ED5 /* shadow-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow-filter.png"; sourceTree = "<group>"; };
+		8344466623745B3200FD4ED5 /* happy-together-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "happy-together-filter.png"; sourceTree = "<group>"; };
+		8344466723745B3200FD4ED5 /* schindlers-list-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schindlers-list-filter.png"; sourceTree = "<group>"; };
+		8344466823745B3200FD4ED5 /* matrix-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "matrix-filter.png"; sourceTree = "<group>"; };
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8351C1B123608352006A8AB3 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		8351C1B323608371006A8AB3 /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
@@ -155,6 +168,7 @@
 		836F39902372F12500C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		836F399C2372F1F400C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		836F399E2372F1FD00C6E8AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		836F399F237308F500C6E8AB /* glass-break.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = "glass-break.fsh"; sourceTree = "<group>"; };
 		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -229,6 +243,13 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */,
+				8344466623745B3200FD4ED5 /* happy-together-filter.png */,
+				8344466423745B3100FD4ED5 /* joker-filter.png */,
+				8344466823745B3200FD4ED5 /* matrix-filter.png */,
+				8344466723745B3200FD4ED5 /* schindlers-list-filter.png */,
+				8344466523745B3100FD4ED5 /* shadow-filter.png */,
+				836F399F237308F500C6E8AB /* glass-break.fsh */,
 				835DB8212370675D0070AB72 /* loading.json */,
 				835DB81F237059060070AB72 /* film-roll-item.png */,
 				835DB81223704B610070AB72 /* camera-motion.json */,
@@ -435,8 +456,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8351C1DE2360A6A1006A8AB3 /* happy-together.jpg in Resources */,
+				8344466B23745B3200FD4ED5 /* shadow-filter.png in Resources */,
 				83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */,
 				83E2151D2365AF06005E8385 /* launching.gif in Resources */,
+				8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */,
 				8351C1D72360A6A1006A8AB3 /* lookup_miss_etikate.png in Resources */,
 				8351C1E52360A6A1006A8AB3 /* lookup_amatorka.png in Resources */,
 				835DB820237059060070AB72 /* film-roll-item.png in Resources */,
@@ -448,18 +471,23 @@
 				835DB81D23704B610070AB72 /* camera-motion.json in Resources */,
 				8351C1D82360A6A1006A8AB3 /* lookup_soft_elegance_2.png in Resources */,
 				83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */,
+				836F39A0237308F600C6E8AB /* glass-break.fsh in Resources */,
 				8351C1E62360A6A1006A8AB3 /* shadow.jpg in Resources */,
+				8344466A23745B3200FD4ED5 /* joker-filter.png in Resources */,
 				8351C1DC2360A6A1006A8AB3 /* matrix.fsh in Resources */,
 				83E897EE235F356F00435C8A /* Assets.xcassets in Resources */,
 				8351C1E12360A6A1006A8AB3 /* schindlers-list.fsh in Resources */,
+				8344466C23745B3200FD4ED5 /* happy-together-filter.png in Resources */,
 				835DB8222370675E0070AB72 /* loading.json in Resources */,
 				8351C1DB2360A6A1006A8AB3 /* filters.json in Resources */,
 				8351C1E72360A6A1006A8AB3 /* sin-city.jpg in Resources */,
+				8344466D23745B3200FD4ED5 /* schindlers-list-filter.png in Resources */,
 				8351C1DD2360A6A1006A8AB3 /* lookup_soft_elegance_1.png in Resources */,
 				836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */,
 				83E897EC235F356E00435C8A /* Main.storyboard in Resources */,
 				8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */,
 				8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */,
+				8344466E23745B3200FD4ED5 /* matrix-filter.png in Resources */,
 				8363F1C9236713040062106A /* shoot.mp3 in Resources */,
 				8351C1DF2360A6A1006A8AB3 /* matrix.jpg in Resources */,
 				8351C1D92360A6A1006A8AB3 /* 2046.jpg in Resources */,

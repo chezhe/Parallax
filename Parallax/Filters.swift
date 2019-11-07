@@ -57,7 +57,7 @@ func getFilter(name: String) -> ImageProcessingOperation {
     case "happy-together":
         return SoftElegance()
     case "matrix":
-        return customFilter("matrix")
+        return customFilter("glass-break")
     case "sin-city":
         let filter = LuminanceThreshold()
         filter.threshold = 0.5
