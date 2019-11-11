@@ -15,17 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launching.gif" translatesAutoresizingMaskIntoConstraints="NO" id="DLP-bA-C6z">
-                                <rect key="frame" x="-83" y="268" width="580" height="360"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DLP-bA-C6z" secondAttribute="height" multiplier="29:18" id="AfE-1n-gui"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parallax" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1T-df-LWD">
+                                <rect key="frame" x="87.5" y="405" width="239" height="86"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="72"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DLP-bA-C6z" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dW4-2B-tRr"/>
-                            <constraint firstItem="DLP-bA-C6z" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="iHd-6H-FLj"/>
+                            <constraint firstItem="O1T-df-LWD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="LxB-9I-Mr6"/>
+                            <constraint firstItem="O1T-df-LWD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZSw-Ei-rkQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,7 +35,4 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="launching.gif" width="580" height="360"/>
-    </resources>
 </document>

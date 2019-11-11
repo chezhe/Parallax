@@ -58,10 +58,6 @@ func getFilter(name: String) -> ImageProcessingOperation {
         return SoftElegance()
     case "matrix":
         return customFilter("glass-break")
-    case "sin-city":
-        let filter = LuminanceThreshold()
-        filter.threshold = 0.5
-        return filter
     default:
         return FalseColor()
     }

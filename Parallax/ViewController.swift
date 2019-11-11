@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var pictureOutput: PictureOutput!
     var filter: ImageProcessingOperation!
     var soundEffect: AVAudioPlayer?
-    let cameraEnabled: Bool = false
+    let cameraEnabled: Bool = true
     var filterName: String?
     var zoomEnd: CGFloat = 1.0
     

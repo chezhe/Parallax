@@ -37,13 +37,5 @@
         "desc": "两面",
         "filter": "false color",
         "price": 0
-    },
-    {
-        "id": 1005,
-        "name": "matrix",
-        "title": "黑客帝国",
-        "desc": "极客",
-        "filter": "false color",
-        "price": 0
     }
 ]
