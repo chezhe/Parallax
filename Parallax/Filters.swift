@@ -46,18 +46,18 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
 
 func getFilter(name: String) -> ImageProcessingOperation {
     switch name {
-//    case "shadow":
-//        let filter = SepiaToneFilter()
-//        filter.intensity = 1.0
-//        return filter
-//    case "schindlers-list":
-//        return customFilter("schindlers-list")
-//    case "joker":
-//        return customFilter("joker")
-//    case "happy-together":
-//        return SoftElegance()
-//    case "matrix":
-//        return customFilter("glass-break")
+    case "shadow":
+        let filter = SepiaToneFilter()
+        filter.intensity = 1.0
+        return filter
+    case "schindlers-list":
+        return SchindlersList()
+    case "joker":
+        return Joker()
+    case "happy-together":
+        return SoftElegance()
+    case "matrix":
+        return RedAlert()
     default:
         return FalseColor()
     }
