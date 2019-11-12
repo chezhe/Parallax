@@ -6,7 +6,7 @@
 //  Copyright © 2019 王亮. All rights reserved.
 //
 
-import EVGPUImage2
+import GPUImage
 import Foundation
 import CoreLocation
 
@@ -46,37 +46,37 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
 
 func getFilter(name: String) -> ImageProcessingOperation {
     switch name {
-    case "shadow":
-        let filter = SepiaToneFilter()
-        filter.intensity = 1.0
-        return filter
-    case "schindlers-list":
-        return customFilter("schindlers-list")
-    case "joker":
-        return customFilter("joker")
-    case "happy-together":
-        return SoftElegance()
-    case "matrix":
-        return customFilter("glass-break")
+//    case "shadow":
+//        let filter = SepiaToneFilter()
+//        filter.intensity = 1.0
+//        return filter
+//    case "schindlers-list":
+//        return customFilter("schindlers-list")
+//    case "joker":
+//        return customFilter("joker")
+//    case "happy-together":
+//        return SoftElegance()
+//    case "matrix":
+//        return customFilter("glass-break")
     default:
         return FalseColor()
     }
 }
 
-func customFilter(_ name: String) -> BasicOperation {
-    // 获取文件路径
-    let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "fsh")!)
-    var customFilter: BasicOperation
-    
-    do {
-        // 从文件中创建自定义滤镜
-        customFilter = try BasicOperation(fragmentShaderFile: url)
-    } catch {
-        return FalseColor()
-    }
-    
-    return customFilter
-}
+//func customFilter(_ name: String) -> BasicOperation {
+//    // 获取文件路径
+//    let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "fsh")!)
+//    var customFilter: BasicOperation
+//
+//    do {
+//        // 从文件中创建自定义滤镜
+//        customFilter = try BasicOperation(fragmentShaderFile: url)
+//    } catch {
+//        return FalseColor()
+//    }
+//
+//    return customFilter
+//}
 
 
 func getIndexOf(filterName: String) -> Int? {

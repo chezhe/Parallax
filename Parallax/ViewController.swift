@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import EVGPUImage2
 import AVFoundation
 import Persei
 import Lottie
+import GPUImage
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             
             // camera & filter
             if cameraEnabled {
-                viewport.fillMode = .preserveAspectRatioAndFill
+//                viewport.fillMode = .preserveAspectRatioAndFill
                 videoCamera = try Camera(sessionPreset: .hd4K3840x2160, location: .backFacing)
 
                 filter = getFilter(name: filterName!)
@@ -119,34 +119,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         } catch {
             print("Initialize camera with error: \(error)")
         }
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            
-            let orient = UIDevice.current.orientation
-            
-            if self.viewport != nil {
-                switch orient {
-                    case .portrait:
-                        self.viewport.orientation = .portrait
-                    case .landscapeLeft:
-                        self.viewport.orientation = .landscapeLeft
-                    case .landscapeRight:
-                        self.viewport.orientation = .landscapeRight
-                    case .portraitUpsideDown:
-                        self.viewport.orientation = .portraitUpsideDown
-                    default:
-                        self.viewport.orientation = .portrait
-                }
-            }
-            
-        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            print("rotation completed")
-        })
-        
-        super.viewWillTransition(to: size, with: coordinator)
     }
     
     @objc func zoomFrame(_ gestureRecognizer: UIPinchGestureRecognizer) {

@@ -10,6 +10,8 @@
 		0FBAE7ABB081324C256D05CB /* Pods_Parallax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */; };
 		83133D6F236405F20005717E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D6E236405F20005717E /* SettingViewController.swift */; };
 		83133D8323642E1E0005717E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D8223642E1E0005717E /* Extenstions.swift */; };
+		8313593C237A6E28008F5C3E /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83135931237A6D6E008F5C3E /* GPUImage.framework */; };
+		8313593D237A6E28008F5C3E /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83135931237A6D6E008F5C3E /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
 		8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */; };
 		8344466A23745B3200FD4ED5 /* joker-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466423745B3100FD4ED5 /* joker-filter.png */; };
@@ -17,7 +19,6 @@
 		8344466C23745B3200FD4ED5 /* happy-together-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466623745B3200FD4ED5 /* happy-together-filter.png */; };
 		8344466D23745B3200FD4ED5 /* schindlers-list-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466723745B3200FD4ED5 /* schindlers-list-filter.png */; };
 		8344466E23745B3200FD4ED5 /* matrix-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466823745B3200FD4ED5 /* matrix-filter.png */; };
-		8344467023745E0900FD4ED5 /* ShadertoyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344466F23745E0900FD4ED5 /* ShadertoyFilter.swift */; };
 		8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1AC2360833B006A8AB3 /* ImageUtil.swift */; };
 		8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B123608352006A8AB3 /* FileUtil.swift */; };
 		8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B323608371006A8AB3 /* SizeUtil.swift */; };
@@ -66,6 +67,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		83135930237A6D6E008F5C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8313592B237A6D6E008F5C3E /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE0BE7C20D6DE610006E120;
+			remoteInfo = GPUImage_iOS;
+		};
+		83135932237A6D6E008F5C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8313592B237A6D6E008F5C3E /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE0BE8C20D6E2B80006E120;
+			remoteInfo = GPUImage_macOS;
+		};
 		834239C223688F07009612BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
@@ -124,11 +139,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8313593E237A6E28008F5C3E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8313593D237A6E28008F5C3E /* GPUImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2377C4DD9FA901846BA863ED /* Pods-Parallax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parallax.release.xcconfig"; path = "Target Support Files/Pods-Parallax/Pods-Parallax.release.xcconfig"; sourceTree = "<group>"; };
 		23AADD571F676FC8B16CBC62 /* Pods_Parallax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parallax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83133D6E236405F20005717E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83133D8223642E1E0005717E /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		8313592B237A6D6E008F5C3E /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../Downloads/GPUImage3/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
 		834239B723688EF7009612BA /* framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = framework; path = Pods/EVGPUImage2/framework; sourceTree = "<group>"; };
 		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -138,7 +168,6 @@
 		8344466623745B3200FD4ED5 /* happy-together-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "happy-together-filter.png"; sourceTree = "<group>"; };
 		8344466723745B3200FD4ED5 /* schindlers-list-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schindlers-list-filter.png"; sourceTree = "<group>"; };
 		8344466823745B3200FD4ED5 /* matrix-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "matrix-filter.png"; sourceTree = "<group>"; };
-		8344466F23745E0900FD4ED5 /* ShadertoyFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadertoyFilter.swift; sourceTree = "<group>"; };
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8351C1B123608352006A8AB3 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		8351C1B323608371006A8AB3 /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
@@ -200,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FBAE7ABB081324C256D05CB /* Pods_Parallax.framework in Frameworks */,
+				8313593C237A6E28008F5C3E /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +255,15 @@
 				2377C4DD9FA901846BA863ED /* Pods-Parallax.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8313592C237A6D6E008F5C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83135931237A6D6E008F5C3E /* GPUImage.framework */,
+				83135933237A6D6E008F5C3E /* GPUImage.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		834239B923688F07009612BA /* Products */ = {
@@ -283,6 +322,7 @@
 		83E897D8235F356E00435C8A = {
 			isa = PBXGroup;
 			children = (
+				8313592B237A6D6E008F5C3E /* GPUImage.xcodeproj */,
 				834239B823688F07009612BA /* Pods.xcodeproj */,
 				83E897E3235F356E00435C8A /* Parallax */,
 				83E897E2235F356E00435C8A /* Products */,
@@ -305,7 +345,6 @@
 				83E897E4235F356E00435C8A /* AppDelegate.swift */,
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
-				8344466F23745E0900FD4ED5 /* ShadertoyFilter.swift */,
 				83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */,
 				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
 				83366DDD2361FA57005A3175 /* FilmRollViewController.swift */,
@@ -344,6 +383,7 @@
 				83E897DE235F356E00435C8A /* Frameworks */,
 				83E897DF235F356E00435C8A /* Resources */,
 				B04E153AE7A735786733219B /* [CP] Embed Pods Frameworks */,
+				8313593E237A6E28008F5C3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,6 +423,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 8313592C237A6D6E008F5C3E /* Products */;
+					ProjectRef = 8313592B237A6D6E008F5C3E /* GPUImage.xcodeproj */;
+				},
+				{
 					ProductGroup = 834239B923688F07009612BA /* Products */;
 					ProjectRef = 834239B823688F07009612BA /* Pods.xcodeproj */;
 				},
@@ -395,6 +439,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		83135931237A6D6E008F5C3E /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 83135930237A6D6E008F5C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83135933237A6D6E008F5C3E /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 83135932237A6D6E008F5C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		834239C323688F07009612BA /* EVGPUImage2.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -560,7 +618,6 @@
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
 				83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */,
 				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
-				8344467023745E0900FD4ED5 /* ShadertoyFilter.swift in Sources */,
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
 				83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */,
 				83E2151F2365AFA6005E8385 /* LaunchViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 
 import UIKit
-import EVGPUImage2
+import GPUImage
 import INSPhotoGallery
 
 class GalleryViewController: UIViewController {
