@@ -25,6 +25,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var photoButton: UIButton!
     
     @IBOutlet weak var torchBtn: UIButton!
+    @IBOutlet weak var switchBtn: UIButton!
     
     private var deviceOrientationHelper = DeviceOrientationHelper()
     
@@ -63,6 +64,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         do {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
             self.modalPresentationCapturesStatusBarAppearance = true
+            torchBtn.isHidden = true
+            switchBtn.isHidden = true
             
             let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(zoomFrame(_:)))
             pinchGesture.delegate = self

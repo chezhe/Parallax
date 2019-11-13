@@ -131,6 +131,7 @@
                         <outlet property="filterSwitcher" destination="wKi-Km-PKW" id="Ngm-gI-e7b"/>
                         <outlet property="photoButton" destination="zDP-K7-bhD" id="FJe-V1-hrw"/>
                         <outlet property="screenView" destination="8bC-Xf-vdC" id="O8D-IG-kWW"/>
+                        <outlet property="switchBtn" destination="Esa-Ou-WIg" id="df5-Ig-UNa"/>
                         <outlet property="torchBtn" destination="cxo-Md-ZRE" id="3j7-0V-tL9"/>
                         <outlet property="viewport" destination="ky2-DC-nog" id="YNM-JZ-Zlc"/>
                     </connections>
