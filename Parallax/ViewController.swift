@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     {
         if cameraEnabled {
             do {
-                videoCamera = try Camera(sessionPreset:.hd4K3840x2160, location:.backFacing)
+                videoCamera = try Camera(sessionPreset:.high, location:.backFacing)
                 videoCamera!.runBenchmark = true
             } catch {
                 videoCamera = nil
