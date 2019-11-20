@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             // camera & filter
             if cameraEnabled {
 //                viewport.fillMode = .preserveAspectRatioAndFill
-                videoCamera = try Camera(sessionPreset: .hd4K3840x2160, location: .backFacing)
+                videoCamera = try Camera(sessionPreset: .high, location: .backFacing)
 
                 filter = getFilter(name: filterName!)
                 videoCamera?.addTarget(filter)
@@ -245,6 +245,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func onDeviceRotate(deviceOrientation: UIDeviceOrientation) -> Void {
         self.deviceOrientation = deviceOrientation
+        switch deviceOrientation {
+            case .landscapeLeft:
+                videoCamera?.orientation = .landscapeLeft
+            case .landscapeRight:
+                break
+            default: break
+                
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

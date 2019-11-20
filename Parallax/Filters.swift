@@ -15,7 +15,6 @@ struct Filter: Codable, Identifiable {
     var name: String
     var title: String
     var desc: String
-    var filter: String
     var price: Double
 }
 
@@ -58,6 +57,10 @@ func getFilter(name: String) -> ImageProcessingOperation {
         return SoftElegance()
     case "matrix":
         return RedAlert()
+    case "west-world":
+        return RedAlert()
+    case "shape-of-water":
+        return Rain()
     default:
         return FalseColor()
     }

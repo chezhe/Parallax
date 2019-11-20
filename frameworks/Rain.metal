@@ -126,20 +126,15 @@ fragment half4 rainFragment(SingleInputVertexIO fragmentInput [[stage_in]],
 {
     
     float2 UV = fragmentInput.textureCoordinate;
-    float2 uv = fragmentInput.textureCoordinate;
+    float2 uv = fragmentInput.textureCoordinate * 0.5;
     float T = uniform.iTime;
     
-    float t = T * 0.2;
+    float t = -T * 0.2;
     
     float rainAmount = sin(T*.05)*.3+.4;
     
     float maxBlur = mix(3., 6., rainAmount);
     float minBlur = 2.;
-    
-    float zoom = 1.0;
-    uv *= .7 + zoom*.3;
-
-    UV = (UV-.5)*(.9 + zoom*.1) + .5;
     
     float staticDrops = S(-.5, 1., rainAmount)*2.;
     float layer1 = S(.25, .75, rainAmount);
@@ -150,8 +145,9 @@ fragment half4 rainFragment(SingleInputVertexIO fragmentInput [[stage_in]],
     float cx = Drops(uv + e, t, staticDrops, layer1, layer2).x;
     float cy = Drops(uv + e.yx, t, staticDrops, layer1, layer2).x;
     float2 n = float2(cx - c.x, cy - c.x);        // expensive normals
-    
+
     float focus = mix(maxBlur-c.y, minBlur, S(.1, .2, c.x));
+    
     constexpr sampler quadSampler;
     half3 col = inputTexture.sample(quadSampler, UV+n, focus).rgb;
     
