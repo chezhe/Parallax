@@ -12,6 +12,10 @@
 		83133D8323642E1E0005717E /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83133D8223642E1E0005717E /* Extenstions.swift */; };
 		83135966237A8AAF008F5C3E /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83135954237A8366008F5C3E /* GPUImage.framework */; };
 		83135967237A8AAF008F5C3E /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83135954237A8366008F5C3E /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8335B40E238A2B1D00E23887 /* west-world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8335B404238A2B1C00E23887 /* west-world.jpg */; };
+		8335B410238A2B7A00E23887 /* shape-of-water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8335B40F238A2B7A00E23887 /* shape-of-water.jpg */; };
+		8335B412238A421800E23887 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8335B411238A421800E23887 /* StoreKit.framework */; };
+		8335B414238A4BBB00E23887 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335B413238A4BBB00E23887 /* IAPHelper.swift */; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
 		8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */; };
 		8344466A23745B3200FD4ED5 /* joker-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466423745B3100FD4ED5 /* joker-filter.png */; };
@@ -25,7 +29,6 @@
 		8351C1BB23608807006A8AB3 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1BA23608807006A8AB3 /* GalleryViewController.swift */; };
 		8351C1D72360A6A1006A8AB3 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1C42360A6A0006A8AB3 /* lookup_miss_etikate.png */; };
 		8351C1D82360A6A1006A8AB3 /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1C52360A6A0006A8AB3 /* lookup_soft_elegance_2.png */; };
-		8351C1D92360A6A1006A8AB3 /* 2046.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1C62360A6A0006A8AB3 /* 2046.jpg */; };
 		8351C1DA2360A6A1006A8AB3 /* Chaplin.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1C72360A6A0006A8AB3 /* Chaplin.fsh */; };
 		8351C1DB2360A6A1006A8AB3 /* filters.json in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1C82360A6A0006A8AB3 /* filters.json */; };
 		8351C1DC2360A6A1006A8AB3 /* matrix.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1C92360A6A0006A8AB3 /* matrix.fsh */; };
@@ -35,16 +38,13 @@
 		8351C1E02360A6A1006A8AB3 /* blade-runner-2049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1CD2360A6A1006A8AB3 /* blade-runner-2049.jpg */; };
 		8351C1E12360A6A1006A8AB3 /* schindlers-list.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1CE2360A6A1006A8AB3 /* schindlers-list.fsh */; };
 		8351C1E22360A6A1006A8AB3 /* schindlers-list.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1CF2360A6A1006A8AB3 /* schindlers-list.jpg */; };
-		8351C1E32360A6A1006A8AB3 /* amelie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D02360A6A1006A8AB3 /* amelie.jpg */; };
 		8351C1E42360A6A1006A8AB3 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D12360A6A1006A8AB3 /* lookup.png */; };
 		8351C1E52360A6A1006A8AB3 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D22360A6A1006A8AB3 /* lookup_amatorka.png */; };
 		8351C1E62360A6A1006A8AB3 /* shadow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D32360A6A1006A8AB3 /* shadow.jpg */; };
-		8351C1E72360A6A1006A8AB3 /* sin-city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D42360A6A1006A8AB3 /* sin-city.jpg */; };
 		8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D52360A6A1006A8AB3 /* joker.jpg */; };
 		8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8351C1D62360A6A1006A8AB3 /* joker.fsh */; };
 		8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1EA2360A6C6006A8AB3 /* Filters.swift */; };
 		835DB81D23704B610070AB72 /* camera-motion.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB81223704B610070AB72 /* camera-motion.json */; };
-		835DB820237059060070AB72 /* film-roll-item.png in Resources */ = {isa = PBXBuildFile; fileRef = 835DB81F237059060070AB72 /* film-roll-item.png */; };
 		835DB8222370675E0070AB72 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB8212370675D0070AB72 /* loading.json */; };
 		8363F1C9236713040062106A /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8363F1C8236713040062106A /* shoot.mp3 */; };
 		836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 836F399D2372F1F400C6E8AB /* Localizable.strings */; };
@@ -53,10 +53,8 @@
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
 		83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */; };
-		83BEADBA238575A600C4035A /* west-world.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BEADB8238575A500C4035A /* west-world.png */; };
 		83BEADBB238575A600C4035A /* west-world-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BEADB9238575A600C4035A /* west-world-filter.png */; };
 		83BEADC223857CB900C4035A /* shape-of-water-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BEADC023857CB900C4035A /* shape-of-water-filter.png */; };
-		83BEADC323857CB900C4035A /* shape-of-water.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BEADC123857CB900C4035A /* shape-of-water.png */; };
 		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
 		83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E21510236568C6005E8385 /* CustomOverlayView.xib */; };
 		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
@@ -156,6 +154,10 @@
 		83133D6E236405F20005717E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		83133D8223642E1E0005717E /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		8313594E237A8365008F5C3E /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = frameworks/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		8335B404238A2B1C00E23887 /* west-world.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "west-world.jpg"; sourceTree = "<group>"; };
+		8335B40F238A2B7A00E23887 /* shape-of-water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shape-of-water.jpg"; sourceTree = "<group>"; };
+		8335B411238A421800E23887 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8335B413238A4BBB00E23887 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
 		834239B723688EF7009612BA /* framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = framework; path = Pods/EVGPUImage2/framework; sourceTree = "<group>"; };
 		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -171,7 +173,6 @@
 		8351C1BA23608807006A8AB3 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		8351C1C42360A6A0006A8AB3 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
 		8351C1C52360A6A0006A8AB3 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_2.png; sourceTree = "<group>"; };
-		8351C1C62360A6A0006A8AB3 /* 2046.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2046.jpg; sourceTree = "<group>"; };
 		8351C1C72360A6A0006A8AB3 /* Chaplin.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Chaplin.fsh; sourceTree = "<group>"; };
 		8351C1C82360A6A0006A8AB3 /* filters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filters.json; sourceTree = "<group>"; };
 		8351C1C92360A6A0006A8AB3 /* matrix.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = matrix.fsh; sourceTree = "<group>"; };
@@ -181,16 +182,13 @@
 		8351C1CD2360A6A1006A8AB3 /* blade-runner-2049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blade-runner-2049.jpg"; sourceTree = "<group>"; };
 		8351C1CE2360A6A1006A8AB3 /* schindlers-list.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = "schindlers-list.fsh"; sourceTree = "<group>"; };
 		8351C1CF2360A6A1006A8AB3 /* schindlers-list.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "schindlers-list.jpg"; sourceTree = "<group>"; };
-		8351C1D02360A6A1006A8AB3 /* amelie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amelie.jpg; sourceTree = "<group>"; };
 		8351C1D12360A6A1006A8AB3 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		8351C1D22360A6A1006A8AB3 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		8351C1D32360A6A1006A8AB3 /* shadow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shadow.jpg; sourceTree = "<group>"; };
-		8351C1D42360A6A1006A8AB3 /* sin-city.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sin-city.jpg"; sourceTree = "<group>"; };
 		8351C1D52360A6A1006A8AB3 /* joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joker.jpg; sourceTree = "<group>"; };
 		8351C1D62360A6A1006A8AB3 /* joker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = joker.fsh; sourceTree = "<group>"; };
 		8351C1EA2360A6C6006A8AB3 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		835DB81223704B610070AB72 /* camera-motion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "camera-motion.json"; sourceTree = "<group>"; };
-		835DB81F237059060070AB72 /* film-roll-item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "film-roll-item.png"; sourceTree = "<group>"; };
 		835DB8212370675D0070AB72 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		8363F1C8236713040062106A /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
 		836F39902372F12500C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -201,10 +199,8 @@
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationHelper.swift; sourceTree = "<group>"; };
-		83BEADB8238575A500C4035A /* west-world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "west-world.png"; sourceTree = "<group>"; };
 		83BEADB9238575A600C4035A /* west-world-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "west-world-filter.png"; sourceTree = "<group>"; };
 		83BEADC023857CB900C4035A /* shape-of-water-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape-of-water-filter.png"; sourceTree = "<group>"; };
-		83BEADC123857CB900C4035A /* shape-of-water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape-of-water.png"; sourceTree = "<group>"; };
 		83D4E5AF2361D56B007B73C4 /* Persei.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Persei.framework; path = Carthage/Build/iOS/Persei.framework; sourceTree = "<group>"; };
 		83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Persei.framework.dSYM; path = Carthage/Build/iOS/Persei.framework.dSYM; sourceTree = "<group>"; };
 		83D4E5B72361D782007B73C4 /* GPUImage2 */ = {isa = PBXFileReference; lastKnownFileType = text; name = GPUImage2; path = "/Users/de/Library/Developer/Xcode/DerivedData/Parallax-cggpgovfzygpfcdsoytdqbifaqqh/SourcePackages/checkouts/GPUImage2"; sourceTree = "<absolute>"; };
@@ -229,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8335B412238A421800E23887 /* StoreKit.framework in Frameworks */,
 				0FBAE7ABB081324C256D05CB /* Pods_Parallax.framework in Frameworks */,
 				83135966237A8AAF008F5C3E /* GPUImage.framework in Frameworks */,
 			);
@@ -240,6 +237,7 @@
 		3AE3A647F1605F22C2B6A32D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8335B411238A421800E23887 /* StoreKit.framework */,
 				834239B723688EF7009612BA /* framework */,
 				83D4E5B72361D782007B73C4 /* GPUImage2 */,
 				83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */,
@@ -285,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				83BEADC023857CB900C4035A /* shape-of-water-filter.png */,
-				83BEADC123857CB900C4035A /* shape-of-water.png */,
+				8335B40F238A2B7A00E23887 /* shape-of-water.jpg */,
 				83BEADB9238575A600C4035A /* west-world-filter.png */,
-				83BEADB8238575A500C4035A /* west-world.png */,
+				8335B404238A2B1C00E23887 /* west-world.jpg */,
 				8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */,
 				8344466623745B3200FD4ED5 /* happy-together-filter.png */,
 				8344466423745B3100FD4ED5 /* joker-filter.png */,
@@ -296,12 +294,9 @@
 				8344466523745B3100FD4ED5 /* shadow-filter.png */,
 				836F399F237308F500C6E8AB /* glass-break.fsh */,
 				835DB8212370675D0070AB72 /* loading.json */,
-				835DB81F237059060070AB72 /* film-roll-item.png */,
 				835DB81223704B610070AB72 /* camera-motion.json */,
 				8363F1C8236713040062106A /* shoot.mp3 */,
 				83E2151C2365AF06005E8385 /* launching.gif */,
-				8351C1C62360A6A0006A8AB3 /* 2046.jpg */,
-				8351C1D02360A6A1006A8AB3 /* amelie.jpg */,
 				8351C1CD2360A6A1006A8AB3 /* blade-runner-2049.jpg */,
 				8351C1C72360A6A0006A8AB3 /* Chaplin.fsh */,
 				8351C1C82360A6A0006A8AB3 /* filters.json */,
@@ -318,7 +313,6 @@
 				8351C1CE2360A6A1006A8AB3 /* schindlers-list.fsh */,
 				8351C1CF2360A6A1006A8AB3 /* schindlers-list.jpg */,
 				8351C1D32360A6A1006A8AB3 /* shadow.jpg */,
-				8351C1D42360A6A1006A8AB3 /* sin-city.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -356,6 +350,7 @@
 				83E897EA235F356E00435C8A /* Main.storyboard */,
 				838DA90D2365D64600C9BC8F /* FilmRollCell.swift */,
 				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
+				8335B413238A4BBB00E23887 /* IAPHelper.swift */,
 				8351C1AC2360833B006A8AB3 /* ImageUtil.swift */,
 				8351C1EA2360A6C6006A8AB3 /* Filters.swift */,
 				8351C1B123608352006A8AB3 /* FileUtil.swift */,
@@ -516,16 +511,15 @@
 				8351C1DE2360A6A1006A8AB3 /* happy-together.jpg in Resources */,
 				8344466B23745B3200FD4ED5 /* shadow-filter.png in Resources */,
 				83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */,
+				8335B40E238A2B1D00E23887 /* west-world.jpg in Resources */,
 				83E2151D2365AF06005E8385 /* launching.gif in Resources */,
 				8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */,
 				8351C1D72360A6A1006A8AB3 /* lookup_miss_etikate.png in Resources */,
 				8351C1E52360A6A1006A8AB3 /* lookup_amatorka.png in Resources */,
-				835DB820237059060070AB72 /* film-roll-item.png in Resources */,
 				8351C1E02360A6A1006A8AB3 /* blade-runner-2049.jpg in Resources */,
 				8351C1E22360A6A1006A8AB3 /* schindlers-list.jpg in Resources */,
 				8351C1DA2360A6A1006A8AB3 /* Chaplin.fsh in Resources */,
 				8351C1E42360A6A1006A8AB3 /* lookup.png in Resources */,
-				8351C1E32360A6A1006A8AB3 /* amelie.jpg in Resources */,
 				835DB81D23704B610070AB72 /* camera-motion.json in Resources */,
 				8351C1D82360A6A1006A8AB3 /* lookup_soft_elegance_2.png in Resources */,
 				83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */,
@@ -537,22 +531,19 @@
 				83E897EE235F356F00435C8A /* Assets.xcassets in Resources */,
 				8351C1E12360A6A1006A8AB3 /* schindlers-list.fsh in Resources */,
 				8344466C23745B3200FD4ED5 /* happy-together-filter.png in Resources */,
-				83BEADC323857CB900C4035A /* shape-of-water.png in Resources */,
 				835DB8222370675E0070AB72 /* loading.json in Resources */,
 				8351C1DB2360A6A1006A8AB3 /* filters.json in Resources */,
-				8351C1E72360A6A1006A8AB3 /* sin-city.jpg in Resources */,
 				8344466D23745B3200FD4ED5 /* schindlers-list-filter.png in Resources */,
 				8351C1DD2360A6A1006A8AB3 /* lookup_soft_elegance_1.png in Resources */,
 				836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */,
 				83E897EC235F356E00435C8A /* Main.storyboard in Resources */,
+				8335B410238A2B7A00E23887 /* shape-of-water.jpg in Resources */,
 				8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */,
 				8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */,
 				8344466E23745B3200FD4ED5 /* matrix-filter.png in Resources */,
 				8363F1C9236713040062106A /* shoot.mp3 in Resources */,
 				8351C1DF2360A6A1006A8AB3 /* matrix.jpg in Resources */,
 				83BEADC223857CB900C4035A /* shape-of-water-filter.png in Resources */,
-				8351C1D92360A6A1006A8AB3 /* 2046.jpg in Resources */,
-				83BEADBA238575A600C4035A /* west-world.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +607,7 @@
 				83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */,
 				83133D6F236405F20005717E /* SettingViewController.swift in Sources */,
 				83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */,
+				8335B414238A4BBB00E23887 /* IAPHelper.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
 				83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */,
 				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
@@ -780,7 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -808,7 +800,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

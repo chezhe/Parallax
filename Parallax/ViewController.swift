@@ -36,6 +36,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     let cameraEnabled: Bool = true
     var filterName: String?
     var zoomEnd: CGFloat = 1.0
+    var currentFilter: Filter?
     
     fileprivate var menu: MenuView!
     fileprivate var deviceOrientation: UIDeviceOrientation?
@@ -84,6 +85,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             filmButton.backgroundColor = UIColor.white
             captureButton.tintColor = .white
             photoButton.tintColor = .white
+            if filterItem!.locked() {
+                let lockImage = UIImage(imageLiteralResourceName: "lock")
+                captureButton.setImage(lockImage, for: .normal)
+            }
+            currentFilter = filterItem
             
             photoButton.bounds.size = CGSize(width: 50, height: 50)
             
@@ -147,15 +153,19 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func onCapture(_ sender: Any) {
-        soundEffect?.play()
-        
-        if cameraEnabled {
-            pictureOutput = PictureOutput()
-            pictureOutput.encodedImageFormat = .jpeg
-            pictureOutput.imageAvailableCallback = {image in
-                self.onCaptureCompleted(image: image)
+        if (currentFilter?.locked())! {
+            //
+        } else {
+            soundEffect?.play()
+            
+            if cameraEnabled {
+                pictureOutput = PictureOutput()
+                pictureOutput.encodedImageFormat = .jpeg
+                pictureOutput.imageAvailableCallback = {image in
+                    self.onCaptureCompleted(image: image)
+                }
+                filter --> pictureOutput
             }
-            filter --> pictureOutput
         }
     }
     
@@ -331,6 +341,14 @@ extension ViewController: MenuViewDelegate {
         self.switchFilter(name: filterItem.name)
         let filmIcon = UIImage(cgImage: getCGImage(name: filterItem.name + "-filter", ext: "png"))
         filmButton.setImage(filmIcon, for: .normal)
+        currentFilter = filterItem
+        
+        if filterItem.locked() {
+            let lockImage = UIImage(imageLiteralResourceName: "lock")
+            captureButton.setImage(lockImage, for: .normal)
+        } else {
+            captureButton.setImage(UIImage(imageLiteralResourceName: "capture"), for: .normal)
+        }
     }
 }
 

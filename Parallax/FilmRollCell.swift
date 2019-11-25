@@ -33,9 +33,9 @@ class FilmRollCell: UICollectionViewCell {
         let apply = NSLocalizedString("Apply", comment: "")
         let applying = NSLocalizedString("Applying", comment: "")
         
-        let image = UIImage(cgImage: getCGImage(name: filter.name, ext: "jpg"), scale: 4, orientation: UIImage.Orientation.up)
+        let image = UIImage(cgImage: getCGImage(name: filter.name, ext: "jpg"), scale: 8, orientation: UIImage.Orientation.up)
         effectImage.image = image
-        effectImage.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        effectImage.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height)
         
 //        useBtn.layer.borderWidth = 1
 //        useBtn.layer.borderColor = UIColor.white.cgColor
@@ -50,12 +50,16 @@ class FilmRollCell: UICollectionViewCell {
             useBtn.layer.borderColor = UIColor.orange.cgColor
             useBtn.setTitleColor(UIColor.darkGray, for: .normal)
         } else {
-            useBtn.setTitle(apply, for: .normal)
+            if filter.locked() {
+                useBtn.setTitle("￥" + String(filter.price), for: .normal)
+            } else {
+                useBtn.setTitle(apply, for: .normal)
+            }
+            
             useBtn.layer.backgroundColor = UIColor.darkGray.cgColor
             useBtn.setTitleColor(UIColor.white, for: .normal)
         }
     }
-    
     
     @IBAction func onUsed(_ sender: Any) {
         let filter = FILTERS[index!]

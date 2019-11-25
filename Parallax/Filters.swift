@@ -16,6 +16,15 @@ struct Filter: Codable, Identifiable {
     var title: String
     var desc: String
     var price: Double
+    var productID: String?
+    
+    func locked() -> Bool {
+        let isUnlocked = UserDefaults.standard.string(forKey: name) == "unlocked"
+        if price > 0 && !isUnlocked {
+            return true
+        }
+        return false
+    }
 }
 
 let FILTERS: [Filter] = load("filters.json")
