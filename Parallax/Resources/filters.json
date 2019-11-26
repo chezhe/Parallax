@@ -31,13 +31,15 @@
         "name": "west-world",
         "title": "西部世界",
         "desc": "红色警报",
-        "price": 6
+        "price": 6,
+        "productID": "westworld"
     },
     {
         "id": 1006,
         "name": "shape-of-water",
         "title": "水形物语",
         "desc": "窗外下着雨",
-        "price": 6
+        "price": 6,
+        "productID": "shapeofwater"
     }
 ]

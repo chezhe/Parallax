@@ -47,6 +47,10 @@
 		835DB81D23704B610070AB72 /* camera-motion.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB81223704B610070AB72 /* camera-motion.json */; };
 		835DB8222370675E0070AB72 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 835DB8212370675D0070AB72 /* loading.json */; };
 		8363F1C9236713040062106A /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8363F1C8236713040062106A /* shoot.mp3 */; };
+		836C6BA9238C23AF005AA1A8 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C6BA8238C23AF005AA1A8 /* StoreObserver.swift */; };
+		836C6BAB238C23F9005AA1A8 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C6BAA238C23F9005AA1A8 /* AppProtocols.swift */; };
+		836C6BAD238C245A005AA1A8 /* AppDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C6BAC238C245A005AA1A8 /* AppDataTypes.swift */; };
+		836C6BAF238C26F8005AA1A8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C6BAE238C26F8005AA1A8 /* StoreManager.swift */; };
 		836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 836F399D2372F1F400C6E8AB /* Localizable.strings */; };
 		836F39A0237308F600C6E8AB /* glass-break.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 836F399F237308F500C6E8AB /* glass-break.fsh */; };
 		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
@@ -191,6 +195,10 @@
 		835DB81223704B610070AB72 /* camera-motion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "camera-motion.json"; sourceTree = "<group>"; };
 		835DB8212370675D0070AB72 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		8363F1C8236713040062106A /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
+		836C6BA8238C23AF005AA1A8 /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		836C6BAA238C23F9005AA1A8 /* AppProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
+		836C6BAC238C245A005AA1A8 /* AppDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTypes.swift; sourceTree = "<group>"; };
+		836C6BAE238C26F8005AA1A8 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		836F39902372F12500C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		836F399C2372F1F400C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		836F399E2372F1FD00C6E8AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -317,6 +325,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		836C6B9E238C2398005AA1A8 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				836C6BA8238C23AF005AA1A8 /* StoreObserver.swift */,
+				836C6BAC238C245A005AA1A8 /* AppDataTypes.swift */,
+				836C6BAA238C23F9005AA1A8 /* AppProtocols.swift */,
+				836C6BAE238C26F8005AA1A8 /* StoreManager.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		83E897D8235F356E00435C8A = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +359,7 @@
 		83E897E3235F356E00435C8A /* Parallax */ = {
 			isa = PBXGroup;
 			children = (
+				836C6B9E238C2398005AA1A8 /* IAP */,
 				83E897E4235F356E00435C8A /* AppDelegate.swift */,
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
@@ -597,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AFC7052364495900371D9E /* PhotoCell.swift in Sources */,
+				836C6BAF238C26F8005AA1A8 /* StoreManager.swift in Sources */,
 				8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */,
 				83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */,
 				83E215152365738F005E8385 /* PhotoModel.swift in Sources */,
@@ -607,8 +628,11 @@
 				83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */,
 				83133D6F236405F20005717E /* SettingViewController.swift in Sources */,
 				83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */,
+				836C6BAB238C23F9005AA1A8 /* AppProtocols.swift in Sources */,
+				836C6BA9238C23AF005AA1A8 /* StoreObserver.swift in Sources */,
 				8335B414238A4BBB00E23887 /* IAPHelper.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
+				836C6BAD238C245A005AA1A8 /* AppDataTypes.swift in Sources */,
 				83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */,
 				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
@@ -701,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -756,7 +780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -772,7 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -800,7 +824,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = UJY4NHS9W7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

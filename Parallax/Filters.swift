@@ -19,9 +19,8 @@ struct Filter: Codable, Identifiable {
     var productID: String?
     
     func locked() -> Bool {
-        let isUnlocked = UserDefaults.standard.string(forKey: name) == "unlocked"
-        if price > 0 && !isUnlocked {
-            return true
+        if productID != nil && price > 0 {
+            return UserDefaults.standard.string(forKey: productID!) != "unlocked"
         }
         return false
     }

@@ -13,7 +13,7 @@ import Lottie
 import GPUImage
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
-    
+    // MARK: - Properties
     @IBOutlet weak var viewport: RenderView!
 
     @IBOutlet var screenView: UIView!
@@ -41,6 +41,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     fileprivate var menu: MenuView!
     fileprivate var deviceOrientation: UIDeviceOrientation?
     
+    // MARK: - Funtions
     required init(coder aDecoder: NSCoder)
     {
         if cameraEnabled {
@@ -61,6 +62,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         deviceOrientation = .portrait
         deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
+        
+        StoreManager.shared.delegate = self
+        StoreObserver.shared.delegate = self
         
         do {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -154,7 +158,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func onCapture(_ sender: Any) {
         if (currentFilter?.locked())! {
-            //
+            fetchProductInformation(id: (currentFilter?.productID)!)
         } else {
             soundEffect?.play()
             
@@ -320,6 +324,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             overlay.removeFromSuperview()
         }
     }
+    
+    // MARK: - Fetch Product Information
+
+    /// Retrieves product information from the App Store.
+    fileprivate func fetchProductInformation(id: String) {
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let identifiers = [id]
+            StoreManager.shared.startProductRequest(with: identifiers)
+        } else {
+            
+        }
+    }
 }
 
 
@@ -352,3 +368,33 @@ extension ViewController: MenuViewDelegate {
     }
 }
 
+
+// MARK: - StoreManagerDelegate
+
+/// Extends ParentViewController to conform to StoreManagerDelegate.
+extension ViewController: StoreManagerDelegate {
+    func storeManagerDidReceiveResponse(_ response: [Section]) {
+//        switchToViewController(segment: .products)
+        // Switch to the Products view controller.
+//        products.reload(with: response)
+//        segmentedControl.selectedSegmentIndex = 0
+    }
+
+    func storeManagerDidReceiveMessage(_ message: String) {
+//        alert(with: Messages.productRequestStatus, message: message)
+    }
+}
+
+// MARK: - StoreObserverDelegate
+
+/// Extends ParentViewController to conform to StoreObserverDelegate.
+extension ViewController: StoreObserverDelegate {
+    func storeObserverDidReceiveMessage(_ message: String) {
+        //handle purchase result,update UI
+//        alert(with: Messages.purchaseStatus, message: message)
+    }
+
+    func storeObserverRestoreDidSucceed() {
+//        handleRestoredSucceededTransaction()
+    }
+}
