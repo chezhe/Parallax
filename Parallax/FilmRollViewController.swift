@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ElongationPreview
 
-class FilmRollViewController: UIViewController {
+class FilmRollViewController: ElongationViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     

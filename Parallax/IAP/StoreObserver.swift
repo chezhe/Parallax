@@ -134,7 +134,6 @@ extension StoreObserver: SKPaymentTransactionObserver {
     /// Called when an error occur while restoring purchases. Notify the user about the error.
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         if let error = error as? SKError, error.code != .paymentCancelled {
-            print("### \(error)")
             DispatchQueue.main.async {
                 self.delegate?.storeObserverDidReceiveMessage(error.localizedDescription)
             }

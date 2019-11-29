@@ -15,7 +15,6 @@
 		8335B40E238A2B1D00E23887 /* west-world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8335B404238A2B1C00E23887 /* west-world.jpg */; };
 		8335B410238A2B7A00E23887 /* shape-of-water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8335B40F238A2B7A00E23887 /* shape-of-water.jpg */; };
 		8335B412238A421800E23887 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8335B411238A421800E23887 /* StoreKit.framework */; };
-		8335B414238A4BBB00E23887 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335B413238A4BBB00E23887 /* IAPHelper.swift */; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
 		8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466323745B3100FD4ED5 /* blade-runner-2049-filter.png */; };
 		8344466A23745B3200FD4ED5 /* joker-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344466423745B3100FD4ED5 /* joker-filter.png */; };
@@ -161,7 +160,6 @@
 		8335B404238A2B1C00E23887 /* west-world.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "west-world.jpg"; sourceTree = "<group>"; };
 		8335B40F238A2B7A00E23887 /* shape-of-water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shape-of-water.jpg"; sourceTree = "<group>"; };
 		8335B411238A421800E23887 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		8335B413238A4BBB00E23887 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
 		834239B723688EF7009612BA /* framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = framework; path = Pods/EVGPUImage2/framework; sourceTree = "<group>"; };
 		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 				83E897EA235F356E00435C8A /* Main.storyboard */,
 				838DA90D2365D64600C9BC8F /* FilmRollCell.swift */,
 				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
-				8335B413238A4BBB00E23887 /* IAPHelper.swift */,
 				8351C1AC2360833B006A8AB3 /* ImageUtil.swift */,
 				8351C1EA2360A6C6006A8AB3 /* Filters.swift */,
 				8351C1B123608352006A8AB3 /* FileUtil.swift */,
@@ -630,7 +627,6 @@
 				83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */,
 				836C6BAB238C23F9005AA1A8 /* AppProtocols.swift in Sources */,
 				836C6BA9238C23AF005AA1A8 /* StoreObserver.swift in Sources */,
-				8335B414238A4BBB00E23887 /* IAPHelper.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
 				836C6BAD238C245A005AA1A8 /* AppDataTypes.swift in Sources */,
 				83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */,

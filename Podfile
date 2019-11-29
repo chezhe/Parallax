@@ -13,4 +13,5 @@ target 'Parallax' do
   pod 'Persei', '~> 3.0'
   pod 'INSNibLoading'
   pod 'lottie-ios'
+  pod 'ElongationPreview'
 end

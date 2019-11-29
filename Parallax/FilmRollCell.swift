@@ -37,8 +37,6 @@ class FilmRollCell: UICollectionViewCell {
         effectImage.image = image
         effectImage.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height)
         
-//        useBtn.layer.borderWidth = 1
-//        useBtn.layer.borderColor = UIColor.white.cgColor
         useBtn.layer.cornerRadius = 15
         useBtn.contentEdgeInsets = UIEdgeInsets(top: 0,left: 15,bottom: 0,right: 15)
         useBtn.bounds.size = CGSize(width: 80, height: 30)
@@ -65,14 +63,12 @@ class FilmRollCell: UICollectionViewCell {
         let filter = FILTERS[index!]
         UserDefaults.standard.set(filter.name, forKey: "filterName")
         
-        useBtn.setTitle("使用中", for: .normal)
-//        useBtn.setTitleColor(UIColor.darkGray, for: .normal)
-//        useBtn.layer.backgroundColor = UIColor.orange.cgColor
-//        useBtn.layer.borderColor = UIColor.orange.cgColor
+        let applying = NSLocalizedString("Applying", comment: "")
+        useBtn.setTitle(applying, for: .normal)
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.onBack(sender)
-//        }
+        }
     }
 }
 

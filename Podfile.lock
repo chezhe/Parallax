@@ -1,4 +1,5 @@
 PODS:
+  - ElongationPreview (2.1.0)
   - INSNibLoading (1.0.2)
   - INSPhotoGallery (1.2.8)
   - lottie-ios (3.1.3)
@@ -6,6 +7,7 @@ PODS:
   - SPAlert (1.1.1)
 
 DEPENDENCIES:
+  - ElongationPreview
   - INSNibLoading
   - INSPhotoGallery
   - lottie-ios
@@ -14,6 +16,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ElongationPreview
     - INSNibLoading
     - INSPhotoGallery
     - lottie-ios
@@ -21,12 +24,13 @@ SPEC REPOS:
     - SPAlert
 
 SPEC CHECKSUMS:
+  ElongationPreview: 84b401d349bfcf855e94d6cc6b95d609260b6d96
   INSNibLoading: 0244d5b9c30d4642c77b31469cbfd905e8b1efb3
   INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
   lottie-ios: 496ac5cea1bbf1a7bd1f1f472f3232eb1b8d744b
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
   SPAlert: 292690a27df49ff131d532a0a39d89b08dd93e4d
 
-PODFILE CHECKSUM: 404376ae4d0cd08628efadce0ac038a9bcdfa2ac
+PODFILE CHECKSUM: 525a48a320b7adac21c8b2bf7fcd516b06d46998
 
 COCOAPODS: 1.8.3

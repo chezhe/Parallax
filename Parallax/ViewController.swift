@@ -392,6 +392,8 @@ extension ViewController: StoreObserverDelegate {
     func storeObserverDidReceiveMessage(_ message: String) {
         //handle purchase result,update UI
 //        alert(with: Messages.purchaseStatus, message: message)
+        print("### \(message)")
+        
     }
 
     func storeObserverRestoreDidSucceed() {
