@@ -67,7 +67,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         StoreObserver.shared.delegate = self
         
         do {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
             self.modalPresentationCapturesStatusBarAppearance = true
             torchBtn.isHidden = true
             switchBtn.isHidden = true
@@ -278,6 +277,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
         super.viewWillAppear(animated)
         if let videoCamera = videoCamera {
@@ -343,7 +343,7 @@ extension ViewController: MenuViewDelegate {
     func menu(_ menu: MenuView, didSelectItemAt index: Int) {
         if index == FILTERS.count {
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmroll") as! FilmRollViewController
+            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmrollx") as! FilmRollViewController
             self.navigationController?.pushViewController(filmroll, animated:true)
             
             let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"

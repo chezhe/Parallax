@@ -11,43 +11,63 @@ import ElongationPreview
 
 class FilmRollViewController: ElongationViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        setup()
     }
     
-    
-    @IBAction func onBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
-    
-    @IBAction func onGoSetting(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-        let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
-        self.navigationController?.pushViewController(setting, animated:true)
+
+    override func openDetailView(for indexPath: IndexPath) {
+        let id = String(describing: DetailViewController.self)
+        guard let detailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: id) as? DetailViewController else { return }
+        let filter = FILTERS[indexPath.row]
+        detailViewController.title = NSLocalizedString(filter.name, comment: "")
+        expand(viewController: detailViewController)
     }
-    
 }
 
-extension FilmRollViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+private extension FilmRollViewController {
+    func setup() {
+        tableView.backgroundColor = UIColor.black
+        tableView.registerNib(FilmRollElongationCell.self)
+    }
+}
+
+extension FilmRollViewController {
+
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return FILTERS.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilmRollCell", for: indexPath) as! FilmRollCell
-        cell.updateCell(index: indexPath.item, onBack: self.onBack)
+
+    override func tableView(_ tableView: UITableView, cellForRowAt _: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(FilmRollElongationCell.self)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView,
-           layout collectionViewLayout: UICollectionViewLayout,
-           sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width - 20, height: 240)
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        super.tableView(tableView, willDisplay: cell, forRowAt: indexPath)
+        guard let cell = cell as? FilmRollElongationCell else { return }
+
+        let filter = FILTERS[indexPath.row]
+
+        let attributedLocality = NSMutableAttributedString(string: NSLocalizedString(filter.name, comment: ""), attributes: [
+            NSAttributedString.Key.font: UIFont.robotoFont(ofSize: 22, weight: .medium),
+            NSAttributedString.Key.kern: 0,
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+        ])
+
+        cell.topImageView.image = UIImage(cgImage: getCGImage(name: filter.name, ext: "jpg"), scale: 3, orientation: UIImage.Orientation.up)
+        cell.localityLabel?.attributedText = attributedLocality
+        cell.countryLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
+        cell.aboutTitleLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
+        cell.aboutDescriptionLabel.text = NSLocalizedString(filter.name + "-desc", comment: "")
     }
 }

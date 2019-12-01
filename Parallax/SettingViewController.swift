@@ -11,49 +11,25 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
-    @IBOutlet weak var saveLocalBtnOn: UIButton!
-    
-    @IBOutlet weak var saveLocalBtnOff: UIButton!
-    
+    @IBOutlet weak var saveLocalSwitcher: UISwitch!
     @IBOutlet weak var savePhotoLocalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
         
-        let onTitle = NSLocalizedString("On", comment: "")
-        let offTitle = NSLocalizedString("Off", comment: "")
         let saveLocalTitle = NSLocalizedString("Save photo local directly", comment: "")
-        
-        saveLocalBtnOn.setTitle(onTitle, for: .normal)
-        saveLocalBtnOff.setTitle(offTitle, for: .normal)
         savePhotoLocalLabel.text = saveLocalTitle
-        
+
         let autoSaveLocal = UserDefaults.standard.string(forKey: "autoSaveLocal") == "true" ? true : false
-        if autoSaveLocal {
-            saveLocalBtnOn.setTitleColor(.orange, for: .normal)
-            saveLocalBtnOff.setTitleColor(.gray, for: .normal)
-        } else {
-            saveLocalBtnOn.setTitleColor(.gray, for: .normal)
-            saveLocalBtnOff.setTitleColor(.orange, for: .normal)
-        }
+        saveLocalSwitcher.setOn(autoSaveLocal, animated: true)
     }
     
     
-    @IBAction func onBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func turnSaveLocalOn(_ sender: Any) {
-        UserDefaults.standard.set("true", forKey: "autoSaveLocal")
-        saveLocalBtnOn.setTitleColor(.orange, for: .normal)
-        saveLocalBtnOff.setTitleColor(.gray, for: .normal)
-    }
- 
-    
-    @IBAction func turnSaveLocalOff(_ sender: Any) {
-        UserDefaults.standard.set("false", forKey: "autoSaveLocal")
-        saveLocalBtnOn.setTitleColor(.gray, for: .normal)
-        saveLocalBtnOff.setTitleColor(.orange, for: .normal)
+    @IBAction func onToggle(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn ? "true" : "false", forKey: "autoSaveLocal")
     }
 }

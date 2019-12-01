@@ -52,12 +52,21 @@
 		836C6BAF238C26F8005AA1A8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836C6BAE238C26F8005AA1A8 /* StoreManager.swift */; };
 		836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 836F399D2372F1F400C6E8AB /* Localizable.strings */; };
 		836F39A0237308F600C6E8AB /* glass-break.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 836F399F237308F500C6E8AB /* glass-break.fsh */; };
-		838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838DA90D2365D64600C9BC8F /* FilmRollCell.swift */; };
 		83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */; };
 		83AFC7052364495900371D9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFC7042364495900371D9E /* PhotoCell.swift */; };
 		83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */; };
 		83BEADBB238575A600C4035A /* west-world-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BEADB9238575A600C4035A /* west-world-filter.png */; };
 		83BEADC223857CB900C4035A /* shape-of-water-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BEADC023857CB900C4035A /* shape-of-water-filter.png */; };
+		83BF5146239156EF00B11184 /* FilmRollElongationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF5145239156EF00B11184 /* FilmRollElongationCell.swift */; };
+		83BF51562391593700B11184 /* FilmRollElongationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BF51552391593700B11184 /* FilmRollElongationCell.xib */; };
+		83BF515923915A1500B11184 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF515823915A1500B11184 /* UIFont.swift */; };
+		83BF515B23915A9200B11184 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF515A23915A9200B11184 /* UITableView.swift */; };
+		83BF516023915C2300B11184 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BF515D23915C2300B11184 /* Roboto-Medium.ttf */; };
+		83BF516123915C2300B11184 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BF515E23915C2300B11184 /* Roboto-Regular.ttf */; };
+		83BF516323916ABB00B11184 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF516223916ABB00B11184 /* DetailViewController.swift */; };
+		83BF516623916AF200B11184 /* GridViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BF516423916AF200B11184 /* GridViewCell.xib */; };
+		83BF516723916AF200B11184 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF516523916AF200B11184 /* GridViewCell.swift */; };
+		83BF516923916D7500B11184 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BF516823916D7500B11184 /* Roboto-Bold.ttf */; };
 		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
 		83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E21510236568C6005E8385 /* CustomOverlayView.xib */; };
 		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
@@ -135,6 +144,13 @@
 			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
 			remoteInfo = "lottie-ios";
 		};
+		83BF5151239156F000B11184 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 72FA8E32C5330ADDD61FCF1F7A543C67;
+			remoteInfo = ElongationPreview;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -201,12 +217,21 @@
 		836F399C2372F1F400C6E8AB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		836F399E2372F1FD00C6E8AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		836F399F237308F500C6E8AB /* glass-break.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = "glass-break.fsh"; sourceTree = "<group>"; };
-		838DA90D2365D64600C9BC8F /* FilmRollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollCell.swift; sourceTree = "<group>"; };
 		83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModelViewController.swift; sourceTree = "<group>"; };
 		83AFC7042364495900371D9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationHelper.swift; sourceTree = "<group>"; };
 		83BEADB9238575A600C4035A /* west-world-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "west-world-filter.png"; sourceTree = "<group>"; };
 		83BEADC023857CB900C4035A /* shape-of-water-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape-of-water-filter.png"; sourceTree = "<group>"; };
+		83BF5145239156EF00B11184 /* FilmRollElongationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollElongationCell.swift; sourceTree = "<group>"; };
+		83BF51552391593700B11184 /* FilmRollElongationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilmRollElongationCell.xib; sourceTree = "<group>"; };
+		83BF515823915A1500B11184 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		83BF515A23915A9200B11184 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		83BF515D23915C2300B11184 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		83BF515E23915C2300B11184 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		83BF516223916ABB00B11184 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		83BF516423916AF200B11184 /* GridViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridViewCell.xib; sourceTree = "<group>"; };
+		83BF516523916AF200B11184 /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		83BF516823916D7500B11184 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		83D4E5AF2361D56B007B73C4 /* Persei.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Persei.framework; path = Carthage/Build/iOS/Persei.framework; sourceTree = "<group>"; };
 		83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Persei.framework.dSYM; path = Carthage/Build/iOS/Persei.framework.dSYM; sourceTree = "<group>"; };
 		83D4E5B72361D782007B73C4 /* GPUImage2 */ = {isa = PBXFileReference; lastKnownFileType = text; name = GPUImage2; path = "/Users/de/Library/Developer/Xcode/DerivedData/Parallax-cggpgovfzygpfcdsoytdqbifaqqh/SourcePackages/checkouts/GPUImage2"; sourceTree = "<absolute>"; };
@@ -274,6 +299,7 @@
 		834239B923688F07009612BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				83BF5152239156F000B11184 /* ElongationPreview.framework */,
 				834239C523688F07009612BA /* INSNibLoading.framework */,
 				834239C723688F07009612BA /* INSPhotoGallery.framework */,
 				834239C923688F07009612BA /* INSPhotoGallery.bundle */,
@@ -288,6 +314,9 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83BF515D23915C2300B11184 /* Roboto-Medium.ttf */,
+				83BF516823916D7500B11184 /* Roboto-Bold.ttf */,
+				83BF515E23915C2300B11184 /* Roboto-Regular.ttf */,
 				83BEADC023857CB900C4035A /* shape-of-water-filter.png */,
 				8335B40F238A2B7A00E23887 /* shape-of-water.jpg */,
 				83BEADB9238575A600C4035A /* west-world-filter.png */,
@@ -334,6 +363,41 @@
 			path = IAP;
 			sourceTree = "<group>";
 		};
+		83BF5154239158F600B11184 /* FilmRoll */ = {
+			isa = PBXGroup;
+			children = (
+				83366DDD2361FA57005A3175 /* FilmRollViewController.swift */,
+				83BF516223916ABB00B11184 /* DetailViewController.swift */,
+				83BF516523916AF200B11184 /* GridViewCell.swift */,
+				83BF516423916AF200B11184 /* GridViewCell.xib */,
+				83BF5145239156EF00B11184 /* FilmRollElongationCell.swift */,
+				83BF51552391593700B11184 /* FilmRollElongationCell.xib */,
+			);
+			name = FilmRoll;
+			sourceTree = "<group>";
+		};
+		83BF515723915A0300B11184 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83BF515823915A1500B11184 /* UIFont.swift */,
+				83BF515A23915A9200B11184 /* UITableView.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		83BF516A2391753A00B11184 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
+				83E215142365738F005E8385 /* PhotoModel.swift */,
+				83AFC7042364495900371D9E /* PhotoCell.swift */,
+				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
+				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
+				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
 		83E897D8235F356E00435C8A = {
 			isa = PBXGroup;
 			children = (
@@ -362,20 +426,15 @@
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
 				83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */,
-				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
-				83366DDD2361FA57005A3175 /* FilmRollViewController.swift */,
+				83BF516A2391753A00B11184 /* Gallery */,
+				83BF5154239158F600B11184 /* FilmRoll */,
 				83133D6E236405F20005717E /* SettingViewController.swift */,
 				83E897EA235F356E00435C8A /* Main.storyboard */,
-				838DA90D2365D64600C9BC8F /* FilmRollCell.swift */,
-				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
 				8351C1AC2360833B006A8AB3 /* ImageUtil.swift */,
 				8351C1EA2360A6C6006A8AB3 /* Filters.swift */,
 				8351C1B123608352006A8AB3 /* FileUtil.swift */,
 				8351C1B323608371006A8AB3 /* SizeUtil.swift */,
-				83E215142365738F005E8385 /* PhotoModel.swift */,
-				83AFC7042364495900371D9E /* PhotoCell.swift */,
-				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
-				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
+				83BF515723915A0300B11184 /* Extensions */,
 				83133D8223642E1E0005717E /* Extenstions.swift */,
 				836F399D2372F1F400C6E8AB /* Localizable.strings */,
 				83E897ED235F356F00435C8A /* Assets.xcassets */,
@@ -518,6 +577,13 @@
 			remoteRef = 835DB81B23704B610070AB72 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		83BF5152239156F000B11184 /* ElongationPreview.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ElongationPreview.framework;
+			remoteRef = 83BF5151239156F000B11184 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -527,7 +593,9 @@
 			files = (
 				8351C1DE2360A6A1006A8AB3 /* happy-together.jpg in Resources */,
 				8344466B23745B3200FD4ED5 /* shadow-filter.png in Resources */,
+				83BF516123915C2300B11184 /* Roboto-Regular.ttf in Resources */,
 				83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */,
+				83BF516623916AF200B11184 /* GridViewCell.xib in Resources */,
 				8335B40E238A2B1D00E23887 /* west-world.jpg in Resources */,
 				83E2151D2365AF06005E8385 /* launching.gif in Resources */,
 				8344466923745B3200FD4ED5 /* blade-runner-2049-filter.png in Resources */,
@@ -535,6 +603,7 @@
 				8351C1E52360A6A1006A8AB3 /* lookup_amatorka.png in Resources */,
 				8351C1E02360A6A1006A8AB3 /* blade-runner-2049.jpg in Resources */,
 				8351C1E22360A6A1006A8AB3 /* schindlers-list.jpg in Resources */,
+				83BF516923916D7500B11184 /* Roboto-Bold.ttf in Resources */,
 				8351C1DA2360A6A1006A8AB3 /* Chaplin.fsh in Resources */,
 				8351C1E42360A6A1006A8AB3 /* lookup.png in Resources */,
 				835DB81D23704B610070AB72 /* camera-motion.json in Resources */,
@@ -550,8 +619,10 @@
 				8344466C23745B3200FD4ED5 /* happy-together-filter.png in Resources */,
 				835DB8222370675E0070AB72 /* loading.json in Resources */,
 				8351C1DB2360A6A1006A8AB3 /* filters.json in Resources */,
+				83BF516023915C2300B11184 /* Roboto-Medium.ttf in Resources */,
 				8344466D23745B3200FD4ED5 /* schindlers-list-filter.png in Resources */,
 				8351C1DD2360A6A1006A8AB3 /* lookup_soft_elegance_1.png in Resources */,
+				83BF51562391593700B11184 /* FilmRollElongationCell.xib in Resources */,
 				836F399B2372F1F400C6E8AB /* Localizable.strings in Resources */,
 				83E897EC235F356E00435C8A /* Main.storyboard in Resources */,
 				8335B410238A2B7A00E23887 /* shape-of-water.jpg in Resources */,
@@ -625,6 +696,9 @@
 				83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */,
 				83133D6F236405F20005717E /* SettingViewController.swift in Sources */,
 				83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */,
+				83BF515B23915A9200B11184 /* UITableView.swift in Sources */,
+				83BF516323916ABB00B11184 /* DetailViewController.swift in Sources */,
+				83BF5146239156EF00B11184 /* FilmRollElongationCell.swift in Sources */,
 				836C6BAB238C23F9005AA1A8 /* AppProtocols.swift in Sources */,
 				836C6BA9238C23AF005AA1A8 /* StoreObserver.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
@@ -632,9 +706,10 @@
 				83B843472371BF1800706FFB /* DeviceOrientationHelper.swift in Sources */,
 				83AFC6FA236441EB00371D9E /* CustomModelViewController.swift in Sources */,
 				8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */,
+				83BF515923915A1500B11184 /* UIFont.swift in Sources */,
 				83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */,
 				83E2151F2365AFA6005E8385 /* LaunchViewController.swift in Sources */,
-				838DA90E2365D64600C9BC8F /* FilmRollCell.swift in Sources */,
+				83BF516723916AF200B11184 /* GridViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

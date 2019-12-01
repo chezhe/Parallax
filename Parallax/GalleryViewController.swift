@@ -26,6 +26,13 @@ class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        
+        let rightSideOptionButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "setting"), style: .plain, target: self, action: #selector(goSetting))
+        self.navigationItem.rightBarButtonItem = rightSideOptionButton
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -35,8 +42,10 @@ class GalleryViewController: UIViewController {
         }
     }
     
-    @IBAction func onBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @objc func goSetting() {
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+        let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
+        self.navigationController?.pushViewController(setting, animated:true)
     }
 }
 
