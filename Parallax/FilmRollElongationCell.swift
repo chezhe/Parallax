@@ -17,5 +17,6 @@ class FilmRollElongationCell: ElongationCell {
     @IBOutlet var aboutTitleLabel: UILabel!
     @IBOutlet var aboutDescriptionLabel: UILabel!
 
+    @IBOutlet weak var priceButton: UIButton!
     @IBOutlet var topImageViewTopConstraint: NSLayoutConstraint!
 }

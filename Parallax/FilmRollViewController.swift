@@ -32,6 +32,19 @@ class FilmRollViewController: ElongationViewController {
         detailViewController.title = NSLocalizedString(filter.name, comment: "")
         expand(viewController: detailViewController)
     }
+    
+    
+    // MARK: - Fetch Product Information
+
+    /// Retrieves product information from the App Store.
+    fileprivate func fetchProductInformation(id: String) {
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let identifiers = [id]
+            StoreManager.shared.startProductRequest(with: identifiers)
+        } else {
+            
+        }
+    }
 }
 
 private extension FilmRollViewController {
@@ -69,5 +82,13 @@ extension FilmRollViewController {
         cell.countryLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
         cell.aboutTitleLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
         cell.aboutDescriptionLabel.text = NSLocalizedString(filter.name + "-desc", comment: "")
+        if filter.locked() {
+            cell.priceButton.setTitle("￥" + String(filter.price), for: .normal)
+            cell.priceButton.actionHandle(controlEvents: UIControl.Event.touchUpInside, ForAction:{() -> Void in
+                self.fetchProductInformation(id: filter.productID!)
+            })
+        } else {
+            cell.priceButton.isHidden = true
+        }
     }
 }

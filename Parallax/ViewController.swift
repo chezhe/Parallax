@@ -82,7 +82,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 return item.name == filterName
             }
             filmButton.tintColor = .white
-            let filmIcon = UIImage(cgImage: getCGImage(name: filterItem!.name + "-filter", ext: "png"))
+            let filmIcon = UIImage(cgImage: getCGImage(name: filterItem!.name + "-filter", ext: "jpg"))
             filmButton.setImage(filmIcon, for: .normal)
             filmButton.bounds.size = CGSize(width: 50, height: 50)
             filmButton.backgroundColor = UIColor.white
@@ -116,18 +116,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             filterSwitcher.addSubview(menu)
             
             menu.items = FILTERS.map { item in
-                var item = MenuItem(image: UIImage(cgImage: getCGImage(name: item.name + "-filter", ext: "png")))
-                item.backgroundColor = UIColor.darkGray
+                var item = MenuItem(image: UIImage(cgImage: getCGImage(name: item.name + "-filter", ext: "jpg")))
+                item.backgroundColor = UIColor.black
                 item.highlightedBackgroundColor = UIColor(white: 1, alpha: 0.3)
                 item.shadowColor = UIColor(white: 1, alpha: 0.3)
                 return item
             }
             var shopItem = MenuItem(image: UIImage(named: "shop")!)
-            shopItem.backgroundColor = UIColor.darkGray
-            shopItem.shadowColor = UIColor.darkGray
+            shopItem.backgroundColor = UIColor(displayP3Red: 17.0/255, green: 18.0/255, blue: 19.0/255, alpha: 1.0)
+            shopItem.shadowColor = UIColor(displayP3Red: 17.0/255, green: 18.0/255, blue: 19.0/255, alpha: 1.0)
             menu.items.append(shopItem)
             menu.selectedIndex = getIndexOf(filterName: filterName!)
-            menu.backgroundColor = UIColor.darkGray
+            menu.backgroundColor = UIColor(displayP3Red: 17.0/255, green: 18.0/255, blue: 19.0/255, alpha: 1.0)
         } catch {
             print("Initialize camera with error: \(error)")
         }
@@ -157,7 +157,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBAction func onCapture(_ sender: Any) {
         if (currentFilter?.locked())! {
-            fetchProductInformation(id: (currentFilter?.productID)!)
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmrollx") as! FilmRollViewController
+            self.navigationController?.pushViewController(filmroll, animated:true)
+//            fetchProductInformation(id: (currentFilter?.productID)!)
+//            self.animateLottie(name: "loading")
         } else {
             soundEffect?.play()
             
@@ -174,7 +178,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func onCaptureCompleted(image: UIImage) {
         DispatchQueue.main.async {
-            self.animateLottie()
+            self.animateLottie(name: "shoot")
             
             let dateformatter = DateFormatter()
             dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
@@ -196,7 +200,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             // if enable save image to photo library directly
             let autoSaveLocal = UserDefaults.standard.string(forKey: "autoSaveLocal") == "true" ? true : false
             if autoSaveLocal {
-                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
             } else {
                 FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
 
@@ -260,8 +264,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.deviceOrientation = deviceOrientation
         switch deviceOrientation {
             case .landscapeLeft:
-                videoCamera?.orientation = .landscapeLeft
+                videoCamera?.orientation = .landscapeRight
             case .landscapeRight:
+                videoCamera?.orientation = .landscapeRight
                 break
             default: break
                 
@@ -287,9 +292,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let lastPhoto = FileUtil.getLastPhoto()
         photoButton.setImage(lastPhoto, for: .normal)
         
-        let newFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
-        if newFilterName != filterName {
-            switchFilter(name: newFilterName)
+        if (currentFilter?.locked())! {
+            captureButton.setImage(UIImage(imageLiteralResourceName: "lock"), for: .normal)
+        } else {
+            captureButton.setImage(UIImage(imageLiteralResourceName: "capture"), for: .normal)
         }
     }
     
@@ -308,32 +314,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func animateLottie() {
+    func animateLottie(name: String) {
         let overlay = UIView(frame: self.view.frame)
         overlay.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
         self.view.addSubview(overlay)
         overlay.center = self.view.center
         
         let animView = AnimationView(name: "camera-motion")
-        let anim = Animation.named("loading", bundle: Bundle.main)
+        let anim = Animation.named(name, bundle: Bundle.main)
         animView.animation = anim
+//        animView.backgroundColor = UIColor.trans
         overlay.addSubview(animView)
-        animView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animView.frame = CGRect(x: 0, y: 0, width: 375, height: 375)
         animView.center = overlay.center
         animView.play { (finished) in
             overlay.removeFromSuperview()
-        }
-    }
-    
-    // MARK: - Fetch Product Information
-
-    /// Retrieves product information from the App Store.
-    fileprivate func fetchProductInformation(id: String) {
-        if StoreObserver.shared.isAuthorizedForPayments {
-            let identifiers = [id]
-            StoreManager.shared.startProductRequest(with: identifiers)
-        } else {
-            
         }
     }
 }
@@ -355,7 +350,7 @@ extension ViewController: MenuViewDelegate {
         UserDefaults.standard.set(filterItem.name, forKey: "filterName")
         
         self.switchFilter(name: filterItem.name)
-        let filmIcon = UIImage(cgImage: getCGImage(name: filterItem.name + "-filter", ext: "png"))
+        let filmIcon = UIImage(cgImage: getCGImage(name: filterItem.name + "-filter", ext: "jpg"))
         filmButton.setImage(filmIcon, for: .normal)
         currentFilter = filterItem
         
