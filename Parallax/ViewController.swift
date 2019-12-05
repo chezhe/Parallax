@@ -201,11 +201,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             let autoSaveLocal = UserDefaults.standard.string(forKey: "autoSaveLocal") == "true" ? true : false
             if autoSaveLocal {
                 UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
-            } else {
-                FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
-
-                FileUtil.onLaunch()
             }
+            FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
+            FileUtil.onLaunch()
             
             let lastPhoto = ImageUtil.cropScaleSize(image: newImage, size: CGSize(width: 200, height: 200))
             self.photoButton.setImage(lastPhoto, for: .normal)

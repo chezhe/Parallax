@@ -142,8 +142,6 @@ extension StoreObserver: SKPaymentTransactionObserver {
 
     /// Called when all restorable transactions have been processed by the payment queue.
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        print(Messages.restorable)
-
         if !hasRestorablePurchases {
             DispatchQueue.main.async {
                 self.delegate?.storeObserverDidReceiveMessage(Messages.noRestorablePurchases)
