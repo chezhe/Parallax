@@ -21,11 +21,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>APPNAME requires access to your phone’s camera.</string>
+	<string>NSCameraUsageDescription</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>APPNAME requires access to your photo library.</string>
+	<string>NSPhotoLibraryUsageDesciption</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>APPNAME requires access to your photo library.</string>
+	<string>NSPhotoLibraryUsageDesciption</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

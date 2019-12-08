@@ -18,6 +18,11 @@ class FilmRollViewController: ElongationViewController {
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        
+        let restore = NSLocalizedString("Restore", comment: "")
+        let rightSideOptionButton = UIBarButtonItem(title: restore, style: .plain, target: self, action: #selector(restorePurchase))
+        self.navigationItem.rightBarButtonItem = rightSideOptionButton
+        
         setup()
     }
     
@@ -33,17 +38,8 @@ class FilmRollViewController: ElongationViewController {
         expand(viewController: detailViewController)
     }
     
-    
-    // MARK: - Fetch Product Information
-
-    /// Retrieves product information from the App Store.
-    fileprivate func fetchProductInformation(id: String) {
-        if StoreObserver.shared.isAuthorizedForPayments {
-            let identifiers = [id]
-            StoreManager.shared.startProductRequest(with: identifiers)
-        } else {
-            
-        }
+    @objc func restorePurchase(){
+        StoreObserver.shared.restore()
     }
 }
 
@@ -82,13 +78,37 @@ extension FilmRollViewController {
         cell.countryLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
         cell.aboutTitleLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
         cell.aboutDescriptionLabel.text = NSLocalizedString(filter.name + "-desc", comment: "")
-        if filter.locked() {
-            cell.priceButton.setTitle("￥" + String(filter.price), for: .normal)
-            cell.priceButton.actionHandle(controlEvents: UIControl.Event.touchUpInside, ForAction:{() -> Void in
-                self.fetchProductInformation(id: filter.productID!)
-            })
-        } else {
+        cell.priceButton.accessibilityIdentifier = filter.productID
+        if !filter.locked() {
             cell.priceButton.isHidden = true
+        } else {
+            cell.priceButton.setTitle("￥" + String(filter.price), for: .normal)
         }
+    }
+    
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard shouldExpand else { return }
+        DispatchQueue.main.async {
+            self.expandedIndexPath = indexPath
+            self.openDetailView(for: indexPath)
+        }
+        
+        let cell = tableView.cellForRow(at: indexPath) as? FilmRollElongationCell
+        cell?.priceButton.isHidden = true
+    }
+    
+    override func animationController(forDismissed _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if expandedIndexPath != nil {
+            let filter = FILTERS[expandedIndexPath!.row]
+            let cell = tableView.cellForRow(at: expandedIndexPath!) as? FilmRollElongationCell
+            cell?.priceButton.isHidden = false
+
+            if !filter.locked() {
+                cell?.priceButton.isHidden = true
+            } else {
+                cell?.priceButton.setTitle("￥" + String(filter.price), for: .normal)
+            }
+        }
+        return super.animationController(forDismissed: self)
     }
 }

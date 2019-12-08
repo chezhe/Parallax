@@ -8,6 +8,7 @@
 
 import StoreKit
 import Foundation
+import SPAlert
 
 class StoreObserver: NSObject {
     // MARK: - Types
@@ -62,9 +63,11 @@ class StoreObserver: NSObject {
 
     /// Handles successful purchase transactions.
     fileprivate func handlePurchased(_ transaction: SKPaymentTransaction) {
-        purchased.append(transaction)
-        print("\(Messages.deliverContent) \(transaction.payment.productIdentifier).")
         UserDefaults.standard.set("unlocked", forKey: transaction.payment.productIdentifier)
+        let success = NSLocalizedString("Thanks for buying", comment: "")
+        SPAlert.present(title: "", message: success, image: UIImage(imageLiteralResourceName: "gift"))
+        purchased.append(transaction)
+        print("### \(Messages.deliverContent) \(transaction.payment.productIdentifier).")
         // Finish the successful transaction.
         SKPaymentQueue.default().finishTransaction(transaction)
     }
@@ -72,10 +75,10 @@ class StoreObserver: NSObject {
     /// Handles failed purchase transactions.
     fileprivate func handleFailed(_ transaction: SKPaymentTransaction) {
         var message = "\(Messages.purchaseOf) \(transaction.payment.productIdentifier) \(Messages.failed)"
-
+        
         if let error = transaction.error {
             message += "\n\(Messages.error) \(error.localizedDescription)"
-            print("\(Messages.error) \(error.localizedDescription)")
+            SPAlert.present(title: "", message: error.localizedDescription, image: UIImage(imageLiteralResourceName: "error"))
         }
 
         // Do not send any notifications when the user cancels the purchase.
@@ -92,8 +95,11 @@ class StoreObserver: NSObject {
     fileprivate func handleRestored(_ transaction: SKPaymentTransaction) {
         hasRestorablePurchases = true
         restored.append(transaction)
-        print("\(Messages.restoreContent) \(transaction.payment.productIdentifier).")
-
+        
+        UserDefaults.standard.set("unlocked", forKey: transaction.payment.productIdentifier)
+        let success = NSLocalizedString("Thanks for buying", comment: "")
+        SPAlert.present(title: "", message: success, image: UIImage(imageLiteralResourceName: "restore"))
+        
         DispatchQueue.main.async {
             self.delegate?.storeObserverRestoreDidSucceed()
         }

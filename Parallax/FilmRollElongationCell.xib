@@ -105,9 +105,12 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="8"/>
+                                                <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onClick:" destination="Tn3-op-5hs" eventType="touchUpInside" id="jzZ-8A-4ES"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

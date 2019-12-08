@@ -1,0 +1,10 @@
+/* 
+  Infoplist.strings
+  Parallax
+
+  Created by 王亮 on 2019/12/8.
+  Copyright © 2019 王亮. All rights reserved.
+*/
+
+"NSCameraUsageDescription" = "Parallax 需要为您拍摄照片";
+"NSPhotoLibraryUsageDesciption" = "Parallax 需要存储照片到相册";

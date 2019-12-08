@@ -19,4 +19,21 @@ class FilmRollElongationCell: ElongationCell {
 
     @IBOutlet weak var priceButton: UIButton!
     @IBOutlet var topImageViewTopConstraint: NSLayoutConstraint!
+    
+    @IBAction func onClick(_ sender: Any) {
+        fetchProductInformation(id: priceButton.accessibilityIdentifier!)
+    }
+    
+    // MARK: - Fetch Product Information
+
+    /// Retrieves product information from the App Store.
+    fileprivate func fetchProductInformation(id: String) {
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let identifiers = [id]
+            StoreManager.shared.startProductRequest(with: identifiers)
+        } else {
+            
+        }
+    }
 }
+
