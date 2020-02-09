@@ -178,11 +178,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func onCaptureCompleted(image: UIImage) {
         DispatchQueue.main.async {
-            self.animateLottie(name: "shoot")
+//            self.animateLottie(name: "shoot")
+            
+            let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
             
             let dateformatter = DateFormatter()
             dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            let name = dateformatter.string(from: Date())
+            let name = dateformatter.string(from: Date()) + "_" + filterName + "_"
 
             var newImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
 

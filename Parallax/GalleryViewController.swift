@@ -20,9 +20,7 @@ class GalleryViewController: UIViewController {
     var useCustomOverlay = true
     let numberOfItemsPerRow = 4
     
-    var photos = FileUtil.photoList.map { photo in
-        return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
-    }
+    var photos:[PhotoModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +29,59 @@ class GalleryViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
         
-        let rightSideOptionButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "setting"), style: .plain, target: self, action: #selector(goSetting))
+        let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+        
+        let currentFilter = NSLocalizedString(currentFilterName, comment: "")
+        let allFilters = NSLocalizedString("All Photos", comment: "")
+        
+        let segment: UISegmentedControl = UISegmentedControl(items: [currentFilter, allFilters])
+        segment.sizeToFit()
+        segment.tintColor = UIColor(red:0.99, green:0.00, blue:0.25, alpha:1.00)
+        segment.selectedSegmentIndex = 0;
+//        segment.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "ProximaNova-Light", size: 15)!], for: .normal)
+        self.navigationItem.titleView = segment
+        segment.addTarget(self, action: #selector(segmentedControlValueChanged), for:.valueChanged)
+        
+        let rightSideOptionButton = UIBarButtonItem(image: UIImage(imageLiteralResourceName: "import"), style: .plain, target: self, action: #selector(importPhoto))
         self.navigationItem.rightBarButtonItem = rightSideOptionButton
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        photos = FileUtil.photoList.filter { photo in
+            let filterName = photo.url.path.components(separatedBy: "_")
+            return filterName[1] == currentFilterName
+        }.map { photo in
+            return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
+        }
         
         if photos.count > 0 {
             emptyText.isHidden = true
         }
     }
     
-    @objc func goSetting() {
-        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-        let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
-        self.navigationController?.pushViewController(setting, animated:true)
+    @objc func segmentedControlValueChanged(segment: UISegmentedControl) {
+        print("\(segment.selectedSegmentIndex)")
+        let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+        if segment.selectedSegmentIndex == 0 {
+            photos = FileUtil.photoList.filter { photo in
+                let filterName = photo.url.path.components(separatedBy: "_")
+                return filterName[1] == currentFilterName
+            }.map { photo in
+                return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
+            }
+        } else {
+            photos = FileUtil.photoList.map { photo in
+                return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
+            }
+        }
+        collectionView.reloadData()
+    }
+    
+    @objc func importPhoto() {
+//        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+//        let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
+//        self.navigationController?.pushViewController(setting, animated:true)
     }
 }
 
