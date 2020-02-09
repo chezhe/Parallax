@@ -11,7 +11,7 @@ import UIKit
 import GPUImage
 import INSPhotoGallery
 
-class GalleryViewController: UIViewController {
+class GalleryViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,8 +19,10 @@ class GalleryViewController: UIViewController {
     
     var useCustomOverlay = true
     let numberOfItemsPerRow = 4
+    var segmentIndex = 0
     
     var photos:[PhotoModel] = []
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,22 +50,17 @@ class GalleryViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        photos = FileUtil.photoList.filter { photo in
-            let filterName = photo.url.path.components(separatedBy: "_")
-            return filterName[1] == currentFilterName
-        }.map { photo in
-            return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
-        }
-        
-        if photos.count > 0 {
-            emptyText.isHidden = true
-        }
+        loadPhotos(index: 0)
     }
     
     @objc func segmentedControlValueChanged(segment: UISegmentedControl) {
-        print("\(segment.selectedSegmentIndex)")
+        segmentIndex = segment.selectedSegmentIndex
+        loadPhotos(index: segment.selectedSegmentIndex)
+    }
+    
+    func loadPhotos(index: Int) -> Void {
         let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
-        if segment.selectedSegmentIndex == 0 {
+        if index == 0 {
             photos = FileUtil.photoList.filter { photo in
                 let filterName = photo.url.path.components(separatedBy: "_")
                 return filterName[1] == currentFilterName
@@ -76,12 +73,48 @@ class GalleryViewController: UIViewController {
             }
         }
         collectionView.reloadData()
+        
+        if photos.count > 0 {
+            emptyText.isHidden = true
+        }
     }
     
     @objc func importPhoto() {
 //        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
 //        let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
 //        self.navigationController?.pushViewController(setting, animated:true)
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+           imagePicker.delegate = self
+           imagePicker.sourceType = .savedPhotosAlbum
+           imagePicker.allowsEditing = false
+
+           present(imagePicker, animated: true, completion: nil)
+       }
+    }
+    
+    func onImagePicked(_ controller: UIImagePickerController, didSelect image: UIImage?){
+        self.dismiss(animated: true, completion: { () -> Void in
+
+        })
+        let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+        
+        let currentFilter = getFilter(name: currentFilterName) as ImageProcessingOperation
+        let newImage = image!.filterWithOperation(currentFilter)
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let name = dateformatter.string(from: Date()) + "_" + currentFilterName + "_"
+
+        FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
+        FileUtil.onLaunch()
+        loadPhotos(index: segmentIndex)
+    }
+    
+    public func imagePickerController(_ picker: UIImagePickerController,
+                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        self.onImagePicked(picker, didSelect: image)
     }
 }
 

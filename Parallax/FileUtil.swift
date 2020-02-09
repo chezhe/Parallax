@@ -32,9 +32,12 @@ class FileUtil {
     }
     
     public static func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> Void {
-        guard let data = image.png else {
+//        image.jpegData(compressionQuality: .greatestFiniteMagnitude)
+        print("1")
+        guard let data = image.jpegData(compressionQuality: .greatestFiniteMagnitude) else {
             return
         }
+        print("2")
         let fileURL = self.fileURLInDocumentDirectory(fileName)
         do {
             try data.write(to: fileURL)

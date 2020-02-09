@@ -74,22 +74,6 @@ func getFilter(name: String) -> ImageProcessingOperation {
     }
 }
 
-//func customFilter(_ name: String) -> BasicOperation {
-//    // 获取文件路径
-//    let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "fsh")!)
-//    var customFilter: BasicOperation
-//
-//    do {
-//        // 从文件中创建自定义滤镜
-//        customFilter = try BasicOperation(fragmentShaderFile: url)
-//    } catch {
-//        return FalseColor()
-//    }
-//
-//    return customFilter
-//}
-
-
 func getIndexOf(filterName: String) -> Int? {
     return FILTERS.map{filter in filter.name}.firstIndex(of: filterName)
 }
