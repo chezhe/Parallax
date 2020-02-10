@@ -20,6 +20,8 @@ class FilmRollElongationCell: ElongationCell {
     @IBOutlet weak var priceButton: UIButton!
     @IBOutlet var topImageViewTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var backBtn: UIButton!
+    
     @IBAction func onClick(_ sender: Any) {
         fetchProductInformation(id: priceButton.accessibilityIdentifier!)
     }
@@ -34,6 +36,10 @@ class FilmRollElongationCell: ElongationCell {
         } else {
             
         }
+    }
+    
+    @IBAction func onBack(_ sender: Any) {
+        print("+")
     }
 }
 

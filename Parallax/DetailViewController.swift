@@ -17,6 +17,15 @@ final class DetailViewController: ElongationDetailViewController {
         tableView.separatorStyle = .none
         tableView.registerNib(GridViewCell.self)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+    }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 1

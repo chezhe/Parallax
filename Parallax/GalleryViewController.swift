@@ -40,7 +40,7 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
         segment.sizeToFit()
         segment.tintColor = UIColor(red:0.99, green:0.00, blue:0.25, alpha:1.00)
         segment.selectedSegmentIndex = 0;
-//        segment.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "ProximaNova-Light", size: 15)!], for: .normal)
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .normal)
         self.navigationItem.titleView = segment
         segment.addTarget(self, action: #selector(segmentedControlValueChanged), for:.valueChanged)
         
@@ -80,9 +80,6 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     @objc func importPhoto() {
-//        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-//        let setting = storyBoard.instantiateViewController(withIdentifier: "setting")
-//        self.navigationController?.pushViewController(setting, animated:true)
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
            imagePicker.delegate = self
            imagePicker.sourceType = .savedPhotosAlbum
@@ -92,14 +89,15 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
        }
     }
     
-    func onImagePicked(_ controller: UIImagePickerController, didSelect image: UIImage?){
+    func onImagePicked(_ controller: UIImagePickerController, didSelect image: UIImage){
         self.dismiss(animated: true, completion: { () -> Void in
 
         })
         let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
         
-        let currentFilter = getFilter(name: currentFilterName) as ImageProcessingOperation
-        let newImage = image!.filterWithOperation(currentFilter)
+        let currentFilter = getFilter(name: currentFilterName) as! BasicOperation
+        
+        let newImage = image.filterWithOperation(currentFilter)
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let name = dateformatter.string(from: Date()) + "_" + currentFilterName + "_"

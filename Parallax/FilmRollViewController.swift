@@ -79,6 +79,7 @@ extension FilmRollViewController {
         cell.aboutTitleLabel.text = NSLocalizedString(filter.name + "-subtitle", comment: "")
         cell.aboutDescriptionLabel.text = NSLocalizedString(filter.name + "-desc", comment: "")
         cell.priceButton.accessibilityIdentifier = filter.productID
+        cell.backBtn.isHidden = true
         if !filter.locked() {
             cell.priceButton.isHidden = true
         } else {
@@ -95,6 +96,7 @@ extension FilmRollViewController {
         
         let cell = tableView.cellForRow(at: indexPath) as? FilmRollElongationCell
         cell?.priceButton.isHidden = true
+        cell?.backBtn.isHidden = false
     }
     
     override func animationController(forDismissed _: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -108,6 +110,7 @@ extension FilmRollViewController {
             } else {
                 cell?.priceButton.setTitle("￥" + String(filter.price), for: .normal)
             }
+            cell?.backBtn.isHidden = true
         }
         return super.animationController(forDismissed: self)
     }
