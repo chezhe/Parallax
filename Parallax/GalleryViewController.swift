@@ -38,9 +38,9 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
         
         let segment: UISegmentedControl = UISegmentedControl(items: [currentFilter, allFilters])
         segment.sizeToFit()
-        segment.tintColor = UIColor(red:0.99, green:0.00, blue:0.25, alpha:1.00)
         segment.selectedSegmentIndex = 0;
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .normal)
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .selected)
         self.navigationItem.titleView = segment
         segment.addTarget(self, action: #selector(segmentedControlValueChanged), for:.valueChanged)
         
@@ -61,6 +61,7 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
     func loadPhotos(index: Int) -> Void {
         let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
         if index == 0 {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
             photos = FileUtil.photoList.filter { photo in
                 let filterName = photo.url.path.components(separatedBy: "_")
                 return filterName[1] == currentFilterName
@@ -68,9 +69,13 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
                 return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
             }
         } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
             photos = FileUtil.photoList.map { photo in
                 return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
             }
+        }
+        if currentFilterName == "happy-together" {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
         collectionView.reloadData()
         
