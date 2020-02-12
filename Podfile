@@ -14,4 +14,5 @@ target 'Parallax' do
   pod 'INSNibLoading'
   pod 'lottie-ios'
   pod 'ElongationPreview'
+  pod 'CollectionViewSlantedLayout', '~> 3.1'
 end

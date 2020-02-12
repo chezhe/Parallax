@@ -64,7 +64,7 @@ func getFilter(name: String) -> ImageProcessingOperation {
     case "happy-together":
         return SoftElegance()
     case "matrix":
-        return RedAlert()
+        return TheMatrix()
     case "west-world":
         return RedAlert()
     case "shape-of-water":

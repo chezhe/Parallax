@@ -85,7 +85,7 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     @objc func importPhoto() {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
            imagePicker.delegate = self
            imagePicker.sourceType = .savedPhotosAlbum
            imagePicker.allowsEditing = false
@@ -94,7 +94,7 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
        }
     }
     
-    func onImagePicked(_ controller: UIImagePickerController, didSelect image: UIImage){
+    func onImagePicked(_ controller: UIImagePickerController, didSelect image: UIImage) {
         self.dismiss(animated: true, completion: { () -> Void in
 
         })

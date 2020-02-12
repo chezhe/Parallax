@@ -1,4 +1,5 @@
 PODS:
+  - CollectionViewSlantedLayout (3.1.1)
   - ElongationPreview (2.1.0)
   - INSNibLoading (1.0.2)
   - INSPhotoGallery (1.2.8)
@@ -7,6 +8,7 @@ PODS:
   - SPAlert (1.1.1)
 
 DEPENDENCIES:
+  - CollectionViewSlantedLayout (~> 3.1)
   - ElongationPreview
   - INSNibLoading
   - INSPhotoGallery
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CollectionViewSlantedLayout
     - ElongationPreview
     - INSNibLoading
     - INSPhotoGallery
@@ -24,6 +27,7 @@ SPEC REPOS:
     - SPAlert
 
 SPEC CHECKSUMS:
+  CollectionViewSlantedLayout: 24397455acd2461960bc45d394e0ef99c17d03ce
   ElongationPreview: 84b401d349bfcf855e94d6cc6b95d609260b6d96
   INSNibLoading: 0244d5b9c30d4642c77b31469cbfd905e8b1efb3
   INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
@@ -31,6 +35,6 @@ SPEC CHECKSUMS:
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
   SPAlert: 292690a27df49ff131d532a0a39d89b08dd93e4d
 
-PODFILE CHECKSUM: 525a48a320b7adac21c8b2bf7fcd516b06d46998
+PODFILE CHECKSUM: f134db001666fa98d584689088b0d1cf50377277
 
 COCOAPODS: 1.8.3
