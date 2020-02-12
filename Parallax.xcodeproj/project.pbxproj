@@ -16,8 +16,8 @@
 		8335B410238A2B7A00E23887 /* shape-of-water.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8335B40F238A2B7A00E23887 /* shape-of-water.jpg */; };
 		8335B412238A421800E23887 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8335B411238A421800E23887 /* StoreKit.framework */; };
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
-		8348B01823F437C500D8ABCE /* matrix-filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8348B00923F437C500D8ABCE /* matrix-filter.jpg */; };
-		8348B01923F437C500D8ABCE /* matrix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8348B01723F437C500D8ABCE /* matrix.jpg */; };
+		8348B02B23F4454E00D8ABCE /* matrix-filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8348B02923F4454D00D8ABCE /* matrix-filter.jpg */; };
+		8348B02C23F4454E00D8ABCE /* matrix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8348B02A23F4454D00D8ABCE /* matrix.jpg */; };
 		8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1AC2360833B006A8AB3 /* ImageUtil.swift */; };
 		8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B123608352006A8AB3 /* FileUtil.swift */; };
 		8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B323608371006A8AB3 /* SizeUtil.swift */; };
@@ -187,8 +187,8 @@
 		83366DDD2361FA57005A3175 /* FilmRollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmRollViewController.swift; sourceTree = "<group>"; };
 		834239B723688EF7009612BA /* framework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = framework; path = Pods/EVGPUImage2/framework; sourceTree = "<group>"; };
 		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
-		8348B00923F437C500D8ABCE /* matrix-filter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "matrix-filter.jpg"; path = "../../../../Downloads/matrix-filter.jpg"; sourceTree = "<group>"; };
-		8348B01723F437C500D8ABCE /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = matrix.jpg; path = ../../../../Downloads/matrix.jpg; sourceTree = "<group>"; };
+		8348B02923F4454D00D8ABCE /* matrix-filter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "matrix-filter.jpg"; sourceTree = "<group>"; };
+		8348B02A23F4454D00D8ABCE /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8351C1B123608352006A8AB3 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		8351C1B323608371006A8AB3 /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
@@ -325,8 +325,8 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8348B00923F437C500D8ABCE /* matrix-filter.jpg */,
-				8348B01723F437C500D8ABCE /* matrix.jpg */,
+				8348B02923F4454D00D8ABCE /* matrix-filter.jpg */,
+				8348B02A23F4454D00D8ABCE /* matrix.jpg */,
 				83BF51EB239554C000B11184 /* shoot.json */,
 				83BF51DF2395430000B11184 /* happy-together-filter.jpg */,
 				83BF51E12395430100B11184 /* joker-filter.jpg */,
@@ -611,7 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8351C1DE2360A6A1006A8AB3 /* happy-together.jpg in Resources */,
-				8348B01923F437C500D8ABCE /* matrix.jpg in Resources */,
+				8348B02C23F4454E00D8ABCE /* matrix.jpg in Resources */,
 				83BF51E62395430100B11184 /* shadow-filter.jpg in Resources */,
 				83BF516123915C2300B11184 /* Roboto-Regular.ttf in Resources */,
 				83E897F1235F356F00435C8A /* LaunchScreen.storyboard in Resources */,
@@ -635,7 +635,7 @@
 				838977E3239CBE1800CDBA1A /* InfoPlist.strings in Resources */,
 				8351C1E62360A6A1006A8AB3 /* shadow.jpg in Resources */,
 				8351C1DC2360A6A1006A8AB3 /* matrix.fsh in Resources */,
-				8348B01823F437C500D8ABCE /* matrix-filter.jpg in Resources */,
+				8348B02B23F4454E00D8ABCE /* matrix-filter.jpg in Resources */,
 				83E897EE235F356F00435C8A /* Assets.xcassets in Resources */,
 				8351C1E12360A6A1006A8AB3 /* schindlers-list.fsh in Resources */,
 				835DB8222370675E0070AB72 /* loading.json in Resources */,
