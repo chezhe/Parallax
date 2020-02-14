@@ -83,7 +83,9 @@ extension FilmRollViewController {
         if !filter.locked() {
             cell.priceButton.isHidden = true
         } else {
-            cell.priceButton.setTitle("￥" + String(filter.price), for: .normal)
+            let currency = NSLocalizedString("currency", comment: "")
+            let price = NSLocalizedString("6", comment: "")
+            cell.priceButton.setTitle(currency + price, for: .normal)
         }
     }
     
@@ -108,7 +110,9 @@ extension FilmRollViewController {
             if !filter.locked() {
                 cell?.priceButton.isHidden = true
             } else {
-                cell?.priceButton.setTitle("￥" + String(filter.price), for: .normal)
+                let currency = NSLocalizedString("currency", comment: "")
+                let price = NSLocalizedString("6", comment: "")
+                cell?.priceButton.setTitle(currency + price, for: .normal)
             }
             cell?.backBtn.isHidden = true
         }

@@ -338,7 +338,7 @@ extension ViewController: MenuViewDelegate {
     func menu(_ menu: MenuView, didSelectItemAt index: Int) {
         if index == FILTERS.count {
             let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmrollx") as! FilmRollViewController
+            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filters") as! FiltersViewController
             self.navigationController?.pushViewController(filmroll, animated:true)
             
             let filterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"

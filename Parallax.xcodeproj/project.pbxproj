@@ -73,6 +73,9 @@
 		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
 		83E2151D2365AF06005E8385 /* launching.gif in Resources */ = {isa = PBXBuildFile; fileRef = 83E2151C2365AF06005E8385 /* launching.gif */; };
 		83E2151F2365AFA6005E8385 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2151E2365AFA6005E8385 /* LaunchViewController.swift */; };
+		83E8750D23F6DD4A0060193A /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8750C23F6DD4A0060193A /* FiltersViewController.swift */; };
+		83E8750F23F6E0BA0060193A /* covers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83E8750E23F6E0BA0060193A /* covers.plist */; };
+		83E8751323F6E2DB0060193A /* FilterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8751223F6E2DB0060193A /* FilterCollectionCell.swift */; };
 		83E897E5235F356E00435C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E4235F356E00435C8A /* AppDelegate.swift */; };
 		83E897E7235F356E00435C8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E6235F356E00435C8A /* SceneDelegate.swift */; };
 		83E897E9235F356E00435C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E897E8235F356E00435C8A /* ViewController.swift */; };
@@ -250,6 +253,9 @@
 		83E215142365738F005E8385 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		83E2151C2365AF06005E8385 /* launching.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launching.gif; sourceTree = "<group>"; };
 		83E2151E2365AFA6005E8385 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		83E8750C23F6DD4A0060193A /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		83E8750E23F6E0BA0060193A /* covers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = covers.plist; sourceTree = "<group>"; };
+		83E8751223F6E2DB0060193A /* FilterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionCell.swift; sourceTree = "<group>"; };
 		83E897E1235F356E00435C8A /* Parallax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parallax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E897E4235F356E00435C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83E897E6235F356E00435C8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -409,6 +415,15 @@
 			name = Gallery;
 			sourceTree = "<group>";
 		};
+		83E8750023F6DB390060193A /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				83E8750C23F6DD4A0060193A /* FiltersViewController.swift */,
+				83E8751223F6E2DB0060193A /* FilterCollectionCell.swift */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
 		83E897D8235F356E00435C8A = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +452,7 @@
 				83E897E6235F356E00435C8A /* SceneDelegate.swift */,
 				83E897E8235F356E00435C8A /* ViewController.swift */,
 				83B843462371BF1800706FFB /* DeviceOrientationHelper.swift */,
+				83E8750023F6DB390060193A /* Filters */,
 				83BF516A2391753A00B11184 /* Gallery */,
 				83BF5154239158F600B11184 /* FilmRoll */,
 				83133D6E236405F20005717E /* SettingViewController.swift */,
@@ -453,6 +469,7 @@
 				83E2151E2365AFA6005E8385 /* LaunchViewController.swift */,
 				838977E5239CBE1800CDBA1A /* InfoPlist.strings */,
 				83E897F2235F356F00435C8A /* Info.plist */,
+				83E8750E23F6E0BA0060193A /* covers.plist */,
 				8351C1B723608678006A8AB3 /* Resources */,
 			);
 			path = Parallax;
@@ -648,6 +665,7 @@
 				83E897EC235F356E00435C8A /* Main.storyboard in Resources */,
 				8335B410238A2B7A00E23887 /* shape-of-water.jpg in Resources */,
 				8351C1E82360A6A1006A8AB3 /* joker.jpg in Resources */,
+				83E8750F23F6E0BA0060193A /* covers.plist in Resources */,
 				83BF51EA2395430100B11184 /* west-world-filter.jpg in Resources */,
 				8351C1E92360A6A1006A8AB3 /* joker.fsh in Resources */,
 				8363F1C9236713040062106A /* shoot.mp3 in Resources */,
@@ -705,6 +723,7 @@
 			files = (
 				83AFC7052364495900371D9E /* PhotoCell.swift in Sources */,
 				836C6BAF238C26F8005AA1A8 /* StoreManager.swift in Sources */,
+				83E8750D23F6DD4A0060193A /* FiltersViewController.swift in Sources */,
 				8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */,
 				83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */,
 				83E215152365738F005E8385 /* PhotoModel.swift in Sources */,
@@ -718,6 +737,7 @@
 				83BF515B23915A9200B11184 /* UITableView.swift in Sources */,
 				83BF516323916ABB00B11184 /* DetailViewController.swift in Sources */,
 				83BF5146239156EF00B11184 /* FilmRollElongationCell.swift in Sources */,
+				83E8751323F6E2DB0060193A /* FilterCollectionCell.swift in Sources */,
 				836C6BAB238C23F9005AA1A8 /* AppProtocols.swift in Sources */,
 				836C6BA9238C23AF005AA1A8 /* StoreObserver.swift in Sources */,
 				8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */,
