@@ -23,7 +23,6 @@ class FiltersViewController: UIViewController {
         super.loadView()
         if let url = Bundle.main.url(forResource: "covers", withExtension: "plist"),
             let contents = NSArray(contentsOf: url) as? [[String: String]] {
-            print("### \(contents)")
             covers = contents
         }
     }
@@ -34,6 +33,15 @@ class FiltersViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+        
+        let restore = NSLocalizedString("Restore", comment: "")
+        let rightSideOptionButton = UIBarButtonItem(title: restore, style: .plain, target: self, action: #selector(restorePurchase))
+        self.navigationItem.rightBarButtonItem = rightSideOptionButton
+        
+//        collectionViewLayout.isFirstCellExcluded = true
+//        collectionViewLayout.isLastCellExcluded = true
+//        collectionViewLayout.lineSpacing = 0.0
+//        collectionViewLayout.slantingSize = 0
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -50,14 +58,8 @@ class FiltersViewController: UIViewController {
         return UIStatusBarAnimation.slide
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "ShowSettings" ,
-//                let settingsController = segue.destination as? SettingsController,
-//                let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout else {
-//            return
-//        }
-//
-//        settingsController.collectionViewLayout = layout
+    @objc func restorePurchase(){
+        StoreObserver.shared.restore()
     }
 }
 
@@ -70,12 +72,11 @@ extension FiltersViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
                             as? FilterCollectionCell else {
             fatalError()
         }
-
+        
         cell.image = UIImage(named: covers[indexPath.row]["picture"]!)!
 
         if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
