@@ -38,10 +38,10 @@ class FiltersViewController: UIViewController {
         let rightSideOptionButton = UIBarButtonItem(title: restore, style: .plain, target: self, action: #selector(restorePurchase))
         self.navigationItem.rightBarButtonItem = rightSideOptionButton
         
-//        collectionViewLayout.isFirstCellExcluded = true
-//        collectionViewLayout.isLastCellExcluded = true
-//        collectionViewLayout.lineSpacing = 0.0
-//        collectionViewLayout.slantingSize = 0
+        collectionViewLayout.isFirstCellExcluded = true
+        collectionViewLayout.isLastCellExcluded = true
+        collectionViewLayout.lineSpacing = 0.0
+        collectionViewLayout.slantingSize = 0
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -78,9 +78,23 @@ extension FiltersViewController: UICollectionViewDataSource {
         }
         
         cell.image = UIImage(named: covers[indexPath.row]["picture"]!)!
+        cell.title.text = NSLocalizedString(covers[indexPath.row]["title"]!, comment: "")
+        cell.desc.text = NSLocalizedString(covers[indexPath.row]["title"]! + "-subtitle", comment: "")
 
+        let filter = FILTERS[indexPath.row]
+        cell.buyBtn.accessibilityIdentifier = filter.productID
+        if !filter.locked() {
+            cell.buyBtn.isHidden = true
+        } else {
+            let currency = NSLocalizedString("currency", comment: "")
+            let price = NSLocalizedString("6", comment: "")
+            cell.buyBtn.setTitle(currency + price, for: .normal)
+        }
+        
         if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
             cell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
+//            cell.title.transform = CGAffineTransform(rotationAngle: -CGFloat(Float.pi / 2))
+//            cell.desc.transform = CGAffineTransform(rotationAngle: -CGFloat(Float.pi / 2))
         }
 
         return cell
@@ -90,13 +104,16 @@ extension FiltersViewController: UICollectionViewDataSource {
 extension FiltersViewController: CollectionViewDelegateSlantedLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NSLog("Did select item at indexPath: [\(indexPath.section)][\(indexPath.row)]")
+        let detail = FilterDetail()
+        let filter = FILTERS[indexPath.row]
+        detail.filterName = filter.name
+        self.navigationController?.pushViewController(detail, animated:true)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: CollectionViewSlantedLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGFloat {
-        return collectionViewLayout.scrollDirection == .vertical ? 275 : 325
+        return collectionViewLayout.scrollDirection == .vertical ? 250 : 325
     }
 }
 

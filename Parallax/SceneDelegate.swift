@@ -31,8 +31,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             FileUtil.onLaunch()
         }
-        
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

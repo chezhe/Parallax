@@ -12,19 +12,19 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>happy-together</string>
-		<key>creator</key>
-		<string>AC/DC</string>
-		<key>picture</key>
-		<string>happy-together</string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>shadow</string>
 		<key>creator</key>
 		<string>U2</string>
 		<key>picture</key>
 		<string>shadow</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>happy-together</string>
+		<key>creator</key>
+		<string>AC/DC</string>
+		<key>picture</key>
+		<string>happy-together</string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -49,14 +49,6 @@
 		<string>Aerosmith</string>
 		<key>picture</key>
 		<string>shape-of-water</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>matrix</string>
-		<key>creator</key>
-		<string>David Bowie</string>
-		<key>picture</key>
-		<string>matrix</string>
 	</dict>
 </array>
 </plist>

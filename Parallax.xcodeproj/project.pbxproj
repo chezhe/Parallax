@@ -68,6 +68,7 @@
 		83BF51EA2395430100B11184 /* west-world-filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83BF51E42395430100B11184 /* west-world-filter.jpg */; };
 		83BF51EC239554C000B11184 /* shoot.json in Resources */ = {isa = PBXBuildFile; fileRef = 83BF51EB239554C000B11184 /* shoot.json */; };
 		83BF51EE2395603900B11184 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF51ED2395603900B11184 /* UIButton.swift */; };
+		83CA100523F97D4200428655 /* FilterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA100423F97D4200428655 /* FilterDetail.swift */; };
 		83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2150E23656898005E8385 /* CustomOverlayView.swift */; };
 		83E21511236568C6005E8385 /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E21510236568C6005E8385 /* CustomOverlayView.xib */; };
 		83E215152365738F005E8385 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E215142365738F005E8385 /* PhotoModel.swift */; };
@@ -245,6 +246,7 @@
 		83BF51E42395430100B11184 /* west-world-filter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "west-world-filter.jpg"; sourceTree = "<group>"; };
 		83BF51EB239554C000B11184 /* shoot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shoot.json; sourceTree = "<group>"; };
 		83BF51ED2395603900B11184 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		83CA100423F97D4200428655 /* FilterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetail.swift; sourceTree = "<group>"; };
 		83D4E5AF2361D56B007B73C4 /* Persei.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Persei.framework; path = Carthage/Build/iOS/Persei.framework; sourceTree = "<group>"; };
 		83D4E5B32361D586007B73C4 /* Persei.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Persei.framework.dSYM; path = Carthage/Build/iOS/Persei.framework.dSYM; sourceTree = "<group>"; };
 		83D4E5B72361D782007B73C4 /* GPUImage2 */ = {isa = PBXFileReference; lastKnownFileType = text; name = GPUImage2; path = "/Users/de/Library/Developer/Xcode/DerivedData/Parallax-cggpgovfzygpfcdsoytdqbifaqqh/SourcePackages/checkouts/GPUImage2"; sourceTree = "<absolute>"; };
@@ -331,39 +333,39 @@
 		8351C1B723608678006A8AB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8348B02923F4454D00D8ABCE /* matrix-filter.jpg */,
-				8348B02A23F4454D00D8ABCE /* matrix.jpg */,
-				83BF51EB239554C000B11184 /* shoot.json */,
-				83BF51DF2395430000B11184 /* happy-together-filter.jpg */,
-				83BF51E12395430100B11184 /* joker-filter.jpg */,
-				83BF51E22395430100B11184 /* schindlers-list-filter.jpg */,
-				83BF51E02395430100B11184 /* shadow-filter.jpg */,
-				83BF51E32395430100B11184 /* shape-of-water-filter.jpg */,
-				83BF51E42395430100B11184 /* west-world-filter.jpg */,
-				83BF515D23915C2300B11184 /* Roboto-Medium.ttf */,
-				83BF516823916D7500B11184 /* Roboto-Bold.ttf */,
-				83BF515E23915C2300B11184 /* Roboto-Regular.ttf */,
-				8335B40F238A2B7A00E23887 /* shape-of-water.jpg */,
-				8335B404238A2B1C00E23887 /* west-world.jpg */,
-				836F399F237308F500C6E8AB /* glass-break.fsh */,
-				835DB8212370675D0070AB72 /* loading.json */,
 				835DB81223704B610070AB72 /* camera-motion.json */,
-				8363F1C8236713040062106A /* shoot.mp3 */,
-				83E2151C2365AF06005E8385 /* launching.gif */,
 				8351C1C72360A6A0006A8AB3 /* Chaplin.fsh */,
 				8351C1C82360A6A0006A8AB3 /* filters.json */,
+				836F399F237308F500C6E8AB /* glass-break.fsh */,
+				83BF51DF2395430000B11184 /* happy-together-filter.jpg */,
 				8351C1CB2360A6A1006A8AB3 /* happy-together.jpg */,
+				83BF51E12395430100B11184 /* joker-filter.jpg */,
 				8351C1D62360A6A1006A8AB3 /* joker.fsh */,
 				8351C1D52360A6A1006A8AB3 /* joker.jpg */,
+				83E2151C2365AF06005E8385 /* launching.gif */,
+				835DB8212370675D0070AB72 /* loading.json */,
 				8351C1D22360A6A1006A8AB3 /* lookup_amatorka.png */,
 				8351C1C42360A6A0006A8AB3 /* lookup_miss_etikate.png */,
 				8351C1CA2360A6A1006A8AB3 /* lookup_soft_elegance_1.png */,
 				8351C1C52360A6A0006A8AB3 /* lookup_soft_elegance_2.png */,
 				8351C1D12360A6A1006A8AB3 /* lookup.png */,
+				8348B02923F4454D00D8ABCE /* matrix-filter.jpg */,
 				8351C1C92360A6A0006A8AB3 /* matrix.fsh */,
+				8348B02A23F4454D00D8ABCE /* matrix.jpg */,
+				83BF516823916D7500B11184 /* Roboto-Bold.ttf */,
+				83BF515D23915C2300B11184 /* Roboto-Medium.ttf */,
+				83BF515E23915C2300B11184 /* Roboto-Regular.ttf */,
+				83BF51E22395430100B11184 /* schindlers-list-filter.jpg */,
 				8351C1CE2360A6A1006A8AB3 /* schindlers-list.fsh */,
 				8351C1CF2360A6A1006A8AB3 /* schindlers-list.jpg */,
+				83BF51E02395430100B11184 /* shadow-filter.jpg */,
 				8351C1D32360A6A1006A8AB3 /* shadow.jpg */,
+				83BF51E32395430100B11184 /* shape-of-water-filter.jpg */,
+				8335B40F238A2B7A00E23887 /* shape-of-water.jpg */,
+				83BF51EB239554C000B11184 /* shoot.json */,
+				8363F1C8236713040062106A /* shoot.mp3 */,
+				83BF51E42395430100B11184 /* west-world-filter.jpg */,
+				8335B404238A2B1C00E23887 /* west-world.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -420,6 +422,7 @@
 			children = (
 				83E8750C23F6DD4A0060193A /* FiltersViewController.swift */,
 				83E8751223F6E2DB0060193A /* FilterCollectionCell.swift */,
+				83CA100423F97D4200428655 /* FilterDetail.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */,
 				83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */,
 				83E215152365738F005E8385 /* PhotoModel.swift in Sources */,
+				83CA100523F97D4200428655 /* FilterDetail.swift in Sources */,
 				8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */,
 				8351C1BB23608807006A8AB3 /* GalleryViewController.swift in Sources */,
 				83E897E9235F356E00435C8A /* ViewController.swift in Sources */,

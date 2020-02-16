@@ -1,11 +1,5 @@
 [
     {
-        "id": 999,
-        "name": "matrix",
-        "title": "黑客帝国",
-        "desc": "01100001010",
-        "price": 0
-    }, {
         "id": 1000,
         "name": "schindlers-list",
         "title": "辛德勒的名单",
@@ -37,7 +31,7 @@
         "name": "west-world",
         "title": "西部世界",
         "desc": "红色警报",
-        "price": 0,
+        "price": 6,
         "productID": "westworld"
     },
     {
@@ -45,7 +39,7 @@
         "name": "shape-of-water",
         "title": "水形物语",
         "desc": "窗外下着雨",
-        "price": 0,
+        "price": 6,
         "productID": "shapeofwater"
     }
 ]

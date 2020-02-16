@@ -17,8 +17,30 @@ class FilterCollectionCell: CollectionViewSlantedCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var desc: UILabel!
+    
+    @IBOutlet weak var buyBtn: UIButton!
+    
     private var gradient = CAGradientLayer()
 
+    @IBAction func onBuy(_ sender: Any) {
+        fetchProductInformation(id: buyBtn.accessibilityIdentifier!)
+    }
+    
+    // MARK: - Fetch Product Information
+
+    /// Retrieves product information from the App Store.
+    fileprivate func fetchProductInformation(id: String) {
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let identifiers = [id]
+            StoreManager.shared.startProductRequest(with: identifiers)
+        } else {
+            
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
