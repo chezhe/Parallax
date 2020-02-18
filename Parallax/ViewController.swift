@@ -31,12 +31,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var videoCamera: Camera?
     var pictureOutput: PictureOutput!
+    var movieOutput: MovieOutput? = nil
     var filter: ImageProcessingOperation!
     var soundEffect: AVAudioPlayer?
-    let cameraEnabled: Bool = true
     var filterName: String?
     var zoomEnd: CGFloat = 1.0
     var currentFilter: Filter?
+    var isRecording = false
     
     fileprivate var menu: MenuView!
     fileprivate var deviceOrientation: UIDeviceOrientation?
@@ -44,14 +45,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - Funtions
     required init(coder aDecoder: NSCoder)
     {
-        if cameraEnabled {
-            do {
-                videoCamera = try Camera(sessionPreset:.high, location:.backFacing)
-                videoCamera!.runBenchmark = true
-            } catch {
-                videoCamera = nil
-                print("Couldn't initialize camera with error: \(error)")
-            }
+        do {
+            videoCamera = try Camera(sessionPreset:.high, location:.backFacing)
+            videoCamera!.runBenchmark = true
+        } catch {
+            videoCamera = nil
+            print("Couldn't initialize camera with error: \(error)")
         }
 
         super.init(coder: aDecoder)!
@@ -88,24 +87,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             filmButton.backgroundColor = UIColor.white
             captureButton.tintColor = .white
             photoButton.tintColor = .white
-            if filterItem!.locked() {
-                let lockImage = UIImage(imageLiteralResourceName: "lock")
-                captureButton.setImage(lockImage, for: .normal)
-            }
             currentFilter = filterItem
             
             photoButton.bounds.size = CGSize(width: 50, height: 50)
             
             // camera & filter
-            if cameraEnabled {
-//                viewport.fillMode = .preserveAspectRatioAndFill
-                videoCamera = try Camera(sessionPreset: .high, location: .backFacing)
+            videoCamera = try Camera(sessionPreset: .high, location: .backFacing)
 
-                filter = getFilter(name: filterName!)
-                videoCamera?.addTarget(filter)
-                filter.addTarget(viewport)
-                videoCamera?.startCapture()
-            }
+            filter = getFilter(name: filterName!)
+            videoCamera?.addTarget(filter)
+            filter.addTarget(viewport)
+            videoCamera?.startCapture()
 
             // sound effect
             soundEffect = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "shoot.mp3", ofType:nil)!))
@@ -156,24 +148,52 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func onCapture(_ sender: Any) {
-        if (currentFilter?.locked())! {
-            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmrollx") as! FilmRollViewController
-            self.navigationController?.pushViewController(filmroll, animated:true)
-//            fetchProductInformation(id: (currentFilter?.productID)!)
-//            self.animateLottie(name: "loading")
-        } else {
-            soundEffect?.play()
-            
-            if cameraEnabled {
-                pictureOutput = PictureOutput()
-                pictureOutput.encodedImageFormat = .jpeg
-                pictureOutput.imageAvailableCallback = {image in
-                    self.onCaptureCompleted(image: image)
+        if !isRecording {
+            do {
+                isRecording = true
+                captureButton.setImage(UIImage(named: "stop"), for: .normal)
+                
+                let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
+                
+                let dateformatter = DateFormatter()
+                dateformatter.dateFormat = "yyyy-MM-dd+hh:mm:ss"
+                let name = dateformatter.string(from: Date()) + "_" + currentFilterName + "_.mp4"
+                
+                let documentsDir = try FileManager.default.url(for:.documentDirectory, in:.userDomainMask, appropriateFor:nil, create:true)
+                let fileURL = URL(string: name, relativeTo: documentsDir)!
+                do {
+                    try FileManager.default.removeItem(at:fileURL)
+                } catch {
                 }
-                filter --> pictureOutput
+                
+                movieOutput = try MovieOutput(URL:fileURL, size:Size(width:480, height:640), liveVideo:true)
+    //                camera.audioEncodingTarget = movieOutput
+                filter --> movieOutput!
+                movieOutput!.startRecording()
+            } catch {
+                fatalError("Couldn't initialize movie, error: \(error)")
             }
+        } else {
+            isRecording = false
+            movieOutput = nil
+            captureButton.setImage(UIImage(named: "record"), for: .normal)
         }
+//        if (currentFilter?.locked())! {
+//            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+//            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmrollx") as! FilmRollViewController
+//            self.navigationController?.pushViewController(filmroll, animated:true)
+//        } else {
+//            soundEffect?.play()
+//
+//            if cameraEnabled {
+//                pictureOutput = PictureOutput()
+//                pictureOutput.encodedImageFormat = .jpeg
+//                pictureOutput.imageAvailableCallback = {image in
+//                    self.onCaptureCompleted(image: image)
+//                }
+//                filter --> pictureOutput
+//            }
+//        }
     }
     
     func onCaptureCompleted(image: UIImage) {
@@ -206,9 +226,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
             FileUtil.onLaunch()
-            
-            let lastPhoto = ImageUtil.cropScaleSize(image: newImage, size: CGSize(width: 200, height: 200))
-            self.photoButton.setImage(lastPhoto, for: .normal)
         }
     }
     
@@ -235,20 +252,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func onToggleFlash(_ sender: Any) {
-        if cameraEnabled {
-            do {
-                try videoCamera!.inputCamera.lockForConfiguration()
-                if videoCamera?.inputCamera.torchMode == .off {
-                    videoCamera?.inputCamera.torchMode = .on
-                    torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-off"), for: .normal)
-                } else {
-                    videoCamera?.inputCamera.torchMode = .off
-                    torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-on"), for: .normal)
-                }
-                videoCamera!.inputCamera.unlockForConfiguration()
-            } catch {
-                
+        do {
+            try videoCamera!.inputCamera.lockForConfiguration()
+            if videoCamera?.inputCamera.torchMode == .off {
+                videoCamera?.inputCamera.torchMode = .on
+                torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-off"), for: .normal)
+            } else {
+                videoCamera?.inputCamera.torchMode = .off
+                torchBtn.setImage(UIImage(imageLiteralResourceName: "flash-on"), for: .normal)
             }
+            videoCamera!.inputCamera.unlockForConfiguration()
+        } catch {
+            
         }
     }
     
@@ -288,30 +303,19 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         if let videoCamera = videoCamera {
             videoCamera.startCapture()
         }
-        
-        let lastPhoto = FileUtil.getLastPhoto()
-        photoButton.setImage(lastPhoto, for: .normal)
-        
-        if (currentFilter?.locked())! {
-            captureButton.setImage(UIImage(imageLiteralResourceName: "lock"), for: .normal)
-        } else {
-            captureButton.setImage(UIImage(imageLiteralResourceName: "capture"), for: .normal)
-        }
     }
     
     func switchFilter(name: String) -> Void {
         filterName = name
         menu.selectedIndex = getIndexOf(filterName: name)
         
-        if cameraEnabled {
-            filter.removeAllTargets()
-            resetCamera()
-            
-            self.filter = getFilter(name: name)
-            self.videoCamera!.addTarget(self.filter)
-            self.filter.addTarget(self.viewport!)
-            self.videoCamera!.startCapture()
-        }
+        filter.removeAllTargets()
+        resetCamera()
+        
+        self.filter = getFilter(name: name)
+        self.videoCamera!.addTarget(self.filter)
+        self.filter.addTarget(self.viewport!)
+        self.videoCamera!.startCapture()
     }
     
     func animateLottie(name: String) {
@@ -353,13 +357,6 @@ extension ViewController: MenuViewDelegate {
         let filmIcon = UIImage(cgImage: getCGImage(name: filterItem.name + "-filter", ext: "jpg"))
         filmButton.setImage(filmIcon, for: .normal)
         currentFilter = filterItem
-        
-        if filterItem.locked() {
-            let lockImage = UIImage(imageLiteralResourceName: "lock")
-            captureButton.setImage(lockImage, for: .normal)
-        } else {
-            captureButton.setImage(UIImage(imageLiteralResourceName: "capture"), for: .normal)
-        }
     }
 }
 

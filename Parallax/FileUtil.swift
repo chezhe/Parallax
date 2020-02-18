@@ -32,7 +32,6 @@ class FileUtil {
     }
     
     public static func storeImageToDocumentDirectory(image: UIImage, fileName: String) -> Void {
-//        image.jpegData(compressionQuality: .greatestFiniteMagnitude)
         guard let data = image.jpegData(compressionQuality: .greatestFiniteMagnitude) else {
             return
         }
@@ -52,8 +51,9 @@ class FileUtil {
         }
         var list: [Photo] = []
         for url in urls {
-            let photo = Photo(url: url, isPortrait: url.path.contains("Portrait"), image: UIImage(contentsOfFile: url.path)!)
-            list.append(photo)
+            print("### \(url.path)")
+//            let photo = Photo(url: url, isPortrait: url.path.contains("Portrait"), image: UIImage(contentsOfFile: url.path)!)
+//            list.append(photo)
         }
         
         return list
