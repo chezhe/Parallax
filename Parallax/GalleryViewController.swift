@@ -59,21 +59,23 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     func loadPhotos(index: Int) -> Void {
+        let fullWidth = collectionView.bounds.size.width
         let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
         if index == 0 {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
             photos = FileUtil.photoList.filter { photo in
                 let filterName = photo.url.path.components(separatedBy: "_")
-                return filterName[1] == currentFilterName
+                return filterName.count > 1 && filterName[1] == currentFilterName
             }.map { photo in
-                return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
+                return PhotoModel(image: photo.thumbnail, thumbnailImage: ImageUtil.cropScaleSize(image: photo.thumbnail, size: CGSize(width: fullWidth, height: 128)), url: photo.url)
             }
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
             photos = FileUtil.photoList.map { photo in
-                return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
+                return PhotoModel(image: photo.thumbnail, thumbnailImage: ImageUtil.cropScaleSize(image: photo.thumbnail, size: CGSize(width: fullWidth, height: 128)), url: photo.url)
             }
         }
+        
         if currentFilterName == "happy-together" {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
@@ -138,7 +140,7 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-        let size:CGFloat = (collectionView.frame.size.width - space) / 3.0
+        let size:CGFloat = (collectionView.frame.size.width - space)
         return CGSize(width: size, height: size)
     }
     
@@ -168,7 +170,7 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         FileUtil.onLaunch()
         self.photos = FileUtil.photoList.map { photo in
-            return PhotoModel(image: photo.image, thumbnailImage: ImageUtil.cropScaleSize(image: photo.image, size: CGSize(width: 128, height: 128)), url: photo.url)
+            return PhotoModel(image: photo.thumbnail, thumbnailImage: ImageUtil.cropScaleSize(image: photo.thumbnail, size: CGSize(width: 128, height: 128)), url: photo.url)
         }
         self.collectionView.reloadData()
     }

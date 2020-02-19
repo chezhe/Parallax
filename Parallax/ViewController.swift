@@ -177,6 +177,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             isRecording = false
             movieOutput = nil
             captureButton.setImage(UIImage(named: "record"), for: .normal)
+            FileUtil.onLaunch()
         }
 //        if (currentFilter?.locked())! {
 //            let storyBoard = UIStoryboard(name: "Main", bundle:nil)

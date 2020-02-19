@@ -13,7 +13,7 @@ class CustomModelViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     lazy var photos = FileUtil.getPhotoList().map { photo in
-        return INSPhoto(image: photo.image, thumbnailImage: nil)
+        return INSPhoto(image: photo.thumbnail, thumbnailImage: nil)
     }
     
     override func viewDidLoad() {

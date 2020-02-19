@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 struct Photo: Identifiable {
     var id = UUID()
     var url: URL
     var isPortrait: Bool
-    var image: UIImage
+    var thumbnail: UIImage
 }
 
 extension FileManager {
@@ -51,9 +52,19 @@ class FileUtil {
         }
         var list: [Photo] = []
         for url in urls {
-            print("### \(url.path)")
-//            let photo = Photo(url: url, isPortrait: url.path.contains("Portrait"), image: UIImage(contentsOfFile: url.path)!)
-//            list.append(photo)
+            let avAsset = AVURLAsset(url: url, options: nil)
+            let imageGenerator = AVAssetImageGenerator(asset: avAsset)
+            imageGenerator.appliesPreferredTrackTransform = true
+            var thumbnail: UIImage?
+
+            do {
+                thumbnail = try UIImage(cgImage: imageGenerator.copyCGImage(at: CMTime(seconds: 0, preferredTimescale: 1), actualTime: nil))
+
+                let photo = Photo(url: url, isPortrait: url.path.contains("Portrait"), thumbnail: thumbnail!)
+                list.append(photo)
+            } catch let e as NSError {
+                print("Error: \(e)")
+            }
         }
         
         return list
@@ -73,9 +84,8 @@ class FileUtil {
     }
     
     public static func deletePhoto(url: URL) -> Void {
-        let fileManager = FileManager()
         do {
-            try fileManager.removeItem(atPath: url.path)
+            try FileManager.default.removeItem(at: url)
         } catch {
             print("Ooops! Something went wrong: \(error)")
         }
