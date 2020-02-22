@@ -38,6 +38,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var zoomEnd: CGFloat = 1.0
     var currentFilter: Filter?
     var isRecording = false
+    var fileURL: URL?
     
     fileprivate var menu: MenuView!
     fileprivate var deviceOrientation: UIDeviceOrientation?
@@ -160,13 +161,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 let name = dateformatter.string(from: Date()) + "_" + currentFilterName + "_.mp4"
                 
                 let documentsDir = try FileManager.default.url(for:.documentDirectory, in:.userDomainMask, appropriateFor:nil, create:true)
-                let fileURL = URL(string: name, relativeTo: documentsDir)!
+                fileURL = URL(string: name, relativeTo: documentsDir)!
                 do {
-                    try FileManager.default.removeItem(at:fileURL)
+                    try FileManager.default.removeItem(at: fileURL!)
                 } catch {
                 }
                 
-                movieOutput = try MovieOutput(URL:fileURL, size:Size(width:480, height:640), liveVideo:true)
+                movieOutput = try MovieOutput(URL: fileURL!, size: Size(width:480, height:640), liveVideo:true)
+                
     //                camera.audioEncodingTarget = movieOutput
                 filter --> movieOutput!
                 movieOutput!.startRecording()
@@ -178,23 +180,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             movieOutput = nil
             captureButton.setImage(UIImage(named: "record"), for: .normal)
             FileUtil.onLaunch()
+            if (fileURL != nil) {
+                UISaveVideoAtPathToSavedPhotosAlbum(fileURL!.path, nil, nil, nil)
+            }
+            fileURL = nil
         }
-//        if (currentFilter?.locked())! {
-//            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-//            let filmroll = storyBoard.instantiateViewController(withIdentifier: "filmrollx") as! FilmRollViewController
-//            self.navigationController?.pushViewController(filmroll, animated:true)
-//        } else {
-//            soundEffect?.play()
-//
-//            if cameraEnabled {
-//                pictureOutput = PictureOutput()
-//                pictureOutput.encodedImageFormat = .jpeg
-//                pictureOutput.imageAvailableCallback = {image in
-//                    self.onCaptureCompleted(image: image)
-//                }
-//                filter --> pictureOutput
-//            }
-//        }
     }
     
     func onCaptureCompleted(image: UIImage) {
@@ -299,7 +289,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
+//        deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
         super.viewWillAppear(animated)
         if let videoCamera = videoCamera {
             videoCamera.startCapture()

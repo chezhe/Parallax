@@ -8,23 +8,23 @@
 
 import UIKit
 import INSPhotoGallery
+import VersaPlayer
 
 class PhotoCell: UICollectionViewCell {
-    
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var playerView: VersaPlayerView!
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     func populateWithPhoto(_ photo: INSPhotoViewable) {
-        photo.loadThumbnailImageWithCompletionHandler { [weak photo] (image, error) in
-            if let image = image {
-                if let photo = photo as? INSPhoto {
-                    photo.thumbnailImage = image
-                }
-                self.imageView.image = image
-            }
-        }
+//        photo.loadThumbnailImageWithCompletionHandler { [weak photo] (image, error) in
+//            if let image = image {
+//                if let photo = photo as? INSPhoto {
+//                    photo.thumbnailImage = image
+//                }
+//                self.imageView.image = image
+//            }
+//        }
     }
 }

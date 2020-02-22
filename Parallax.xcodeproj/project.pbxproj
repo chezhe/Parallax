@@ -100,6 +100,13 @@
 			remoteGlobalIDString = BCE0BE8C20D6E2B80006E120;
 			remoteInfo = GPUImage_macOS;
 		};
+		831DD1D524011AD50081EE81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67A4D4DD084F5BCCA66B326C45EF9C75;
+			remoteInfo = VersaPlayer;
+		};
 		834239C423688F07009612BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
@@ -326,6 +333,7 @@
 				834239CB23688F07009612BA /* Persei.framework */,
 				834239CD23688F07009612BA /* Pods_Parallax.framework */,
 				834239CF23688F07009612BA /* SPAlert.framework */,
+				831DD1D624011AD50081EE81 /* VersaPlayer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -558,6 +566,13 @@
 			fileType = wrapper.framework;
 			path = GPUImage.framework;
 			remoteRef = 83135955237A8366008F5C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		831DD1D624011AD50081EE81 /* VersaPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = VersaPlayer.framework;
+			remoteRef = 831DD1D524011AD50081EE81 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		834239C523688F07009612BA /* INSNibLoading.framework */ = {
