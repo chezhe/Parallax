@@ -5,6 +5,7 @@ PODS:
   - INSPhotoGallery (1.2.8)
   - lottie-ios (3.1.3)
   - Persei (3.1.1)
+  - Player (0.13.2)
   - SPAlert (1.1.1)
   - VersaPlayer (3.0.2)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - INSPhotoGallery
   - lottie-ios
   - Persei (~> 3.0)
+  - Player (~> 0.13.2)
   - SPAlert
   - VersaPlayer
 
@@ -26,6 +28,7 @@ SPEC REPOS:
     - INSPhotoGallery
     - lottie-ios
     - Persei
+    - Player
     - SPAlert
     - VersaPlayer
 
@@ -36,9 +39,10 @@ SPEC CHECKSUMS:
   INSPhotoGallery: ad317cb9a59c7a5f08550e4155b49622c24dcab3
   lottie-ios: 496ac5cea1bbf1a7bd1f1f472f3232eb1b8d744b
   Persei: 6d36b54e40eccd437211548d3f897269c85d3a13
+  Player: 7a2bcad3631034fa47d4b6fdedf7c4075fc236fe
   SPAlert: 292690a27df49ff131d532a0a39d89b08dd93e4d
   VersaPlayer: 0e9a0ea7da786729ffb377dbd17b34641a8265e4
 
-PODFILE CHECKSUM: 779c1ef65e85219ed4c79b1213bc1cb322ff67ee
+PODFILE CHECKSUM: ea048ce2f8509c1885c5445289741190a9375847
 
 COCOAPODS: 1.8.3

@@ -16,4 +16,5 @@ target 'Parallax' do
   pod 'ElongationPreview'
   pod 'CollectionViewSlantedLayout', '~> 3.1'
   pod 'VersaPlayer'
+  pod 'Player', '~> 0.13.2'
 end

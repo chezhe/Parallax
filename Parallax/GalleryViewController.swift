@@ -18,7 +18,6 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
     
     @IBOutlet weak var emptyText: UILabel!
     
-    var controls: VersaPlayerControls?
     var useCustomOverlay = true
     var segmentIndex = 0
     
@@ -44,12 +43,6 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], for: .selected)
         self.navigationItem.titleView = segment
         segment.addTarget(self, action: #selector(segmentedControlValueChanged), for:.valueChanged)
-        
-        controls = VersaPlayerControls()
-        let playPauseButton = VersaStatefulButton(type: .custom)
-        playPauseButton.activeImage = UIImage(named: "play")
-        playPauseButton.inactiveImage = UIImage(named: "pause")
-        controls?.playPauseButton = playPauseButton
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -130,18 +123,13 @@ class GalleryViewController: UIViewController, UINavigationControllerDelegate, U
 extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-//        cell.populateWithPhoto(photos[(indexPath as NSIndexPath).row])
         
-//        cell.playerView.frame = CGRect(x: 0, y: 0, width: 200, height: 340)
-//        cell.playerView.autoplay = false
-//        cell.playerView.controls = VersaPlayerControls()
-        
-        cell.playerView.use(controls: controls!)
+        cell.playerView.autoplay = false
         cell.playerView.set(item: VersaPlayerItem(url: photos[(indexPath as NSIndexPath).row].url))
         cell.playerView.transform = CGAffineTransform(rotationAngle: -CGFloat(Float.pi / 2))
-//        controls?.toggleFullscreen()
-        controls?.playPauseButton?.set(active: true)
-//        cell.playerView.transform = CGAffineTransform(translationX: 100, y: 80)
+        cell.populateWithPhoto(photos[(indexPath as NSIndexPath).row])
+        
+        print("### \(photos[(indexPath as NSIndexPath).row].url.path)")
         
         return cell
     }
@@ -155,27 +143,16 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: 200)
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
-//        let currentPhoto = photos[(indexPath as NSIndexPath).row]
-//        let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
-//        if useCustomOverlay {
-//            let overlayView = CustomOverlayView(frame: CGRect.zero)
-//            overlayView.setDeleteFunc(delete: self.delete)
-//            galleryPreview.overlayView = overlayView
-//        }
-//
-//        galleryPreview.referenceViewForPhotoWhenDismissingHandler = { [weak self] photo in
-//            if let index = self?.photos.firstIndex(where: {$0 === photo}) {
-//                let indexPath = IndexPath(item: index, section: 0)
-//                return collectionView.cellForItem(at: indexPath) as? PhotoCell
-//            }
-//            return nil
-//        }
-//        present(galleryPreview, animated: true, completion: nil)
-//    }
-//
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+        let videoplayer = storyBoard.instantiateViewController(withIdentifier: "videoplayer") as! VideoViewController
+        videoplayer.fileURL = photos[(indexPath as NSIndexPath).row].url
+        self.navigationController?.pushViewController(videoplayer, animated:true)
+//        present(videoplayer, animated: true, completion: nil)
+    }
+
     func delete(photos: [PhotoModel]) -> Void {
         for photo in photos {
             FileUtil.deletePhoto(url: photo.url)

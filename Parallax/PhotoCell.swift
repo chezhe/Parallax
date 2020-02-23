@@ -12,19 +12,25 @@ import VersaPlayer
 
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var playerView: VersaPlayerView!
+    var controls: VersaPlayerControls?
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     func populateWithPhoto(_ photo: INSPhotoViewable) {
-//        photo.loadThumbnailImageWithCompletionHandler { [weak photo] (image, error) in
-//            if let image = image {
-//                if let photo = photo as? INSPhoto {
-//                    photo.thumbnailImage = image
-//                }
-//                self.imageView.image = image
-//            }
-//        }
+        controls = VersaPlayerControls()
+        let playPauseButton = VersaStatefulButton(type: .custom)
+        playPauseButton.activeImage = UIImage(named: "play")
+        playPauseButton.inactiveImage = UIImage(named: "pause")
+        controls?.playPauseButton = playPauseButton
+        
+        let fullscreenButton = VersaStatefulButton(type: .custom)
+        fullscreenButton.activeImage = UIImage(named: "fullscreen")
+        controls?.fullscreenButton = fullscreenButton
+        
+        self.playerView.use(controls: controls!)
+        
+        controls?.prepare()
     }
 }

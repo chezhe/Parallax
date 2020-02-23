@@ -18,6 +18,7 @@
 		83366DDE2361FA57005A3175 /* FilmRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83366DDD2361FA57005A3175 /* FilmRollViewController.swift */; };
 		8348B02B23F4454E00D8ABCE /* matrix-filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8348B02923F4454D00D8ABCE /* matrix-filter.jpg */; };
 		8348B02C23F4454E00D8ABCE /* matrix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8348B02A23F4454D00D8ABCE /* matrix.jpg */; };
+		8349DA0B24025C5700956323 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349DA0A24025C5700956323 /* VideoViewController.swift */; };
 		8351C1AD2360833B006A8AB3 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1AC2360833B006A8AB3 /* ImageUtil.swift */; };
 		8351C1B223608352006A8AB3 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B123608352006A8AB3 /* FileUtil.swift */; };
 		8351C1B423608371006A8AB3 /* SizeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351C1B323608371006A8AB3 /* SizeUtil.swift */; };
@@ -156,6 +157,13 @@
 			remoteGlobalIDString = 14FC7CA2CA565423747AEDFE12AF8A85;
 			remoteInfo = CollectionViewSlantedLayout;
 		};
+		8349DA1924025C5900956323 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5C08AE3835639A2111ACBCE5382CE742;
+			remoteInfo = Player;
+		};
 		835DB81B23704B610070AB72 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 834239B823688F07009612BA /* Pods.xcodeproj */;
@@ -200,6 +208,7 @@
 		834239B823688F07009612BA /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		8348B02923F4454D00D8ABCE /* matrix-filter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "matrix-filter.jpg"; sourceTree = "<group>"; };
 		8348B02A23F4454D00D8ABCE /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
+		8349DA0A24025C5700956323 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		8351C1AC2360833B006A8AB3 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		8351C1B123608352006A8AB3 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		8351C1B323608371006A8AB3 /* SizeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeUtil.swift; sourceTree = "<group>"; };
@@ -331,6 +340,7 @@
 				834239C923688F07009612BA /* INSPhotoGallery.bundle */,
 				835DB81C23704B610070AB72 /* Lottie.framework */,
 				834239CB23688F07009612BA /* Persei.framework */,
+				8349DA1A24025C5900956323 /* Player.framework */,
 				834239CD23688F07009612BA /* Pods_Parallax.framework */,
 				834239CF23688F07009612BA /* SPAlert.framework */,
 				831DD1D624011AD50081EE81 /* VersaPlayer.framework */,
@@ -418,6 +428,7 @@
 				8351C1BA23608807006A8AB3 /* GalleryViewController.swift */,
 				83E215142365738F005E8385 /* PhotoModel.swift */,
 				83AFC7042364495900371D9E /* PhotoCell.swift */,
+				8349DA0A24025C5700956323 /* VideoViewController.swift */,
 				83E21510236568C6005E8385 /* CustomOverlayView.xib */,
 				83AFC6F9236441EB00371D9E /* CustomModelViewController.swift */,
 				83E2150E23656898005E8385 /* CustomOverlayView.swift */,
@@ -624,6 +635,13 @@
 			remoteRef = 8348B01523F437C500D8ABCE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		8349DA1A24025C5900956323 /* Player.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Player.framework;
+			remoteRef = 8349DA1924025C5900956323 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		835DB81C23704B610070AB72 /* Lottie.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -746,6 +764,7 @@
 				83E2150F23656898005E8385 /* CustomOverlayView.swift in Sources */,
 				83E215152365738F005E8385 /* PhotoModel.swift in Sources */,
 				83CA100523F97D4200428655 /* FilterDetail.swift in Sources */,
+				8349DA0B24025C5700956323 /* VideoViewController.swift in Sources */,
 				8351C1EB2360A6C6006A8AB3 /* Filters.swift in Sources */,
 				8351C1BB23608807006A8AB3 /* GalleryViewController.swift in Sources */,
 				83E897E9235F356E00435C8A /* ViewController.swift in Sources */,
