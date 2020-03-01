@@ -94,7 +94,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             
             // camera & filter
             videoCamera = try Camera(sessionPreset: .high, location: .backFacing)
-
+            
             filter = getFilter(name: filterName!)
             videoCamera?.addTarget(filter)
             filter.addTarget(viewport)
@@ -166,8 +166,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                     try FileManager.default.removeItem(at: fileURL!)
                 } catch {
                 }
-                
-                movieOutput = try MovieOutput(URL: fileURL!, size: Size(width:480, height:640), liveVideo:true)
+                let viewportSize = viewport.bounds.size
+                movieOutput = try MovieOutput(URL: fileURL!, size: Size(width: Float(viewportSize.width), height: Float(viewportSize.height)), liveVideo:true)
                 
     //                camera.audioEncodingTarget = movieOutput
                 filter --> movieOutput!
@@ -184,39 +184,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 UISaveVideoAtPathToSavedPhotosAlbum(fileURL!.path, nil, nil, nil)
             }
             fileURL = nil
-        }
-    }
-    
-    func onCaptureCompleted(image: UIImage) {
-        DispatchQueue.main.async {
-//            self.animateLottie(name: "shoot")
-            
-            let currentFilterName = UserDefaults.standard.string(forKey: "filterName") ?? "schindlers-list"
-            
-            let dateformatter = DateFormatter()
-            dateformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            let name = dateformatter.string(from: Date()) + "_" + currentFilterName + "_"
-
-            var newImage = ImageUtil.cropScaleSize(image: image, size: self.viewport.bounds.size)
-
-            switch self.deviceOrientation {
-                case .portraitUpsideDown:
-                    newImage = UIImage(cgImage: newImage.cgImage!, scale: 1.0, orientation: UIImage.Orientation.down)
-                case .landscapeLeft:
-                    newImage = UIImage(cgImage: newImage.cgImage!, scale: 1.0, orientation: UIImage.Orientation.right)
-                case .landscapeRight:
-                    newImage = UIImage(cgImage: newImage.cgImage!, scale: 1.0, orientation: UIImage.Orientation.left)
-                default: break
-                    
-            }
-
-            // if enable save image to photo library directly
-            let autoSaveLocal = UserDefaults.standard.string(forKey: "autoSaveLocal") == "true" ? true : false
-            if autoSaveLocal {
-                UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
-            }
-            FileUtil.storeImageToDocumentDirectory(image: newImage, fileName: name)
-            FileUtil.onLaunch()
         }
     }
     
@@ -270,9 +237,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.deviceOrientation = deviceOrientation
         switch deviceOrientation {
             case .landscapeLeft:
+                print("### landscapeLeft")
                 videoCamera?.orientation = .landscapeRight
             case .landscapeRight:
+                print("### landscapeRight")
                 videoCamera?.orientation = .landscapeRight
+                break
+            case .portrait:
+                print("### portrait")
                 break
             default: break
                 
@@ -289,7 +261,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
+        deviceOrientationHelper.startDeviceOrientationNotifier(with: self.onDeviceRotate)
         super.viewWillAppear(animated)
         if let videoCamera = videoCamera {
             videoCamera.startCapture()

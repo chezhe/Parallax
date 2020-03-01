@@ -126,10 +126,8 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
         
         cell.playerView.autoplay = false
         cell.playerView.set(item: VersaPlayerItem(url: photos[(indexPath as NSIndexPath).row].url))
-        cell.playerView.transform = CGAffineTransform(rotationAngle: -CGFloat(Float.pi / 2))
+//        cell.playerView.transform = CGAffineTransform(rotationAngle: -CGFloat(Float.pi / 2))
         cell.populateWithPhoto(photos[(indexPath as NSIndexPath).row])
-        
-        print("### \(photos[(indexPath as NSIndexPath).row].url.path)")
         
         return cell
     }

@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKi-Km-PKW">
-                                <rect key="frame" x="0.0" y="545" width="375" height="120"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKi-Km-PKW">
+                                <rect key="frame" x="0.0" y="365" width="375" height="413"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HWx-bi-UlZ">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="90"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWx-bi-UlZ">
+                                        <rect key="frame" x="0.0" y="285" width="375" height="128"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-Ct-fY1">
                                                 <rect key="frame" x="20" y="39" width="50" height="50"/>
@@ -67,27 +67,29 @@
                                 <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="HWx-bi-UlZ" firstAttribute="centerX" secondItem="wKi-Km-PKW" secondAttribute="centerX" id="7NN-ls-5nD"/>
+                                    <constraint firstAttribute="bottom" secondItem="HWx-bi-UlZ" secondAttribute="bottom" id="F47-Um-pLN"/>
                                     <constraint firstItem="HWx-bi-UlZ" firstAttribute="leading" secondItem="awR-ng-0KD" secondAttribute="leading" id="Ict-fZ-nXg"/>
                                     <constraint firstAttribute="trailing" secondItem="HWx-bi-UlZ" secondAttribute="trailing" id="jgo-Jg-Hrh"/>
+                                    <constraint firstItem="HWx-bi-UlZ" firstAttribute="bottom" secondItem="awR-ng-0KD" secondAttribute="bottom" id="kRv-Vr-SnY"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="yMJ-ve-cmF"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="awR-ng-0KD"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ky2-DC-nog" userLabel="viewport" customClass="RenderView" customModule="GPUImage">
-                                <rect key="frame" x="13" y="80" width="375" height="618"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ky2-DC-nog" userLabel="viewport" customClass="RenderView" customModule="GPUImage">
+                                <rect key="frame" x="0.0" y="44" width="375" height="240"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shb-ho-zpy">
-                                        <rect key="frame" x="0.0" y="564" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="186" width="375" height="54"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-Ou-WIg">
-                                                <rect key="frame" x="22" y="4" width="42.666666666666664" height="42.666666666666657"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-Ou-WIg">
+                                                <rect key="frame" x="21.999999999999996" y="5.6666666666666572" width="42.666666666666657" height="42.666666666666664"/>
                                                 <state key="normal" image="switch"/>
                                                 <connections>
                                                     <action selector="onSwitchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O6B-lv-69m"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Md-ZRE">
-                                                <rect key="frame" x="311" y="4" width="42.5" height="42.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Md-ZRE">
+                                                <rect key="frame" x="311" y="5.6666666666666572" width="42.666666666666686" height="42.666666666666664"/>
                                                 <state key="normal" image="flash-on"/>
                                                 <connections>
                                                     <action selector="onToggleFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n6z-wl-VXX"/>
@@ -106,22 +108,21 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="shb-ho-zpy" firstAttribute="leading" secondItem="ky2-DC-nog" secondAttribute="leading" id="7vC-fG-fNH"/>
+                                    <constraint firstAttribute="height" constant="240" id="Fzf-qe-GrK"/>
                                     <constraint firstAttribute="bottom" secondItem="shb-ho-zpy" secondAttribute="bottom" id="bs0-ED-K5y"/>
+                                    <constraint firstAttribute="width" constant="375" id="s1a-cQ-vHo"/>
                                     <constraint firstAttribute="trailing" secondItem="shb-ho-zpy" secondAttribute="trailing" id="ujg-P7-4zT"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.070588235294117646" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ky2-DC-nog" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="23f-Zf-o2B"/>
                             <constraint firstItem="ky2-DC-nog" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5VS-FU-Ngt"/>
                             <constraint firstItem="wKi-Km-PKW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ggh-xs-j1G"/>
-                            <constraint firstItem="wKi-Km-PKW" firstAttribute="leading" secondItem="ky2-DC-nog" secondAttribute="leading" id="SFk-pN-KFb"/>
+                            <constraint firstItem="wKi-Km-PKW" firstAttribute="top" secondItem="ky2-DC-nog" secondAttribute="bottom" constant="81" id="Qg4-A5-zsF"/>
                             <constraint firstItem="wKi-Km-PKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vg6-vg-Ggh"/>
-                            <constraint firstItem="wKi-Km-PKW" firstAttribute="top" secondItem="ky2-DC-nog" secondAttribute="bottom" id="XXv-Ro-DqY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ky2-DC-nog" secondAttribute="bottom" constant="116" id="cZU-c9-adL"/>
-                            <constraint firstItem="wKi-Km-PKW" firstAttribute="trailing" secondItem="ky2-DC-nog" secondAttribute="trailing" id="egg-af-Ura"/>
                             <constraint firstItem="wKi-Km-PKW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jTd-CR-xft"/>
+                            <constraint firstItem="ky2-DC-nog" firstAttribute="centerX" secondItem="wKi-Km-PKW" secondAttribute="centerX" id="nae-m7-9zE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -217,7 +218,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaC-lk-ju2" customClass="VersaPlayerView" customModule="VersaPlayer">
-                                                    <rect key="frame" x="69.872737886715711" y="-69.9439579684705" width="200.00000000000011" height="339.99999999999994"/>
+                                                    <rect key="frame" x="-1.4535519125680973" y="0.25409836065568925" width="339.99999999999989" height="200.00000000000006"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </view>
                                             </subviews>
